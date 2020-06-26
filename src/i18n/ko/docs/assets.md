@@ -1,10 +1,10 @@
 # 📦 애셋
 
-Parcel 은 애셋(assets)을 기반으로 합니다. 애셋은 어떤 파일로든 표현될 수 있습니다만, Parcel 은 JavaScript, CSS, 그리고 HTML 파일과 같은 특정 유형의 애셋을 특별 지원 합니다. Pacel 은 이 파일들 안의 참조에서 자동으로 의존성을 분석하고 출력 번들에 포함시킵니다. 비슷한 유형의 애셋들은 같은 출력 번들로 함께 그룹화 합니다. 만약 다른 유형의 애셋을 임포트 했다면 (예를 들면, JS 파일에서 CSS 파일을 임포트 했다면), 자식 번들이 만들어지고 부모 번들에게 참조를 남깁니다. 후속 섹션에서 이에 대해 설명할 것입니다.
+Parcel 은 애셋\(assets\)을 기반으로 합니다. 애셋은 어떤 파일로든 표현될 수 있습니다만, Parcel 은 JavaScript, CSS, 그리고 HTML 파일과 같은 특정 유형의 애셋을 특별 지원 합니다. Pacel 은 이 파일들 안의 참조에서 자동으로 의존성을 분석하고 출력 번들에 포함시킵니다. 비슷한 유형의 애셋들은 같은 출력 번들로 함께 그룹화 합니다. 만약 다른 유형의 애셋을 임포트 했다면 \(예를 들면, JS 파일에서 CSS 파일을 임포트 했다면\), 자식 번들이 만들어지고 부모 번들에게 참조를 남깁니다. 후속 섹션에서 이에 대해 설명할 것입니다.
 
 ## JavaScript
 
-웹 번들러에 있어 JavaScript 는 가장 전통적인 파일 유형입니다. 파일 임포팅을 위해 Parcel 은 CommonJS 와 ES6 모듈 구문을 모두 지원합니다. 또한 비동기적인 모듈 로드를 위해 다이나믹 `import()` 함수 구문을 지원합니다. 이에 대해선 [코드 분할](code_splitting.html)섹션에서 다룰 것입니다.
+웹 번들러에 있어 JavaScript 는 가장 전통적인 파일 유형입니다. 파일 임포팅을 위해 Parcel 은 CommonJS 와 ES6 모듈 구문을 모두 지원합니다. 또한 비동기적인 모듈 로드를 위해 다이나믹 `import()` 함수 구문을 지원합니다. 이에 대해선 [코드 분할](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/ko/docs/code_splitting.html)섹션에서 다룰 것입니다.
 
 ```javascript
 // CommonJS 구문으로 모듈 임포트
@@ -14,7 +14,7 @@ const dep = require('./path/to/dep')
 import dep from './path/to/dep'
 ```
 
-JavaScript 파일에 JavaScript 가 아닌 애셋 또한 임포트 할 수 있습니다. CSS 나 이미지 파일도 됩니다. 이런 파일들을 임포트 할 때, 다른 번들러들처럼 인라인화 되지 않습니다. 대신, 그 파일의 모든 의존 항목과 함께 별도의 번들(예로 CSS 파일)속에 위치하게 됩니다. [CSS Modules](https://github.com/css-modules/css-modules)을 사용할 시, 추출 된 클래스들은 JavaScript 번들에 위치합니다. 다른 애셋 유형은 출력 파일에 대한 URL 을 JavaScript 번들에 내보냅니다. 이로써 그 파일들에 대한 참조를 코드안에 갖고 있게 됩니다.
+JavaScript 파일에 JavaScript 가 아닌 애셋 또한 임포트 할 수 있습니다. CSS 나 이미지 파일도 됩니다. 이런 파일들을 임포트 할 때, 다른 번들러들처럼 인라인화 되지 않습니다. 대신, 그 파일의 모든 의존 항목과 함께 별도의 번들\(예로 CSS 파일\)속에 위치하게 됩니다. [CSS Modules](https://github.com/css-modules/css-modules)을 사용할 시, 추출 된 클래스들은 JavaScript 번들에 위치합니다. 다른 애셋 유형은 출력 파일에 대한 URL 을 JavaScript 번들에 내보냅니다. 이로써 그 파일들에 대한 참조를 코드안에 갖고 있게 됩니다.
 
 ```javascript
 // CSS 파일 임포트
@@ -27,7 +27,7 @@ import classNames from './test.css'
 import imageURL from './test.png'
 ```
 
-만약 파일을 참조 URL 이 아닌 인라인으로 JavaScript 번들에 포함시키고 싶다면, Node.js 의 `fs.readFileSync` API 를 사용하면 됩니다. 이 때 URL 은 정적으로 분석 가능해야 합니다. 이 말인 즉, 그 안에 변수를 가질 수 없다는 뜻입니다. (단, `__dirname` 와 `__filename` 는 예외입니다.)
+만약 파일을 참조 URL 이 아닌 인라인으로 JavaScript 번들에 포함시키고 싶다면, Node.js 의 `fs.readFileSync` API 를 사용하면 됩니다. 이 때 URL 은 정적으로 분석 가능해야 합니다. 이 말인 즉, 그 안에 변수를 가질 수 없다는 뜻입니다. \(단, `__dirname` 와 `__filename` 는 예외입니다.\)
 
 ```javascript
 import fs from 'fs'
@@ -75,7 +75,7 @@ SCSS 에서 `@import` 구문으로 포함된 의존성도 처리됩니다.
 
 HTML 애셋은 주로 Parcel 진입 파일로 사용됩니다. 그렇지만 JavaScript 파일에 의해서, 예로 다른 페이지로의 링크를 제공하기위해 참조 될 수도 있습니다. 스크립트, 스타일, 미디어, 그리고 다른 HTML 파일의 URL 은 위에서 설명한것 처럼 추출되고 컴파일됩니다. 참조는 HTML 안에서 재작성 됨으로써 정확한 출력 파일로 연결 됩니다. 모든 파일 이름은 현재의 HTML 파일과 관련 있어야 합니다.
 
-```html
+```markup
 <html>
 <body>
   <!-- 이미지 파일 참조 -->
@@ -88,3 +88,4 @@ HTML 애셋은 주로 Parcel 진입 파일로 사용됩니다. 그렇지만 Java
 </body>
 </html>
 ```
+

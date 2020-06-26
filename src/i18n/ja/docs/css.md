@@ -1,14 +1,16 @@
-# CSS
+# css
+
+## CSS
 
 _Supported extensions: `css`, `pcss`, `postcss`_
 
 CSS assets can be imported from a JavaScript or HTML file:
 
-```js
+```javascript
 import './index.css'
 ```
 
-```html
+```markup
 <link rel="stylesheet" type="text/css" href="index.css" />
 ```
 
@@ -26,9 +28,9 @@ CSS assets can contain dependencies referenced by `@import` syntax as well as re
 
 In addition to plain CSS, other compile-to-CSS languages like LESS, SASS, and Stylus are also supported, and work the same way.
 
-# PostCSS
+## PostCSS
 
-[PostCSS](http://postcss.org) is a tool for transforming CSS with plugins, like [autoprefixer](https://github.com/postcss/autoprefixer), [Preset Env](https://github.com/csstools/postcss-preset-env), and [CSS Modules](https://github.com/css-modules/css-modules). You can configure PostCSS with Parcel by creating a configuration file using one of these names: `.postcssrc` (JSON), `.postcssrc.js`, or `postcss.config.js`.
+[PostCSS](http://postcss.org) is a tool for transforming CSS with plugins, like [autoprefixer](https://github.com/postcss/autoprefixer), [Preset Env](https://github.com/csstools/postcss-preset-env), and [CSS Modules](https://github.com/css-modules/css-modules). You can configure PostCSS with Parcel by creating a configuration file using one of these names: `.postcssrc` \(JSON\), `.postcssrc.js`, or `postcss.config.js`.
 
 Install plugins in your app:
 
@@ -38,7 +40,7 @@ yarn add postcss-modules autoprefixer
 
 Then, create a `.postcssrc`:
 
-```json
+```javascript
 {
   "modules": true,
   "plugins": {
@@ -53,22 +55,22 @@ Plugins are specified in the `plugins` object as keys, and options are defined u
 
 Target browsers for Autoprefixer, cssnext and other tools can be specified in `.browserslistrc` file:
 
-```
+```text
 > 1%
 last 2 versions
 ```
 
 CSS Modules are enabled slightly differently using the a top-level `modules` key. This is because Parcel needs to have special support for CSS Modules since they export an object to be included in the JavaScript bundle as well. Note that you still need to install `postcss-modules` in your project.
 
-## Usage with existing CSS libraries
+### Usage with existing CSS libraries
 
 For CSS Modules to work properly with existing modules they need to specify this support in their own `.postcssrc`.
 
-## Set cssnano minify config
+### Set cssnano minify config
 
 Parcel adds [cssnano](http://cssnano.co) to postcss in order to minify css in production build, where custom configuration can be set by creating `cssnano.config.js` file:
 
-```js
+```javascript
 module.exports = {
   preset: [
     'default',
@@ -81,3 +83,4 @@ module.exports = {
   ]
 }
 ```
+

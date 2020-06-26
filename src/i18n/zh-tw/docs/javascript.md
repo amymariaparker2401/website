@@ -1,8 +1,10 @@
-# JavaScript
+# javascript
+
+## JavaScript
 
 _支援的副檔名：`js`、`jsx`、`es6`、`jsm` 及 `mjs`_
 
-網頁打包工具中最傳統的檔案類型就是 JavaScript 了，Parcel 支援 CommonJS 及 ES6 的模組匯入語法，也支援非同步載入的動態的 `import()` 函式，詳情請見[程式碼分離](code_splitting.html)一章。另外動態載入也可從 URL 載入模組。
+網頁打包工具中最傳統的檔案類型就是 JavaScript 了，Parcel 支援 CommonJS 及 ES6 的模組匯入語法，也支援非同步載入的動態的 `import()` 函式，詳情請見[程式碼分離](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/zh-tw/docs/code_splitting.html)一章。另外動態載入也可從 URL 載入模組。
 
 ```javascript
 // 使用 CommonJS 語法匯入模組
@@ -41,8 +43,7 @@ import html from './some.html'
 require('./some.html')
 ```
 
-若你不想使用 URL 引入檔案，而是將檔案直接插入於行內的話，你可以透過 Node.js 的 `fs.readFileSync` API 來達成。
-其中的 URL 必須是靜態可分析，意即 URL 不能包含除了 `__dirname` 及 `__filename` 以外的任何變數。
+若你不想使用 URL 引入檔案，而是將檔案直接插入於行內的話，你可以透過 Node.js 的 `fs.readFileSync` API 來達成。 其中的 URL 必須是靜態可分析，意即 URL 不能包含除了 `__dirname` 及 `__filename` 以外的任何變數。
 
 ```javascript
 import fs from 'fs'
@@ -57,11 +58,11 @@ const buffer = fs.readFileSync(__dirname + '/test.png')
 ;<img src={`data:image/png;base64,${buffer.toString('base64')}`} />
 ```
 
-### 在 JSX 中使用影像檔
+#### 在 JSX 中使用影像檔
 
 下列是在 JSX 中匯入影像檔的範例：
 
-```js
+```javascript
 // 匯入影像檔
 import megaMan from "./images/mega-man.png";
 
@@ -72,19 +73,19 @@ import megaMan from "./images/mega-man.png";
 <img src={`/dist${megaMan}`} title="Mega Man" alt="Mega Man" />
 ```
 
-# Babel
+## Babel
 
 [Babel](https://babeljs.io) 是款熱門且擁有龐大外掛生態系的 JavaScript 轉譯器。其使用方式跟直接執行或在其他打包工具中相同。
 
 在你的 app 中安裝 preset 和外掛：
 
-```shell
+```text
 yarn add --dev babel-preset-react
 ```
 
 接著建立 `.babelrc`：
 
-```json
+```javascript
 {
   "presets": ["@babel/preset-react"]
 }
@@ -92,25 +93,27 @@ yarn add --dev babel-preset-react
 
 你也可以在 `package.json` 中指定 `babel` 設定
 
-```json
+```javascript
 "babel": {
   "presets": ["@babel/preset-react"]
 }
 ```
+
 注意：`package.json` 優先度大於 `.babelrc`。
 
-## 預設的 Babel 轉換
+### 預設的 Babel 轉換
 
-Parcel 預設使用 `babel-preset-env` 轉譯程式碼，這意味著 Parcel 將轉譯所有內部 (本地的 require) 及外部 (node_modules) 的模組。
+Parcel 預設使用 `babel-preset-env` 轉譯程式碼，這意味著 Parcel 將轉譯所有內部 \(本地的 require\) 及外部 \(node\_modules\) 的模組。
 
-Parcel 會使用 [browserslist](https://github.com/browserslist/browserslist) 來處理 `browser` 環境。browserlist 的目標設定可在 `package.json`（`engines.browsers` 或 `browserslist`）中定義，或是使用設定檔 (`browserslist` 或 `.browserslistrc`) 來定義。
+Parcel 會使用 [browserslist](https://github.com/browserslist/browserslist) 來處理 `browser` 環境。browserlist 的目標設定可在 `package.json`（`engines.browsers` 或 `browserslist`）中定義，或是使用設定檔 \(`browserslist` 或 `.browserslistrc`\) 來定義。
 
 browserlist 預設的支援目標為 `> 0.25%`，也就是那些用戶多於 0.25% 的瀏覽器。
 
 針對 `node` 環境，Parcel 則使用 `package.json` 中的 `engines.node` 設定值，此設定預設為 _node 8_。
 
-# Flow
+## Flow
 
 [flow](https://flow.org/) 是款 JavaScript 的靜態類型檢查工具。在 Parcel 中使用 Flow 相當容易，只要將 `// @flow` 置於你的 `js` 檔案的第一行即可。
 
-Parcel 會自動安裝必要的 Babel 設定檔以將 Flow 類別從編譯後的輸出檔中剝離，因此你什麼都不需要擔心，除了兩件事：[編輯器整合](https://flow.org/en/docs/editors/)及利用 `.flowconfig` 來支援[絕對路徑的解析](module_resolution.html#flow-的絕對與波浪號路徑解析)。
+Parcel 會自動安裝必要的 Babel 設定檔以將 Flow 類別從編譯後的輸出檔中剝離，因此你什麼都不需要擔心，除了兩件事：[編輯器整合](https://flow.org/en/docs/editors/)及利用 `.flowconfig` 來支援[絕對路徑的解析](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/zh-tw/docs/module_resolution.html#flow-的絕對與波浪號路徑解析)。
+

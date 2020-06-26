@@ -6,14 +6,15 @@ Parcel uses [dotenv](https://github.com/motdotla/dotenv) to support loading envi
 
 Parcel loads `.env` files with these specific names for the following `NODE_ENV` values:
 
-| valid `.env` filenames   | `NODE_ENV=\*` | `NODE_ENV=test` |
-| ------------------------ | ------------- | --------------- |
-| `.env`                   | ✔️            | ✔️              |
-| `.env.local`             | ✔️            | ✖️              |
-| `.env.${NODE_ENV}`       | ✔️            | ✔️              |
-| `.env.${NODE_ENV}.local` | ✔️            | ✔️              |
+| valid `.env` filenames | `NODE_ENV=\*` | `NODE_ENV=test` |
+| :--- | :--- | :--- |
+| `.env` | ✔️ | ✔️ |
+| `.env.local` | ✔️ | ✖️ |
+| `.env.${NODE_ENV}` | ✔️ | ✔️ |
+| `.env.${NODE_ENV}.local` | ✔️ | ✔️ |
 
 Notably:
 
-- `NODE_ENV` defaults to `development`.
-- `.env.local` is not loaded when `NODE_ENV=test` since [tests should produce the same results for everyone](https://github.com/parcel-bundler/parcel/blob/28df546a2249b6aac1e529dd629f506ba6b0a4bb/src/utils/env.js#L9)
+* `NODE_ENV` defaults to `development`.
+* `.env.local` is not loaded when `NODE_ENV=test` since [tests should produce the same results for everyone](https://github.com/parcel-bundler/parcel/blob/28df546a2249b6aac1e529dd629f506ba6b0a4bb/src/utils/env.js#L9)
+

@@ -12,6 +12,7 @@ import './custom.styl'
 
 或
 
-```html
+```markup
 <link href="./custom.styl" rel="stylesheet">
 ```
+

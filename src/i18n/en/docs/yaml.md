@@ -1,9 +1,9 @@
 # YAML
 
-_Supported extensions: `yaml`, `yml`_
-You can import yaml files into your js like this `import data from './filename.yaml'`.
+_Supported extensions: `yaml`, `yml`_ You can import yaml files into your js like this `import data from './filename.yaml'`.
 
 Example file structure:
+
 ```bash
 .
 ├── package.json
@@ -20,7 +20,7 @@ hello:
   - computer
 ```
 
-```js
+```javascript
 // index.js
 
 import data from './data.yaml'
@@ -28,3 +28,4 @@ console.log(data.hello[0]);
 
 // "world"
 ```
+

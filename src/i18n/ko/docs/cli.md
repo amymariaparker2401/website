@@ -1,10 +1,10 @@
-# 🖥 커맨드 라인 인터페이스(CLI)
+# 🖥 커맨드 라인 인터페이스\(CLI\)
 
 ## 명령어
 
 ### Serve
 
-개발용 서버를 시작합니다. 앱이 수정되면 자동으로 다시 빌드하고, 빠른 개발을 위해 [빠른 모듈 교체](hmr.html)를 지원합니다.
+개발용 서버를 시작합니다. 앱이 수정되면 자동으로 다시 빌드하고, 빠른 개발을 위해 [빠른 모듈 교체](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/ko/docs/hmr.html)를 지원합니다.
 
 ```bash
 parcel index.html
@@ -12,7 +12,7 @@ parcel index.html
 
 ### Build
 
-애셋을 한 번 빌드합니다. 이 과정에서 코드 최소화(미니파이케이션)가 활성화되고 환경변수가 `NODE_ENV=production` 로 설정됩니다. [프로덕션](production.html)에서 보다 자세한 내용을 확인하세요.
+애셋을 한 번 빌드합니다. 이 과정에서 코드 최소화\(미니파이케이션\)가 활성화되고 환경변수가 `NODE_ENV=production` 로 설정됩니다. [프로덕션](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/ko/docs/production.html)에서 보다 자세한 내용을 확인하세요.
 
 ```bash
 parcel build index.html
@@ -56,7 +56,7 @@ parcel build entry.js --out-dir build/output
 parcel build entry.js -d build/output
 ```
 
-```base
+```text
 root
 - build
 - - output
@@ -65,7 +65,7 @@ root
 
 ### 서빙될 public URL 설정
 
-기본값: [--out-dir 옵션과 같음](#output-directory)
+기본값: [--out-dir 옵션과 같음](cli.md#output-directory)
 
 같이 사용 가능한 명령어: `serve`, `watch`, `build`
 
@@ -75,7 +75,7 @@ parcel entry.js --public-url ./dist/
 
 결과물은 다음과 같이 나옵니다.
 
-```html
+```markup
 <link rel="stylesheet" type="text/css" href="/dist/entry.1a2b3c.css">
 <!-- or -->
 <script src="/dist/entry.e5f6g7.js"></script>
@@ -123,12 +123,12 @@ parcel serve entry.js --port 1111
 parcel entry.js --log-level 1
 ```
 
-| 로그 레벨 | 효과               |
-| --------- | ------------------ |
-| 0         | 로깅 비활성화      |
-| 1         | 에러만 로그        |
-| 2         | 에러와 경고를 로그 |
-| 3         | 모두 로깅          |
+| 로그 레벨 | 효과 |
+| :--- | :--- |
+| 0 | 로깅 비활성화 |
+| 1 | 에러만 로그 |
+| 2 | 에러와 경고를 로그 |
+| 3 | 모두 로깅 |
 
 ### 빠른 모듈 교체 호스트네임
 
@@ -176,7 +176,7 @@ parcel build entry.js --detailed-report
 
 기본값: https 비활성
 
-같이 사용 가능한 명령어: `serve`, `watch` (HMR 연결을 위해 HTTPS 로 수신)
+같이 사용 가능한 명령어: `serve`, `watch` \(HMR 연결을 위해 HTTPS 로 수신\)
 
 ```bash
 parcel entry.js --https
@@ -234,7 +234,7 @@ parcel entry.js --no-autoinstall
 parcel entry.js --no-hmr
 ```
 
-### 소스 최소화(미니파이케이션) 비활성화
+### 소스 최소화\(미니파이케이션\) 비활성화
 
 기본값: 소스 최소화 활성
 
@@ -264,7 +264,7 @@ parcel build entry.js --no-cache
 parcel serve entry.js --global myvariable
 ```
 
-### 실험단계의 스코프 호이스팅(scope hoisting)/트리 셰이킹(tree shaking) 지원 활성화
+### 실험단계의 스코프 호이스팅\(scope hoisting\)/트리 셰이킹\(tree shaking\) 지원 활성화
 
 기본값: 비활성화
 
@@ -274,4 +274,5 @@ parcel serve entry.js --global myvariable
 parcel serve entry.js --experimental-scope-hoisting
 ```
 
-더 자세한 정보는 Devon Govett 이 Parcel 1.9 에 대해 작성한 글의 [Tree Shaking section(영문)](https://medium.com/@devongovett/parcel-v1-9-0-tree-shaking-2x-faster-watcher-and-more-87f2e1a70f79#4ed3)을 참조하세요.
+더 자세한 정보는 Devon Govett 이 Parcel 1.9 에 대해 작성한 글의 [Tree Shaking section\(영문\)](https://medium.com/@devongovett/parcel-v1-9-0-tree-shaking-2x-faster-watcher-and-more-87f2e1a70f79#4ed3)을 참조하세요.
+

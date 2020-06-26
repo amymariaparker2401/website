@@ -12,7 +12,7 @@ npm install --save react-dom
 npm install --save-dev parcel-bundler
 ```
 
-<sub>혹시 yarn 패키지 매니저를 사용하신다면 다음의 명령어로 설치할 수 있습니다.</sub>
+혹시 yarn 패키지 매니저를 사용하신다면 다음의 명령어로 설치할 수 있습니다.
 
 ```bash
 yarn add react
@@ -41,7 +41,7 @@ npm install --save-dev babel-preset-env
 npm install --save-dev babel-preset-preact
 ```
 
-<sub>혹시 yarn 패키지 매니저를 사용하신다면 다음의 명령어로 설치할 수 있습니다.</sub>
+혹시 yarn 패키지 매니저를 사용하신다면 다음의 명령어로 설치할 수 있습니다.
 
 ```bash
 yarn add preact
@@ -78,7 +78,7 @@ npm install --save vue
 npm install --save-dev parcel-bundler
 ```
 
-<sub>혹시 yarn 패키지 매니저를 사용하신다면 다음의 명령어로 설치할 수 있습니다.</sub>
+혹시 yarn 패키지 매니저를 사용하신다면 다음의 명령어로 설치할 수 있습니다.
 
 ```bash
 yarn add vue
@@ -93,3 +93,4 @@ yarn add --dev parcel-bundler
   "start": "parcel index.html"
 }
 ```
+

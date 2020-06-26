@@ -32,7 +32,7 @@ Parcel can take any type of file as an entry point, but an HTML or JavaScript fi
 
 Next, create an index.html and index.js file.
 
-```html
+```markup
 <html>
 <body>
   <script src="./index.js"></script>
@@ -44,13 +44,13 @@ Next, create an index.html and index.js file.
 console.log('hello world')
 ```
 
-Parcel has a development server built in, which will automatically rebuild your app as you change files and supports [hot module replacement](hmr.html) for fast development. Point it at your entry file:
+Parcel has a development server built in, which will automatically rebuild your app as you change files and supports [hot module replacement](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/en/docs/hmr.html) for fast development. Point it at your entry file:
 
 ```bash
 parcel index.html
 ```
 
-Now open http://localhost:1234/ in your browser. If hot module replacement isn't working you may need to [configure your editor](hmr.html#safe-write). You can also override the default port with the `-p <port number>` option.
+Now open [http://localhost:1234/](http://localhost:1234/) in your browser. If hot module replacement isn't working you may need to [configure your editor](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/en/docs/hmr.html#safe-write). You can also override the default port with the `-p <port number>` option.
 
 Use the development server when you don't have your own server, or your app is entirely client rendered. If you do have your own server, you can run Parcel in `watch` mode instead. This still automatically rebuilds as files change and supports hot module replacement, but doesn't start a web server.
 
@@ -78,18 +78,18 @@ parcel *.html
 
 _NOTE:_ In case you have a file structure like this:
 
-```
+```text
 - folder-1
 -- index.html
 - folder-2
 -- index.html
 ```
 
-Going to http://localhost:1234/folder-1/ won't work, instead you will need to explicitly point to the file http://localhost:1234/folder-1/index.html.
+Going to [http://localhost:1234/folder-1/](http://localhost:1234/folder-1/) won't work, instead you will need to explicitly point to the file [http://localhost:1234/folder-1/index.html](http://localhost:1234/folder-1/index.html).
 
 ## Building for production
 
-When you're ready to build for production, the `build` mode turns off watching and only builds once. See the [Production](production.html) section for more details.
+When you're ready to build for production, the `build` mode turns off watching and only builds once. See the [Production](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/en/docs/production.html) section for more details.
 
 ## Adding parcel to your project
 
@@ -109,7 +109,7 @@ npm install parcel-bundler --save-dev
 
 Then, add these tasks scripts to your project, by modifying your `package.json`:
 
-```json
+```javascript
 {
   "scripts": {
     "dev": "parcel <your entry file>",
@@ -131,3 +131,4 @@ yarn build
 # or
 npm run build
 ```
+

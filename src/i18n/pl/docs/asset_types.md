@@ -1,8 +1,8 @@
 # 📝 Typy Zasobów
 
-Tak jak opisano w [dokumentacji dot. Zasobów](assets.html), Parcel reprezentuje każdy plik wejściowy jako `Asset`. Typy zasobów są reprezentowane jako klasy dziedziczące z bazowej klasy `Asset` i implementujące wymagane interfejsy do parsowania, analizy zależności, transformowania i generowania kodu.
+Tak jak opisano w [dokumentacji dot. Zasobów](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/pl/docs/assets.html), Parcel reprezentuje każdy plik wejściowy jako `Asset`. Typy zasobów są reprezentowane jako klasy dziedziczące z bazowej klasy `Asset` i implementujące wymagane interfejsy do parsowania, analizy zależności, transformowania i generowania kodu.
 
-Ponieważ Parcel przetwarza zasoby równolegle na wielu rdzeniach procesora, typy zasobów mogą dokonywać jedynie takich transformacji, które dokonywane są na jednym pliku jednocześnie. Dla transformacji na wielu plikach może zostać użyty niestandardowy [Program pakujący](packagers.html).
+Ponieważ Parcel przetwarza zasoby równolegle na wielu rdzeniach procesora, typy zasobów mogą dokonywać jedynie takich transformacji, które dokonywane są na jednym pliku jednocześnie. Dla transformacji na wielu plikach może zostać użyty niestandardowy [Program pakujący](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/pl/docs/packagers.html).
 
 ## Interfejs Zasobu
 
@@ -51,3 +51,4 @@ const Bundler = require('parcel-bundler')
 let bundler = new Bundler('input.js')
 bundler.addAssetType('.ext', require.resolve('./MyAsset'))
 ```
+

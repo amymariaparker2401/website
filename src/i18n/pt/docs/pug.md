@@ -32,7 +32,7 @@ Vamos assumir esta estrutura de arquivos:
 
 Dentro do index.pug, apenas carregue as folhas de estilos e o JS como de costume.
 
-```pug
+```text
 // index.pug
 
 doctype html
@@ -64,7 +64,7 @@ Vamos assumir esta estrutura de arquivos:
 
 Nós precisamos exportar um objeto `locals` de um arquivo `pug.config.js`. O arquivo `pug.config.js` precisa estar no diretório do arquivo `index.pug` OU, em um diretório contendndo o arquivo `package.json`. O arquivo `pug.config.js` não precisa ser importado dentro de um arquivo js explicitamente. Esta **É** única maneira de ter um objeto `locals` disponível para seus templates Pug.
 
-```js
+```javascript
 // pug.config.js
 
 module.exports = {
@@ -74,7 +74,7 @@ module.exports = {
 };
 ```
 
-```pug
+```text
 // index.pug
 
 doctype html
@@ -105,7 +105,7 @@ Se você quiser importar outros arquivos para o arquivo `pug.config.js` você de
 
 Isto irá funcionar:
 
-```js
+```javascript
 // pug.config.js
 
 const data = require("./data.js");
@@ -115,12 +115,11 @@ module.exports = {
     d: data
   }
 };
-
 ```
 
 Isto NÃO irá funcionar:
 
-```js
+```javascript
 import data from "./data.js";
 
 module.exports = {
@@ -132,7 +131,7 @@ module.exports = {
 
 ## Adicionando um script ao package.json
 
-```json
+```javascript
 "scripts": {
     "dev": "parcel src/index.pug",
     "devopen": "parcel src/index.pug --open 'google chrome'",
@@ -140,4 +139,5 @@ module.exports = {
   },
 ```
 
-Nós podemos executar `npm run dev` ou `npm run devopen` para ter o projeto aberto no navegador. Nós podemos construir o projeto para produção com  `npm run build`.
+Nós podemos executar `npm run dev` ou `npm run devopen` para ter o projeto aberto no navegador. Nós podemos construir o projeto para produção com `npm run build`.
+

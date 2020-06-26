@@ -4,18 +4,17 @@
 
 ### Serve
 
-Запускає сервер для розробки, який автоматично збирає заново додаток при зміні файлів і підтримує [гарячу заміну модулів](hmr.html) для швидкої розробки.
+Запускає сервер для розробки, який автоматично збирає заново додаток при зміні файлів і підтримує [гарячу заміну модулів](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/uk/docs/hmr.html) для швидкої розробки.
 
-```Bash
+```bash
 parcel index.html
 ```
 
 ### Build
 
-Збирає ресурси за один раз, це також мініфікує їх і встановлює змінну оточення `NODE_ENV = production`.
-Див. [Робота в продакшені](production.html) для отримання додаткової інформації.
+Збирає ресурси за один раз, це також мініфікує їх і встановлює змінну оточення `NODE_ENV = production`. Див. [Робота в продакшені](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/uk/docs/production.html) для отримання додаткової інформації.
 
-```Bash
+```bash
 parcel build index.html
 ```
 
@@ -23,7 +22,7 @@ parcel build index.html
 
 Команда `watch` схожа на`serve`, з основною відмінністю: вона не запускає сервер.
 
-```Bash
+```bash
 parcel watch index.html
 ```
 
@@ -31,7 +30,7 @@ parcel watch index.html
 
 Відображає всі можливі опції CLI
 
-```Bash
+```bash
 parcel help
 ```
 
@@ -39,7 +38,7 @@ parcel help
 
 Показує номер версії Parcel
 
-```Bash
+```bash
 parcel --version
 ```
 
@@ -51,13 +50,13 @@ parcel --version
 
 Доступно для: `serve`,`watch`, `build`
 
-```Bash
+```bash
 parcel build entry.js --out-dir build/output
 #або
 parcel build entry.js -d build/output
 ```
 
-```Base
+```text
 root
 - build
 - - output
@@ -66,17 +65,17 @@ root
 
 ### Встановити загальнодоступний URL для сервера
 
-Значення за замовчуванням: [аналогічно зазначеному в опції --out-dir](#output-directory)
+Значення за замовчуванням: [аналогічно зазначеному в опції --out-dir](cli.md#output-directory)
 
 Доступно для: `serve`,`watch`, `build`
 
-```Bash
+```bash
 parcel entry.js --public-url ./dist/
 ```
 
 виведе
 
-```Html
+```markup
 <link rel = "stylesheet" type = "text/css" href = "/dist/entry.1a2b3c.css">
 <!--або-->
 <script src = "/dist/entry.e5f6g7.js"></script>
@@ -88,7 +87,7 @@ parcel entry.js --public-url ./dist/
 
 Доступно для: `serve`,`watch`, `build`
 
-```Bash
+```bash
 parcel build entry.js --target node
 ```
 
@@ -100,7 +99,7 @@ parcel build entry.js --target node
 
 Доступно для: `serve`,`watch`, `build`
 
-```Bash
+```bash
 parcel build entry.js --cache-dir build/cache
 ```
 
@@ -110,7 +109,7 @@ parcel build entry.js --cache-dir build/cache
 
 Доступно для: `serve`
 
-```Bash
+```bash
 parcel serve entry.js --port 1111
 ```
 
@@ -120,16 +119,16 @@ parcel serve entry.js --port 1111
 
 Доступно для: `serve`,`watch`, `build`
 
-```Bash
+```bash
 parcel entry.js --log-level 1
 ```
 
-| Рівень логування | Ефект                                  |
-| ---------------- | -------------------------------------- |
-| 0                | Логування відключено                   |
-| 1                | Логувати тільки помилки                |
-| 2                | Логувати тільки помилки і попередження |
-| 3                | Логувати все                           |
+| Рівень логування | Ефект |
+| :--- | :--- |
+| 0 | Логування відключено |
+| 1 | Логувати тільки помилки |
+| 2 | Логувати тільки помилки і попередження |
+| 3 | Логувати все |
 
 ### Ім'я хоста для HMR
 
@@ -137,7 +136,7 @@ parcel entry.js --log-level 1
 
 Доступно для: `serve`,`watch`
 
-```Bash
+```bash
 parcel entry.js --hmr-hostname parceljs.org
 ```
 
@@ -147,7 +146,7 @@ parcel entry.js --hmr-hostname parceljs.org
 
 Доступно для: `serve`,`watch`
 
-```Bash
+```bash
 parcel entry.js --hmr-port 8080
 ```
 
@@ -157,7 +156,7 @@ parcel entry.js --hmr-port 8080
 
 Доступно для: `serve`,`watch`, `build`
 
-```Bash
+```bash
 parcel build entry.js --out-file output.html
 ```
 
@@ -169,7 +168,7 @@ parcel build entry.js --out-file output.html
 
 Доступно для: `build`
 
-```Bash
+```bash
 parcel build entry.js --detailed-report
 ```
 
@@ -177,9 +176,9 @@ parcel build entry.js --detailed-report
 
 Значення за замовчуванням: https відключений
 
-Доступно для: `serve`,`watch` (працює на HTTPS для підключень HMR)
+Доступно для: `serve`,`watch` \(працює на HTTPS для підключень HMR\)
 
-```Bash
+```bash
 parcel build entry.js --https
 ```
 
@@ -191,7 +190,7 @@ parcel build entry.js --https
 
 Доступно для: `serve`,`watch`
 
-```Bash
+```bash
 parcel entry.js --cert certificate.cert --key private.key
 ```
 
@@ -201,7 +200,7 @@ parcel entry.js --cert certificate.cert --key private.key
 
 Доступно для: `serve`
 
-```Bash
+```bash
 parcel entry.js --open
 ```
 
@@ -211,7 +210,7 @@ parcel entry.js --open
 
 Доступно для: `serve`,`watch`, `build`
 
-```Bash
+```bash
 parcel build entry.js --no-source-maps
 ```
 
@@ -221,7 +220,7 @@ parcel build entry.js --no-source-maps
 
 Доступно для: `serve`,`watch`
 
-```Bash
+```bash
 parcel entry.js --no-autoinstall
 ```
 
@@ -231,7 +230,7 @@ parcel entry.js --no-autoinstall
 
 Доступно для: `serve`,`watch`
 
-```Bash
+```bash
 parcel entry.js --no-hmr
 ```
 
@@ -241,7 +240,7 @@ parcel entry.js --no-hmr
 
 Доступно для: `build`
 
-```Bash
+```bash
 parcel build entry.js --no-minify
 ```
 
@@ -251,7 +250,7 @@ parcel build entry.js --no-minify
 
 Доступно для: `serve`,`watch`, `build`
 
-```Bash
+```bash
 parcel build entry.js --no-cache
 ```
 
@@ -261,7 +260,7 @@ parcel build entry.js --no-cache
 
 Доступно для: `serve`,`watch`, `build`
 
-```Bash
+```bash
 parcel serve entry.js --global myvariable
 ```
 
@@ -271,8 +270,9 @@ parcel serve entry.js --global myvariable
 
 Доступно для: `build`
 
-```Bash
+```bash
 parcel serve entry.js --experimental-scope-hoisting
 ```
 
-Для отримання додаткової інформації дивіться [розділ Tree Shaking](https://medium.com/@devongovett/parcel-v1-9-0-tree-shaking-2x-faster-watcher-and-more-87f2e1a70f79#4ed3) в записі Девона Говетта (Devon Govett) про Parcel 1.9.
+Для отримання додаткової інформації дивіться [розділ Tree Shaking](https://medium.com/@devongovett/parcel-v1-9-0-tree-shaking-2x-faster-watcher-and-more-87f2e1a70f79#4ed3) в записі Девона Говетта \(Devon Govett\) про Parcel 1.9.
+

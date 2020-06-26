@@ -1,4 +1,4 @@
-# 🍰 配方(Recipes)
+# 🍰 配方\(Recipes\)
 
 ## React
 
@@ -12,7 +12,7 @@ npm install --save react-dom
 npm install --save-dev parcel-bundler
 ```
 
-<sub>或者如果你安装了 Yarn 包管理器</sub>
+或者如果你安装了 Yarn 包管理器
 
 ```bash
 yarn add react
@@ -41,7 +41,7 @@ npm install --save-dev babel-preset-env
 npm install --save-dev babel-preset-preact
 ```
 
-<sub>或者如果说你安装了 Yarn 包管理器，作为 npm 的备选</sub>
+或者如果说你安装了 Yarn 包管理器，作为 npm 的备选
 
 ```bash
 yarn add preact
@@ -78,7 +78,7 @@ npm install --save vue
 npm install --save-dev parcel-bundler
 ```
 
-<sub>或者如果说你安装了 Yarn 包管理器，作为 npm 的备选</sub>
+或者如果说你安装了 Yarn 包管理器，作为 npm 的备选
 
 ```bash
 yarn add vue
@@ -93,3 +93,4 @@ yarn add --dev parcel-bundler
   "start": "parcel index.html"
 }
 ```
+

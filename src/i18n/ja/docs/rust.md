@@ -8,7 +8,7 @@ You can now simply import `.rs` files just like any other file type in Parcel! A
 
 Just like with `.wasm` files, `.rs` files can be imported with either synchronous or asynchonous imports.
 
-```js
+```javascript
 // synchronous import
 import { add } from './add.rs'
 console.log(add(2, 3))
@@ -19,9 +19,10 @@ console.log(add(2, 3))
 
 On the Rust side, you just need to make sure that function names aren’t mangled and are public.
 
-```rs
+```text
 #[no_mangle]
 pub fn add(a: i32, b: i32) -> i32 {
   return a + b
 }
 ```
+

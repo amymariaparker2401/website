@@ -35,3 +35,4 @@ const Bundler = require('parcel-bundler')
 let bundler = new Bundler('input.js')
 bundler.addPackager('foo', require.resolve('./MyPackager'))
 ```
+

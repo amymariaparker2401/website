@@ -1,15 +1,15 @@
 # 📔 Résolution de module
 
-Le résolveur de Parcel implémente une version modifiée de l'algorithme de [résolution des node_modules](https://nodejs.org/api/modules.html#modules_all_together).
+Le résolveur de Parcel implémente une version modifiée de l'algorithme de [résolution des node\_modules](https://nodejs.org/api/modules.html#modules_all_together).
 
 ## Résolution de module
 
-En plus de l'algorithme standard, tous les [types de ressources supportés par Parcel](assets.html) sont aussi résolus.
+En plus de l'algorithme standard, tous les [types de ressources supportés par Parcel](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/fr/docs/assets.html) sont aussi résolus.
 
 La résolution de module peut être relative à la :
 
-- **racine de l'entrée** : le répertoire du point d'entrée spécifié à Parcel ou la racine partagée (répertoire parent commun) lorsque plusieurs points d'entrée sont spécifiés.
-- **racine du package** : le répertoire racine du module le plus proche dans `node_modules`.
+* **racine de l'entrée** : le répertoire du point d'entrée spécifié à Parcel ou la racine partagée \(répertoire parent commun\) lorsque plusieurs points d'entrée sont spécifiés.
+* **racine du package** : le répertoire racine du module le plus proche dans `node_modules`.
 
 ### Chemins absolus
 
@@ -21,11 +21,11 @@ La résolution de module peut être relative à la :
 
 ### Chemins de fichiers glob
 
-Les globs sont des importations génériques qui regroupent plusieurs ressources à la fois. Les globs peuvent correspondre à tout ou une partie des fichiers (`/assets/*.png`), ainsi qu'aux fichiers de plusieurs répertoires (`/assets/**/*`).
+Les globs sont des importations génériques qui regroupent plusieurs ressources à la fois. Les globs peuvent correspondre à tout ou une partie des fichiers \(`/assets/*.png`\), ainsi qu'aux fichiers de plusieurs répertoires \(`/assets/**/*`\).
 
 Cet exemple regroupe un répertoire de fichiers png et renvoie l’URL dist.
 
-```
+```text
 import foo from "/assets/*.png";
 // {
 //   'file-1': '/file-1.8e73c985.png',
@@ -43,7 +43,7 @@ Les alias sont supportés via le champ `alias` dans `package.json`.
 
 Ces exemples d'alias `react` vers `preact` et d'un module local personnalisé qui ne sont pas dans `node_modules`.
 
-```json
+```javascript
 // package.json
 {
   "name": "some-package",
@@ -60,10 +60,10 @@ Ces exemples d'alias `react` vers `preact` et d'un module local personnalisé qu
 
 Évitez d'utiliser des caractères spéciaux dans vos alias, car certains peuvent être utilisés par Parcel et d'autres par des outils ou des extensions tiers. Par exemple :
 
-- `~` utilisé par Parcel pour résoudre les [chemins du tilde](#chemins-du-tilde-~).
-- `@` utilisé par npm pour résoudre les organisations de npm.
+* `~` utilisé par Parcel pour résoudre les [chemins du tilde](module_resolution.md#chemins-du-tilde-~).
+* `@` utilisé par npm pour résoudre les organisations de npm.
 
-Nous vous conseillons d'être explicite lors de la définition de vos alias, veuillez donc **spécifier les extensions de fichier**, sinon Parcel devra le deviner. Consultez [Export nommés de JavaScript](#export-nommés-de-javascript) pour voir un exemple.
+Nous vous conseillons d'être explicite lors de la définition de vos alias, veuillez donc **spécifier les extensions de fichier**, sinon Parcel devra le deviner. Consultez [Export nommés de JavaScript](module_resolution.md#export-nommés-de-javascript) pour voir un exemple.
 
 ## Problèmes communs
 
@@ -71,7 +71,7 @@ Nous vous conseillons d'être explicite lors de la définition de vos alias, veu
 
 Les cartographies d'alias s'appliquent à de nombreux types d'actifs, mais ne prennent pas spécifiquement en charge la cartographie des exports nommées de JavaScript. Si vous souhaitez cartographier les exports nommées JS, vous pouvez le faire ainsi :
 
-```json
+```javascript
 // package.json
 {
   "name": "some-package",
@@ -83,18 +83,18 @@ Les cartographies d'alias s'appliquent à de nombreux types d'actifs, mais ne pr
 
 et réexporter l'export nommé dans le fichier aliasé :
 
-```js
+```javascript
 // electron-ipc.js
 module.exports = require('electron').ipcRenderer
 ```
 
 ### Flow avec la résolution de chemin absolu et tilde
 
-Lorsque vous utilisez la résolution de module de chemin absolu ou tilde, vous devez configurer Flow à l'aide de [module.name_mapper](https://flow.org/en/docs/config/options/#toc-module-name-mapper-regex-string).
+Lorsque vous utilisez la résolution de module de chemin absolu ou tilde, vous devez configurer Flow à l'aide de [module.name\_mapper](https://flow.org/en/docs/config/options/#toc-module-name-mapper-regex-string).
 
 Soit un projet avec cette structure :
 
-```
+```text
 package.json
 .flowconfig
 src/
@@ -118,20 +118,20 @@ Nous avons besoin que Flow remplace le chemin actuel `/` en `'/components/apple'
 
 Le paramètre suivant dans notre `.flowconfig` réalise ce remplacement :
 
-```
+```text
 [options]
 module.name_mapper='^\/\(.*\)$' -> '<PROJECT_ROOT>/src/\1'
 ```
 
 Où `<PROJECT_ROOT>` est un identifiant spécifique à Flow indiquant l'emplacement de notre `.flowconfig`.
 
-REMARQUE : `module.name_mapper` peut avoir plusieurs entrées. Cela permet de prendre en charge la résolution du chemin [Absolu](module_resolution.html#chemins-absolus) ou [Tilde](module_resolution.html#chemins-du-tilde-~) en plus du support de l'[alias du module local](module_resolution.html#alias).
+REMARQUE : `module.name_mapper` peut avoir plusieurs entrées. Cela permet de prendre en charge la résolution du chemin [Absolu](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/fr/docs/module_resolution.html#chemins-absolus) ou [Tilde](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/fr/docs/module_resolution.html#chemins-du-tilde-~) en plus du support de l'[alias du module local](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/fr/docs/module_resolution.html#alias).
 
 ### Résolution TypeScript ~
 
 TypeScript devra connaître votre utilisation de la résolution de module `~` ou les cartographies d'alias. Veuillez vous reporter à la documentation de [TypeScript Module Resolution docs](https://www.typescriptlang.org/docs/handbook/module-resolution.html) pour plus d'informations.
 
-```json
+```javascript
 // tsconfig.json
 {
   "compilerOptions": {
@@ -149,11 +149,12 @@ Ce sont en ce moment les utilisations conseillées avec des monorepos :
 
 Utilisation conseillée :
 
-- utilisez les chemins relatifs.
-- utilisez `/` pour un chemin racine si une racine est requise.
+* utilisez les chemins relatifs.
+* utilisez `/` pour un chemin racine si une racine est requise.
 
 Utilisation déconseillée :
 
-- **évitez** l'utilisation de `~` dans les monorepos.
+* **évitez** l'utilisation de `~` dans les monorepos.
 
 Si vous êtes un utilisateur de monorepo et que vous souhaitez contribuer à ces recommandations, veuillez fournir des exemples de repos lors de l'ouverture d'issue pour aider la discussion.
+

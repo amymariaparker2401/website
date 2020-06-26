@@ -32,7 +32,7 @@ Parcel pode receber qualquer tipo de arquivo como ponto de entrada, embora um ar
 
 Depois, crie os arquivos index.html e index.js.
 
-```html
+```markup
 <html>
 <body>
   <script src="./index.js"></script>
@@ -44,13 +44,13 @@ Depois, crie os arquivos index.html e index.js.
 console.log('Olá, mundo!')
 ```
 
-Parcel possui um servidor de desenvolvimento embutido, o qual irá reconstruir sua aplicação automaticamente à medida que você vai alterando os arquivos. Ele suporta [Hot Module Replacement](hmr.html) para acelerar o desenvolvimento. Apenas aponte a ele seu arquivo de entrada:
+Parcel possui um servidor de desenvolvimento embutido, o qual irá reconstruir sua aplicação automaticamente à medida que você vai alterando os arquivos. Ele suporta [Hot Module Replacement](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/pt/docs/hmr.html) para acelerar o desenvolvimento. Apenas aponte a ele seu arquivo de entrada:
 
 ```bash
 parcel index.html
 ```
 
-Agora, abra seu navegador em http://localhost:1234/. Você também pode alterar a porta padrão utilizando a opção `-p <port number>`.
+Agora, abra seu navegador em [http://localhost:1234/](http://localhost:1234/). Você também pode alterar a porta padrão utilizando a opção `-p <port number>`.
 
 Utilize o servidor de desenvolvimento caso você não tenha seu próprio servidor, ou sua aplicação será inteiramente renderizada no cliente. Caso você possua seu próprio servidor, você pode utilizar o Parcel em modo `watch`. Essa opção continua reconstruindo sua aplicação à medida que você vai alterando os arquivos e suporta Hot Module Replacement, mas não irá iniciar um servidor.
 
@@ -76,18 +76,18 @@ parcel *.html
 
 _NOTA:_ No caso de você possuir uma estrutura de arquivos como esta:
 
-```
+```text
 - diretorio-1
 -- index.html
 - diretorio-2
 -- index.html
 ```
 
-Acessar http://localhost:1234/diretorio-1/ não irá funcionar, você terá que apontar explicitamente para o arquivo http://localhost:1234/diretorio-1/index.html.
+Acessar [http://localhost:1234/diretorio-1/](http://localhost:1234/diretorio-1/) não irá funcionar, você terá que apontar explicitamente para o arquivo [http://localhost:1234/diretorio-1/index.html](http://localhost:1234/diretorio-1/index.html).
 
 ## Construindo para Produção
 
-Quando você estiver pronto para enviar sua aplicação para produção, o modo `build` desativa a opção `watch` e constrói seus arquivos uma única vez. Veja a seção [Produção](production.html) para mais detalhes.
+Quando você estiver pronto para enviar sua aplicação para produção, o modo `build` desativa a opção `watch` e constrói seus arquivos uma única vez. Veja a seção [Produção](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/pt/docs/production.html) para mais detalhes.
 
 ## Adicionando Parcel ao seu projeto
 
@@ -107,7 +107,7 @@ npm install parcel-bundler --save-dev
 
 Então, adicione esses scripts de tarefas para o seu projeto, modificando o seu `package.json`:
 
-```json
+```javascript
 {
   "scripts": {
     "dev": "parcel <your entry file>",
@@ -129,3 +129,4 @@ yarn build
 # ou
 npm run build
 ```
+

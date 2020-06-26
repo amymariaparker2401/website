@@ -1,6 +1,6 @@
 # 📔 Resolução de Módulo
 
-O resolvedor do Parcel implementa uma versão modificada do algoritmo de [resolução do node_modules](https://nodejs.org/api/modules.html#modules_all_together).
+O resolvedor do Parcel implementa uma versão modificada do algoritmo de [resolução do node\_modules](https://nodejs.org/api/modules.html#modules_all_together).
 
 ## Resolução de Módulo
 
@@ -8,8 +8,8 @@ Além do algorimo padrão, todos os [tipos de recursos suportados pelo Parcel](h
 
 A resolução de módulo pode ser relativa a:
 
-- **raiz do projeto**: o diretório do *entrypoint* especificado para o Parcel, ou a raiz compartilhada (diretório pai em comum) quando múltiplos _entrypoints_ são especificados.
-- **raiz do pacote**: o diretório mais próximo da raiz do pacote em `node_modules`.
+* **raiz do projeto**: o diretório do _entrypoint_ especificado para o Parcel, ou a raiz compartilhada \(diretório pai em comum\) quando múltiplos _entrypoints_ são especificados.
+* **raiz do pacote**: o diretório mais próximo da raiz do pacote em `node_modules`.
 
 ### Caminhos Absolutos
 
@@ -21,7 +21,7 @@ A resolução de módulo pode ser relativa a:
 
 ### Caminho de arquivos Glob
 
-Globs são importações curingas que agrupam vários recursos de uma só vez. Globs podem combinar alguns ou todos os arquivos (`/assets/*.png`), bem como arquivos em vários diretórios (`/assets/**/*`)
+Globs são importações curingas que agrupam vários recursos de uma só vez. Globs podem combinar alguns ou todos os arquivos \(`/assets/*.png`\), bem como arquivos em vários diretórios \(`/assets/**/*`\)
 
 Este exemplo empacota um diretório de arquivos png e retorna as URLs de produção.
 
@@ -43,7 +43,7 @@ Os acrônimos são suportados através do campo `alias` no `package.json`.
 
 Este exemplo utiliza `react` como `preact` e outros módulos locais que não estão em `node_modules`.
 
-```json
+```javascript
 // package.json
 {
   "name": "some-package",
@@ -60,10 +60,10 @@ Este exemplo utiliza `react` como `preact` e outros módulos locais que não est
 
 Evite utilizar quaisquer caracteres especiais em seus acrônimos, alguns podem ser usados pelo Parcel e outros por ferramentas de terceiros ou extensões. Por exemplo:
 
-- `~` usado pelo Parcel para resolver [caminhos com til](#~-caminhos-com-til).
-- `@` usado pelo npm para resolver organizações npm.
+* `~` usado pelo Parcel para resolver [caminhos com til](module_resolution.md#~-caminhos-com-til).
+* `@` usado pelo npm para resolver organizações npm.
 
-Recomendamos ser explícito ao definir seus acrônimos, então por favor **especifique extensões**, caso contrário o Parcel terá de adivinhar. Consulte [exportações denominadas com Javascript](#exportações-denominadas-com-javascript) para um exemplo disso.
+Recomendamos ser explícito ao definir seus acrônimos, então por favor **especifique extensões**, caso contrário o Parcel terá de adivinhar. Consulte [exportações denominadas com Javascript](module_resolution.md#exportações-denominadas-com-javascript) para um exemplo disso.
 
 ## Problemas comuns
 
@@ -71,7 +71,7 @@ Recomendamos ser explícito ao definir seus acrônimos, então por favor **espec
 
 Os mapeamentos de acrônimos se aplicam a muitos tipos de recursos e não oferecem suporte especificamente ao mapeamento de exportações denominadas com Javascript. Se você deseja mapear js chamado _exports_ você pode fazer isso:
 
-```json
+```javascript
 // package.json
 {
   "name": "some-package",
@@ -83,20 +83,20 @@ Os mapeamentos de acrônimos se aplicam a muitos tipos de recursos e não oferec
 
 e re-exportando a exportação nomeada dentro do arquivo com acrônimo:
 
-```js
+```javascript
 // electron-ipc.js
 module.exports = require('electron').ipcRenderer
 ```
 
 ### Flow via Resolução Absoluta ou Til
 
-Flow precisará saber sobre a resolução de módulos para o uso de caminhos absolutos ou caminhos til. Utilizando o recurso [module.name_mapper](https://flow.org/en/docs/config/options/#toc-module-name-mapper-regex-string) do Flow, nós podemos:
+Flow precisará saber sobre a resolução de módulos para o uso de caminhos absolutos ou caminhos til. Utilizando o recurso [module.name\_mapper](https://flow.org/en/docs/config/options/#toc-module-name-mapper-regex-string) do Flow, nós podemos:
 
 > Especificar uma expressão regular para corresponder aos nomes dos módulos, bem como um padrão de substituição
 
 Dado um projeto com essa estrutura:
 
-```
+```text
 package.json
 .flowconfig
 src/
@@ -107,7 +107,7 @@ src/
     banana.js
 ```
 
-E `src/index.html` como um *entrypoint*, a **raíz do projeto** (*project root*) é o diretório `src/`.
+E `src/index.html` como um _entrypoint_, a **raíz do projeto** \(_project root_\) é o diretório `src/`.
 
 Portanto, para mapear essa importação corretamente:
 
@@ -118,9 +118,9 @@ import Apple from '/components/apple'
 // import Apple from 'src/components/apple';
 ```
 
-nós podemos usar essa configuração no arquivo `.flowconfig` para mapear o caminho absoluto (o direcionamento de `/`) para `src/`:
+nós podemos usar essa configuração no arquivo `.flowconfig` para mapear o caminho absoluto \(o direcionamento de `/`\) para `src/`:
 
-```ini
+```text
 [options]
 module.name_mapper='^\/\(.*\)$' -> '<PROJECT_ROOT>/src/\1'
 ```
@@ -131,7 +131,7 @@ Nota: `module.name_mapper` pode ter várias entradas se você desejar suportar a
 
 TypeScript terá de saber sobre o seu uso da resolução de módulo com `~` ou mapeamentos de acrônimos. Por favor, consulte a [documentação de resolução do módulo do TypeScript](https://www.typescriptlang.org/docs/handbook/module-resolution.html) para mais informações.
 
-```json
+```javascript
 // tsconfig.json
 {
   "compilerOptions": {
@@ -149,11 +149,12 @@ Estes são os usos aconselhados com _monorepos_ até o momento:
 
 Uso recomendado:
 
-- use caminhos relativos.
-- use `/` para o caminho raíz, se a raíz for requerida.
+* use caminhos relativos.
+* use `/` para o caminho raíz, se a raíz for requerida.
 
 Uso não recomentado:
 
-- **evite** utilizar `~` com _monorepos_.
+* **evite** utilizar `~` com _monorepos_.
 
 Se você é um usuário _monorepo_ e gostaria de contribuir com essas recomendações, por favor, forneça repositórios de exemplo ao abrir _issues_ para apoiar a discussão.
+

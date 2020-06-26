@@ -8,7 +8,7 @@ Agora você pode simplesmente importar arquivos `.rs` como qualquer outro tipo d
 
 Assim como com arquivos `.wasm`, arquivos `.rs` podem ser importados com as importações síncronas ou assíncronas.
 
-```js
+```javascript
 // importação síncrona
 import { add } from './add.rs'
 console.log(add(2, 3))
@@ -19,9 +19,10 @@ console.log(add(2, 3))
 
 No lado do Rust, você só precisa ter certeza de que os nomes de função não estão desconfiguradas e que são públicas.
 
-```rs
+```text
 #[no_mangle]
 pub fn add(a: i32, b: i32) -> i32 {
   return a + b
 }
 ```
+

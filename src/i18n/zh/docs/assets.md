@@ -1,10 +1,10 @@
-# 📦 资源(Assets)
+# 📦 资源\(Assets\)
 
 Parcel 是基于资源的，资源可以代表任意文件，并且 Parcel 对 JavaScript，CSS，HTML 文件有更多的支持。 Parcel 会自动地分析这些文件和包中引用的依赖。相同类型的资源会被组合到同一捆绑包中。如果导入其他类型的资源（例如：你在 JS 文件中导入 CSS 文件），Parcel 会启动子捆绑包，并在父捆绑包中保留对它的引用。这一点将在以下部分进行说明。
 
 ## JavaScript
 
-JavaScript 是最传统的 Web 打包文件类型。 Parcel 同时支持 CommonJS 和 ES6 两种模块语法来导入文件。它也支持动态的 `import()` 函数语法异步加载模块，这一点会在[代码拆分](code_splitting.html)部分有讨论。
+JavaScript 是最传统的 Web 打包文件类型。 Parcel 同时支持 CommonJS 和 ES6 两种模块语法来导入文件。它也支持动态的 `import()` 函数语法异步加载模块，这一点会在[代码拆分](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/zh/docs/code_splitting.html)部分有讨论。
 
 ```javascript
 // 使用 CommonJS 语法导入模块
@@ -75,7 +75,7 @@ SCSS 文件中的依赖可以使用 `@import` 语句。
 
 HTML 资源是提供给 Parcel 常用入口文件，但也可以被 JavaScript 文件引用，例如：提供链接给其他页面。如上所述，提取并编译脚本、样式、媒体以及其他的 HTML 文件的 URL 。引用会在 HTML 中被重写，以便链接到正确的输出文件。全部的文件名都应该和当前的 HTML 文件相关联。
 
-```html
+```markup
 <html>
 <body>
   <!-- 引入图像文件 -->
@@ -88,3 +88,4 @@ HTML 资源是提供给 Parcel 常用入口文件，但也可以被 JavaScript �
 </body>
 </html>
 ```
+

@@ -6,7 +6,7 @@
 
 [Запис в блозі](http://blog.jakoblind.no/react-parcel/)
 
-```Bash
+```bash
 npm install --save react
 npm install --save react-dom
 npm install --save-dev parcel-bundler
@@ -14,9 +14,9 @@ npm install --save-dev babel-preset-env
 npm install --save-dev babel-preset-react
 ```
 
-<sub>Або, якщо у вас встановлений менеджер пакетів Yarn</sub>
+Або, якщо у вас встановлений менеджер пакетів Yarn
 
-```Bash
+```bash
 yarn add react
 yarn add react-dom
 yarn add --dev parcel-bundler
@@ -26,10 +26,10 @@ yarn add --dev babel-preset-react
 
 Потім додайте скрипт запуску в `package.json`
 
-```Javascript
+```javascript
 // package.json
 "Scripts": {
-  "Start": "parcel index.html"
+  "Start": "parcel index.html"
 }
 ```
 
@@ -37,7 +37,7 @@ yarn add --dev babel-preset-react
 
 Спочатку нам потрібно встановити залежності для Preact.
 
-```Bash
+```bash
 npm install --save preact
 npm install --save preact-compat
 npm install --save-dev parcel-bundler
@@ -45,9 +45,9 @@ npm install --save-dev babel-preset-env
 npm install --save-dev babel-preset-preact
 ```
 
-<sub> Або, якщо у вас встановлений менеджер пакетів Yarn </sub>
+ Або, якщо у вас встановлений менеджер пакетів Yarn
 
-```Bash
+```bash
 yarn add preact
 yarn add preact-compat
 yarn add --dev parcel-bundler
@@ -57,19 +57,19 @@ yarn add --dev babel-preset-preact
 
 Потім переконайтеся, що існує така конфігурація Babel.
 
-```Javascript
+```javascript
 // .babelrc
 {
-  "Presets": [ "env", "preact"]
+  "Presets": [ "env", "preact"]
 }
 ```
 
 Потім додайте скрипт запуску в `package.json`
 
-```Javascript
+```javascript
 // package.json
 "Scripts": {
-  "Start": "parcel index.html"
+  "Start": "parcel index.html"
 }
 ```
 
@@ -77,23 +77,24 @@ yarn add --dev babel-preset-preact
 
 Спочатку нам потрібно встановити залежності для Vue.
 
-```Bash
+```bash
 npm install --save vue
 npm install --save-dev parcel-bundler
 ```
 
-<sub> Або, якщо у вас встановлений менеджер пакетів Yarn </sub>
+ Або, якщо у вас встановлений менеджер пакетів Yarn
 
-```Bash
+```bash
 yarn add vue
 yarn add --dev parcel-bundler
 ```
 
 Потім додайте скрипт запуску в `package.json`
 
-```Javascript
+```javascript
 // package.json
 "Scripts": {
-  "Start": "parcel index.html"
+  "Start": "parcel index.html"
 }
 ```
+

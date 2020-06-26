@@ -12,9 +12,9 @@ Isso desabilita o `watch` e o `hmr` para que o código só seja compilado uma ve
 
 Ativando o modo de produção também define a variável de ambiente `NODE_ENV=production`. As bibliotecas mais conhecidas, como React, possuem recursos de depuração apenas para desenvolvimento, que são desativados ao definir esta variável de ambiente, o que resulta em compilações menores e mais rápidas para produção.
 
-Para aproveitar o mesmo tipo de recursos de depuração somente de desenvolvimento, certifique-se de que a [opção `dead_code` do teaser](https://github.com/terser-js/terser#compress-options) esteja habilitada (está por padrão) e encapsula qualquer depuração somente de desenvolvimento em uma verificação condicional assim:
+Para aproveitar o mesmo tipo de recursos de depuração somente de desenvolvimento, certifique-se de que a [opção `dead_code` do teaser](https://github.com/terser-js/terser#compress-options) esteja habilitada \(está por padrão\) e encapsula qualquer depuração somente de desenvolvimento em uma verificação condicional assim:
 
-```js
+```javascript
 if (process.env.NODE_ENV === 'development') { // Ou, `process.env.NODE_ENV !== 'production'`
   // Irá executar somente em desenvolvimento e ignorado do build de produção.
 }
@@ -22,19 +22,19 @@ if (process.env.NODE_ENV === 'development') { // Ou, `process.env.NODE_ENV !== '
 
 ## Estratégia de nomeação de arquivos
 
-Para permitir a configuração de regras de cache muito agressivas para o seu CDN, para o melhor desempenho e eficiência, o Parcel faz hashes dos nomes dos arquivos da maioria dos bundles (se o bundle deve ter um nome legível/lembrável ou não, principalmente para SEO).
+Para permitir a configuração de regras de cache muito agressivas para o seu CDN, para o melhor desempenho e eficiência, o Parcel faz hashes dos nomes dos arquivos da maioria dos bundles \(se o bundle deve ter um nome legível/lembrável ou não, principalmente para SEO\).
 
-O Parcel segue a tabela a seguir, quando se trata de nomear os pacotes (entrypoints nunca são em hasheados).
+O Parcel segue a tabela a seguir, quando se trata de nomear os pacotes \(entrypoints nunca são em hasheados\).
 
-|                        Tipo de Bundle | Tipo               | Conteúdo hasheado |
-| ------------------------------------: | ------------------ | :----------------: |
-|                              Qualquer | Entrypoint         |         ❌         |
-|                            JavaScript | `<script>`         |         ✅        |
-|                            JavaScript | Dynamic import     |         ❌         |
-|                            JavaScript | Service worker     |         ❌         |
-|                                  HTML | iframe             |         ❌         |
-|                                  HTML | anchor link        |         ❌         |
-| Raw (Imagens, arquivos de texto, ...) | Import/Require/... |         ✅        |
+| Tipo de Bundle | Tipo | Conteúdo hasheado |
+| ---: | :--- | :---: |
+| Qualquer | Entrypoint | ❌ |
+| JavaScript | `<script>` | ✅ |
+| JavaScript | Dynamic import | ❌ |
+| JavaScript | Service worker | ❌ |
+| HTML | iframe | ❌ |
+| HTML | anchor link | ❌ |
+| Raw \(Imagens, arquivos de texto, ...\) | Import/Require/... | ✅ |
 
 O hash do arquivo segue o seguinte padrão de nomeação: `<nome do diretório>-<hash>.<extensão>`.
 
@@ -46,6 +46,7 @@ Esteja ciente que este módulo supõe que você tem o programa [`lscpu`](http://
 
 ## Usando um CI
 
-Se você deseja integrar o Parcel no seu sistema de integração contínua (por exemplo, Travis ou Circle CI), talvez seja necessário instalar o Parcel como uma dependência local.
+Se você deseja integrar o Parcel no seu sistema de integração contínua \(por exemplo, Travis ou Circle CI\), talvez seja necessário instalar o Parcel como uma dependência local.
 
-As instruções podem ser [encontradas aqui](getting_started.html#adicionando-parcel-ao-seu-projeto).
+As instruções podem ser [encontradas aqui](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/pt/docs/getting_started.html#adicionando-parcel-ao-seu-projeto).
+

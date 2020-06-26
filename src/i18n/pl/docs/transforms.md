@@ -1,6 +1,6 @@
 # 🐠 Transformacje
 
-Inne programy tworzące pakiety wymagają instalacji i konfiguracji wtyczek, aby dokonywać transformacji zasobów, ale Parcel od razu wspiera wiele popularnych transformacji i transpilerów. Możesz transformować JavaScript używając [Babel](https://babeljs.io), CSS używając [PostCSS](http://postcss.org) i HTML używając [PostHTML](https://github.com/posthtml/posthtml). Parcel automatycznie uruchamia te transformacje, kiedy znajdzie pliki konfiguracyjne (np. `.babelrc`, `.postcssrc`) w module.
+Inne programy tworzące pakiety wymagają instalacji i konfiguracji wtyczek, aby dokonywać transformacji zasobów, ale Parcel od razu wspiera wiele popularnych transformacji i transpilerów. Możesz transformować JavaScript używając [Babel](https://babeljs.io), CSS używając [PostCSS](http://postcss.org) i HTML używając [PostHTML](https://github.com/posthtml/posthtml). Parcel automatycznie uruchamia te transformacje, kiedy znajdzie pliki konfiguracyjne \(np. `.babelrc`, `.postcssrc`\) w module.
 
 To zachowanie działa nawet w `node_modules`: jeśli plik konfiguracyjny jest opublikowany jako część paczki, transformacje są automatycznie dokonywane na tym i tylko tym module. To zapewnia krótki czas tworzenia pakietów, ponieważ tylko pakiety rzeczywiście potrzebujące transformacji są procesowane. To oznacza także, że nie musisz manualnie konfigurować transformacji tak, aby włączały lub wyłączały poszczególne pliki, ani nie musisz wiedzieć jak kod pochodzący od osób trzecich ma być budowany, aby użyć go w swojej aplikacji.
 
@@ -16,7 +16,7 @@ yarn add @babel/preset-env
 
 Następnie utwórz plik `.babelrc`:
 
-```json
+```javascript
 {
   "presets": ["@babel/preset-env"]
 }
@@ -24,7 +24,7 @@ Następnie utwórz plik `.babelrc`:
 
 ## PostCSS
 
-[PostCSS](http://postcss.org) to narzędzie do transformacji CSS z użyciem wtyczek, np. [autoprefixer](https://github.com/postcss/autoprefixer), [Preset Env](https://github.com/csstools/postcss-preset-env) czy [CSS Modules](https://github.com/css-modules/css-modules). Możesz skonfigurować PostCSS z Parcel tworząc plik konfiguracyjny o jednej z nazw: `.postcssrc` (JSON), `.postcssrc.js` lub `postcss.config.js`.
+[PostCSS](http://postcss.org) to narzędzie do transformacji CSS z użyciem wtyczek, np. [autoprefixer](https://github.com/postcss/autoprefixer), [Preset Env](https://github.com/csstools/postcss-preset-env) czy [CSS Modules](https://github.com/css-modules/css-modules). Możesz skonfigurować PostCSS z Parcel tworząc plik konfiguracyjny o jednej z nazw: `.postcssrc` \(JSON\), `.postcssrc.js` lub `postcss.config.js`.
 
 Zainstaluj wtyczki w aplikacji wykonując:
 
@@ -34,7 +34,7 @@ yarn add postcss-modules autoprefixer
 
 Następnie utwórz plik `.postcssrc`:
 
-```json
+```javascript
 {
   "modules": true,
   "plugins": {
@@ -49,7 +49,7 @@ Wtyczki są wymienione w obiekcie `plugins` jako klucze, a ich opcje są definio
 
 Docelowe przeglądarki dla Autoprefixer, cssnext i innych narzędzi mogą być zdefiniowne w pliku `.browserslistrc`:
 
-```
+```text
 > 1%
 last 2 versions
 ```
@@ -58,7 +58,7 @@ Moduły CSS są włączane w nieco inny sposób za pomocą klucza `modules` na n
 
 ## PostHTML
 
-[PostHTML](https://github.com/posthtml/posthtml) to narzędzie do transformowania HTML za pomocą wtyczek. Możesz skonfigurować PostHTML z Parcel tworząc plik konfiguracyjny o jednej z nazw: `.posthtmlrc` (JSON), `.posthtmlrc.js` lub `posthtml.config.js`.
+[PostHTML](https://github.com/posthtml/posthtml) to narzędzie do transformowania HTML za pomocą wtyczek. Możesz skonfigurować PostHTML z Parcel tworząc plik konfiguracyjny o jednej z nazw: `.posthtmlrc` \(JSON\), `.posthtmlrc.js` lub `posthtml.config.js`.
 
 Zainstaluj wtyczki w aplikacji wykonując:
 
@@ -68,7 +68,7 @@ yarn add posthtml-img-autosize
 
 Następnie utwórz plik `.posthtmlrc`:
 
-```json
+```javascript
 {
   "plugins": {
     "posthtml-img-autosize": {
@@ -84,7 +84,7 @@ Wtyczki są wymienione w obiekcie `plugins` jako klucze, a ich opcje są definio
 
 [TypeScript](https://www.typescriptlang.org/) to typowany nadzbiór JavaScript, który kompiluje się do JavaScript, który wspiera także funkcje ES2015+. Transformacja TypeScript działa od razu bez żadnej dodatkowej konfiguracji.
 
-```html
+```markup
 <!-- index.html -->
 <html>
   <body>
@@ -112,7 +112,7 @@ export default 'Hello, world'
 $ yarn add bs-platform --dev
 ```
 
-```json
+```javascript
 // bsconfig.json
 // z https://github.com/BuckleScript/bucklescript/blob/master/jscomp/bsb/templates/basic-reason/bsconfig.json
 
@@ -136,7 +136,7 @@ $ yarn add bs-platform --dev
 }
 ```
 
-```html
+```markup
 <!-- index.html -->
 <!DOCTYPE html>
 <html>
@@ -146,7 +146,7 @@ $ yarn add bs-platform --dev
 </html>
 ```
 
-```reason
+```text
 /* src/index.re */
 print_endline("Hello World");
 ```
@@ -197,7 +197,7 @@ $ yarn add react react-dom reason-react
 </html>
 ```
 
-```reason
+```text
 /* src/Greeting.re */
 
 let component = ReasonReact.statelessComponent("Greeting");
@@ -208,8 +208,9 @@ let make = (~name, _children) => {
 };
 ```
 
-```reason
+```text
 /* src/index.re */
 
 ReactDOMRe.renderToElementWithId(<Greeting name="Parcel" />, "app");
 ```
+

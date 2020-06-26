@@ -4,7 +4,7 @@
 
 ### Serve
 
-Serve inizializza il server di sviluppo, che effettuerà una rebuild della tua app automaticamente ogni volta che cambi qualche file, e supporta l'[hot module replacement](hmr.html) per uno sviluppo più rapido.
+Serve inizializza il server di sviluppo, che effettuerà una rebuild della tua app automaticamente ogni volta che cambi qualche file, e supporta l'[hot module replacement](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/it/docs/hmr.html) per uno sviluppo più rapido.
 
 ```bash
 parcel index.html
@@ -12,7 +12,7 @@ parcel index.html
 
 ### Build
 
-Build crea gli asset una volta, abilita la minificazione e imposta la variable NODE_ENV per la [Produzione](production.html).
+Build crea gli asset una volta, abilita la minificazione e imposta la variable NODE\_ENV per la [Produzione](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/it/docs/production.html).
 
 ```bash
 parcel build index.html
@@ -48,7 +48,7 @@ or
 parcel build entry.js -d build/output
 ```
 
-```base
+```text
 root
 - build
 - - output
@@ -67,7 +67,7 @@ parcel build entry.js --public-url ./dist/
 
 produrrà:
 
-```html
+```markup
 <link rel="stylesheet" type="text/css" href="/dist/entry.1a2b3c.css">
 oppure
 <script src="/dist/entry.e5f6g7.js"></script>
@@ -95,12 +95,12 @@ Disponibile in: `serve`, `watch`, `build`
 parcel build entry.js --log-level 1
 ```
 
-| Loglevel | Effetto             |
-| -------- | ------------------- |
-| 0        | Logging disattivo   |
-| 1        | Log solo errori     |
-| 2        | Log errori e avvisi |
-| 3        | Log di tutto        |
+| Loglevel | Effetto |
+| :--- | :--- |
+| 0 | Logging disattivo |
+| 1 | Log solo errori |
+| 2 | Log errori e avvisi |
+| 3 | Log di tutto |
 
 ### HMR Hostname
 
@@ -213,3 +213,4 @@ Disponibile in: `serve`, `watch`, `build`
 ```bash
 parcel build entry.js --no-cache
 ```
+

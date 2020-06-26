@@ -32,7 +32,7 @@ Parcel puede utilizar cualquier tipo de archivo como punto de entrada, pero un a
 
 A continuación, crea los archivos index.html y index.js.
 
-```html
+```markup
 <html>
 <body>
   <script src="./index.js"></script>
@@ -44,13 +44,13 @@ A continuación, crea los archivos index.html y index.js.
 console.log('hola mundo')
 ```
 
-Parcel tiene un servidor de desarrollo embebido, el cual automáticamente reconstruye su aplicación cuando realiza cambios en los archivos, y soporta [reemplazo de módulos en caliente](hmr.html) para desarrollar rápidamente. Solo debes indicar el archivo de entrada:
+Parcel tiene un servidor de desarrollo embebido, el cual automáticamente reconstruye su aplicación cuando realiza cambios en los archivos, y soporta [reemplazo de módulos en caliente](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/es/docs/hmr.html) para desarrollar rápidamente. Solo debes indicar el archivo de entrada:
 
 ```bash
 parcel index.html
 ```
 
-Ahora, abre http://localhost:1234/ en su navegador. También puedes reemplazar el puerto por defecto usando la opción `-p <port number>`.
+Ahora, abre [http://localhost:1234/](http://localhost:1234/) en su navegador. También puedes reemplazar el puerto por defecto usando la opción `-p <port number>`.
 
 Utiliza el servidor de desarrollo cuando no tengas tu propio servidor, o tu aplicación sea completamente renderizada en el lado del cliente. Si cuentas con tu propio servidor, puedes ejecutar Parcel en modo `watch`. Este modo seguirá reconstruyendo la aplicación automáticamente cuando hagas cambios en tus archivos y seguirá soportando reemplazo de módulos en caliente, pero no iniciará un servidor web.
 
@@ -58,4 +58,5 @@ Utiliza el servidor de desarrollo cuando no tengas tu propio servidor, o tu apli
 parcel watch index.html
 ```
 
-Cuando estes listo para construir tu aplicación para producción, el modo `build` deshabilita el modo `watch` y solo construye la aplicación una vez. Ve la sección [Producción](production.html) para más detalles.
+Cuando estes listo para construir tu aplicación para producción, el modo `build` deshabilita el modo `watch` y solo construye la aplicación una vez. Ve la sección [Producción](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/es/docs/production.html) para más detalles.
+

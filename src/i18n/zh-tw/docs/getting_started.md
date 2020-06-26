@@ -28,12 +28,11 @@ yarn init -y
 npm init -y
 ```
 
-Parcel 可將任何類型的檔案視為進入點，但 HTML 或 JavaScript 會是較好的選擇。
-如果你在 HTML 中使用相對路徑引入主要的 JavaScript 檔案，Parcel 將會在輸出的檔案中自動替換這些路徑。
+Parcel 可將任何類型的檔案視為進入點，但 HTML 或 JavaScript 會是較好的選擇。 如果你在 HTML 中使用相對路徑引入主要的 JavaScript 檔案，Parcel 將會在輸出的檔案中自動替換這些路徑。
 
 下一步，建立 index.html 及 index.js。
 
-```html
+```markup
 <html>
 <body>
   <script src="./index.js"></script>
@@ -45,14 +44,13 @@ Parcel 可將任何類型的檔案視為進入點，但 HTML 或 JavaScript 會�
 console.log('hello world')
 ```
 
-Parcel 內建了開發專用的伺服器，在你更動檔案的同時會自動重新編譯你的 app，並啟用[模組熱替換](hmr.html)以提高開發效率，你只需要指定進入點：
+Parcel 內建了開發專用的伺服器，在你更動檔案的同時會自動重新編譯你的 app，並啟用[模組熱替換](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/zh-tw/docs/hmr.html)以提高開發效率，你只需要指定進入點：
 
 ```bash
 parcel index.html
 ```
 
-接著在瀏覽器中打開 http://localhost:1234/。
-若模組熱替換無法正常運作，你可能需要[設定你的編輯器](hmr.html#safe-write)。你也可以使用 `-p <port number>` 選項來複寫預設連接埠。
+接著在瀏覽器中打開 [http://localhost:1234/。](http://localhost:1234/。) 若模組熱替換無法正常運作，你可能需要[設定你的編輯器](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/zh-tw/docs/hmr.html#safe-write)。你也可以使用 `-p <port number>` 選項來複寫預設連接埠。
 
 開發專用的伺服器建議只在沒有自有伺服器及純前端 app 的情況下才使用。若你已有伺服器，可使用 Parcel 的 `watch` 模式，此模式仍有自動重新編譯及模組熱替換的功能，但不會啟動網頁伺服器。
 
@@ -78,18 +76,18 @@ parcel *.html
 
 _注意：_ 若你有類似這樣的檔案架構：
 
-```
+```text
 - folder-1
 -- index.html
 - folder-2
 -- index.html
 ```
 
-在這種情況下是無法連線到 http://localhost:1234/folder-1/ 的，你需要明確的指定至檔案才行，如： http://localhost:1234/folder-1/index.html。
+在這種情況下是無法連線到 [http://localhost:1234/folder-1/](http://localhost:1234/folder-1/) 的，你需要明確的指定至檔案才行，如： [http://localhost:1234/folder-1/index.html。](http://localhost:1234/folder-1/index.html。)
 
 ### 編譯正式環境版本
 
-當你準備部署至正式環境時，`build` 模式會關閉檔案監視且僅會編譯一次，詳情請見[正式環境](production.html) 一章。
+當你準備部署至正式環境時，`build` 模式會關閉檔案監視且僅會編譯一次，詳情請見[正式環境](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/zh-tw/docs/production.html) 一章。
 
 ## 將 Parcel 加入至你的專案
 
@@ -109,7 +107,7 @@ npm install parcel-bundler --save-dev
 
 接著將下列腳本加入你的 `package.json` 中：
 
-```json
+```javascript
 {
   "scripts": {
     "dev": "parcel <你的進入點>",
@@ -131,3 +129,4 @@ yarn build
 # 或
 npm run build
 ```
+

@@ -10,9 +10,9 @@ Esto deshabilita el modo `watch` y el reemplazo de módulos en caliente, por lo 
 
 La habilitación del modo producción también configura la variable de entorno `NODE_ENV=production`. Librerías grandes como React contienen características para depuración que son deshabilitadas al configurar esta variable de entorno, lo que resulta en una construcción más pequeña y rápida para producción.
 
-### Opciones
+## Opciones
 
-#### Configurar el directorio de salida
+### Configurar el directorio de salida
 
 Por defecto: "dist"
 
@@ -22,14 +22,14 @@ o
 parcel build entry.js -d build/output
 ```
 
-```base
+```text
 root
 - build
 - - output
 - - - entry.js
 ```
 
-#### Configurar la URL publica en la cual servir
+### Configurar la URL publica en la cual servir
 
 Por defecto: "/"
 
@@ -39,13 +39,13 @@ parcel build entry.js --public-url ./
 
 salida:
 
-```html
+```markup
 <link rel="stylesheet" type="text/css" href="1a2b3c4d.css">
 or
 <script src="e5f6g7h8.js"></script>
 ```
 
-#### Deshabilitar la minificacion
+### Deshabilitar la minificacion
 
 Por defecto: minificación habilitada
 
@@ -53,10 +53,11 @@ Por defecto: minificación habilitada
 parcel build entry.js --no-minify
 ```
 
-#### Deshabilitar el cache de sistema de archivos
+### Deshabilitar el cache de sistema de archivos
 
 Por defecto: cache habilitado
 
 ```bash
 parcel build entry.js --no-cache
 ```
+

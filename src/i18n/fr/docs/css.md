@@ -1,14 +1,16 @@
-# CSS
+# css
+
+## CSS
 
 _Extensions supportées : `css`, `pcss`, `postcss`_
 
 Les ressources CSS peuvent être importées à partir d'un fichier JavaScript ou HTML :
 
-```js
+```javascript
 import './index.css'
 ```
 
-```html
+```markup
 <link rel="stylesheet" type="text/css" href="index.css">
 ```
 
@@ -26,9 +28,9 @@ Les ressources CSS peuvent contenir des dépendances référencées par la synta
 
 En plus des simples CSS, d'autres langages compilés vers CSS comme LESS, SASS et Stylus sont également supportés, et fonctionnent de la même manière.
 
-# PostCSS
+## PostCSS
 
-[PostCSS](http://postcss.org) est un outil pour transformer du CSS avec des plugins, comme [autoprefixer](https://github.com/postcss/autoprefixer), [Preset Env](https://github.com/csstools/postcss-preset-env), et [CSS Modules](https://github.com/css-modules/css-modules). Vous pouvez configurer PostCSS avec Parcel en créant un fichier de configuration en utilisant l'un de ces noms : `.postcssrc` (JSON), `.postcssrc.js` ou `postcss.config.js`.
+[PostCSS](http://postcss.org) est un outil pour transformer du CSS avec des plugins, comme [autoprefixer](https://github.com/postcss/autoprefixer), [Preset Env](https://github.com/csstools/postcss-preset-env), et [CSS Modules](https://github.com/css-modules/css-modules). Vous pouvez configurer PostCSS avec Parcel en créant un fichier de configuration en utilisant l'un de ces noms : `.postcssrc` \(JSON\), `.postcssrc.js` ou `postcss.config.js`.
 
 Installez les plugins dans votre application :
 
@@ -38,7 +40,7 @@ yarn add postcss-modules autoprefixer
 
 Ensuite, créez un `.postcssrc`:
 
-```json
+```javascript
 {
   "modules": true,
   "plugins": {
@@ -53,22 +55,22 @@ Les plugins sont spécifiés dans l'objet `plugins` en tant que clés et les opt
 
 Les navigateurs ciblés pour Autoprefixer, cssnext et d'autres outils peuvent être spécifiés dans le fichier `.browserslistrc` :
 
-```
+```text
 > 1%
 last 2 versions
 ```
 
 Les modules CSS sont activés légèrement différemment en utilisant la clé `modules` du niveau supérieur. C'est parce que Parcel doit avoir un support spécial pour les modules CSS car ils exportent un objet à inclure dans le paquet JavaScript. Notez que vous devez toujours installer `postcss-modules` dans votre projet.
 
-## Utilisation avec les bibliothèques CSS existantes
+### Utilisation avec les bibliothèques CSS existantes
 
 Pour que les modules CSS fonctionnent correctement avec les modules existants, ils doivent spécifier ce support dans leur propre `.postcssrc`.
 
-## Mise en place de la config de minification de cssnano
+### Mise en place de la config de minification de cssnano
 
 Parcel ajoute [cssnano](http://cssnano.co) à postcss afin de minifier le css pour la construction en production. La configuration personnalisée peut être définie en créant le fichier `cssnano.config.js` :
 
-```js
+```javascript
 module.exports = {
   preset: [
     'default',
@@ -81,3 +83,4 @@ module.exports = {
   ]
 }
 ```
+

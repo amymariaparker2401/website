@@ -14,7 +14,7 @@ npm install --save-dev babel-preset-env
 npm install --save-dev babel-preset-react
 ```
 
-<sub>Lub, jeśli używasz Yarn:</sub>
+Lub, jeśli używasz Yarn:
 
 ```bash
 yarn add react
@@ -54,7 +54,7 @@ npm install --save-dev babel-preset-env
 npm install --save-dev babel-preset-preact
 ```
 
-<sub>Lub, jeśli używasz Yarn:</sub>
+Lub, jeśli używasz Yarn:
 
 ```bash
 yarn add preact
@@ -91,7 +91,7 @@ npm install --save vue
 npm install --save-dev parcel-bundler
 ```
 
-<sub>Lub, jeśli używasz Yarn:</sub>
+Lub, jeśli używasz Yarn:
 
 ```bash
 yarn add vue
@@ -106,3 +106,4 @@ Dodaj skrypt startowy do `package.json`:
   "start": "parcel index.html"
 }
 ```
+

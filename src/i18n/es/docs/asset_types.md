@@ -1,8 +1,8 @@
 # 📝 Tipos de Recursos
 
-Como se describe en la [documentación de recursos](assets.html), Parcel representa cada archivo de entrada como un `Asset`. Los tipos de recursos se representan como clases que heredan de la clase base `Asset` e implementan la interfaz requerida para procesar, analizar dependencias, transformar y generar código.
+Como se describe en la [documentación de recursos](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/es/docs/assets.html), Parcel representa cada archivo de entrada como un `Asset`. Los tipos de recursos se representan como clases que heredan de la clase base `Asset` e implementan la interfaz requerida para procesar, analizar dependencias, transformar y generar código.
 
-Debido a que Parcel procesa los recursos en paralelo en múltiples núcleos de procesador, las transformaciones que pueden realizar los tipos de recursos están limitadas a las que operan en un solo archivo a la vez. Para transformaciones en varios archivos se puede usar un [Empaquetador](packagers.html) personalizado.
+Debido a que Parcel procesa los recursos en paralelo en múltiples núcleos de procesador, las transformaciones que pueden realizar los tipos de recursos están limitadas a las que operan en un solo archivo a la vez. Para transformaciones en varios archivos se puede usar un [Empaquetador](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/es/docs/packagers.html) personalizado.
 
 ## Interfaz de Recursos
 
@@ -51,3 +51,4 @@ const Bundler = require('parcel-bundler')
 let bundler = new Bundler('input.js')
 bundler.addAssetType('.ext', require.resolve('./MyAsset'))
 ```
+

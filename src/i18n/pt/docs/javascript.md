@@ -2,7 +2,7 @@
 
 _Extensões suportadas: `js`, `jsx`, `es6`, `jsm`, `mjs`_
 
-O tipo de arquivo mais utilizado pelos empacotadores é o JavaScript. Parcel suporta tanto CommonJS como módulos ES6 para importar os arquivos. Ele também suporta a função `import()` para carregar os módulos de forma assíncrona, o qual será discutido na sessão [separação do código](code_splitting.html). Importações dinâmicas também podem importar módulos de URLs.
+O tipo de arquivo mais utilizado pelos empacotadores é o JavaScript. Parcel suporta tanto CommonJS como módulos ES6 para importar os arquivos. Ele também suporta a função `import()` para carregar os módulos de forma assíncrona, o qual será discutido na sessão [separação do código](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/pt/docs/code_splitting.html). Importações dinâmicas também podem importar módulos de URLs.
 
 ```javascript
 // Importar um módulo utilizando sintaxe CommonJS
@@ -17,7 +17,7 @@ import('https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js')
 });
 ```
 
-Você também pode importar outros tipos de recursos que não sejam arquivos JavaScript, como um arquivo CSS ou mesmo uma imagem. Quando você importar um desses tipos de arquivos, eles não serão incluídos no arquivo principal assim como é feito com os outros empacotadores. Na verdade, eles serão adicionados em arquivos separados (por exemplo, um arquivo CSS) junto com suas dependências. Quando você utilizar [CSS Modules](https://github.com/css-modules/css-modules), as classes exportadas são adicionadas no arquivo de saída JavaScript. Outros tipos de recursos exportam a referência no arquivo de saída JavaScript para que você possa referenciar no seu código.
+Você também pode importar outros tipos de recursos que não sejam arquivos JavaScript, como um arquivo CSS ou mesmo uma imagem. Quando você importar um desses tipos de arquivos, eles não serão incluídos no arquivo principal assim como é feito com os outros empacotadores. Na verdade, eles serão adicionados em arquivos separados \(por exemplo, um arquivo CSS\) junto com suas dependências. Quando você utilizar [CSS Modules](https://github.com/css-modules/css-modules), as classes exportadas são adicionadas no arquivo de saída JavaScript. Outros tipos de recursos exportam a referência no arquivo de saída JavaScript para que você possa referenciar no seu código.
 
 ```javascript
 // Importando um arquivo CSS
@@ -37,7 +37,7 @@ import html from './some.html'
 require('./some.html')
 ```
 
-Caso você queira adicionar um arquivo dentro do arquivo de saída JavaScript, ao invés de referenciar o endereço, você pode utilizar a API `fs.readFileSync` do Node.js para fazer isso. O endereço precisa ser estaticamente analisado, ou seja, ele não pode conter variáveis (diferente de `__dirname` e `__filename`).
+Caso você queira adicionar um arquivo dentro do arquivo de saída JavaScript, ao invés de referenciar o endereço, você pode utilizar a API `fs.readFileSync` do Node.js para fazer isso. O endereço precisa ser estaticamente analisado, ou seja, ele não pode conter variáveis \(diferente de `__dirname` e `__filename`\).
 
 ```javascript
 import fs from 'fs'
@@ -56,7 +56,7 @@ const buffer = fs.readFileSync(__dirname + '/test.png')
 
 Abaixo há um exemplo de como importar imagens para utilizar com JSX.
 
-```js
+```javascript
 // Importando o arquivo de imagem
 import megaMan from "./images/mega-man.png";
 
@@ -73,13 +73,13 @@ import megaMan from "./images/mega-man.png";
 
 Instale as predefinições e plugins na sua aplicação:
 
-```shell
+```text
 yarn add --dev @babel/preset-react
 ```
 
 Crie o arquivo `.babelrc`:
 
-```json
+```javascript
 {
   "presets": ["@babel/preset-react"]
 }
@@ -87,21 +87,21 @@ Crie o arquivo `.babelrc`:
 
 Você também pode colocar a configuração `babel` no `package.json`
 
-```json
+```javascript
 "babel": {
   "presets": ["@babel/preset-react"]
 }
 ```
 
-NOTA: `package.json` tem precedência sobre o  `.babelrc`.
+NOTA: `package.json` tem precedência sobre o `.babelrc`.
 
 ## Conversões padrões do Babel
 
-Parcel transpila o seu código com `@babel/preset-env` por padrão, isto é para transpilar cada modulo interno (_local requires_) e externo (_node_modules_) para coincidir com destino definido.
+Parcel transpila o seu código com `@babel/preset-env` por padrão, isto é para transpilar cada modulo interno \(_local requires_\) e externo \(_node\_modules_\) para coincidir com destino definido.
 
-Para o alvo `browser` é utilizado o [browserslist](https://github.com/browserslist/browserslist), o _browserlist_ alvo pode ser definido no `package.json` (`engines.browsers` ou `browserslist`) ou usando um arquivo de configuração (`browserslist` ou `.browserslistrc`).
+Para o alvo `browser` é utilizado o [browserslist](https://github.com/browserslist/browserslist), o _browserlist_ alvo pode ser definido no `package.json` \(`engines.browsers` ou `browserslist`\) ou usando um arquivo de configuração \(`browserslist` ou `.browserslistrc`\).
 
-O alvo padrão do _browserlist_ é: `> 0.25%` (Significando, suportar cada navegador que tenha 0,25% ou mais da quantidade total de usuários ativos da web)
+O alvo padrão do _browserlist_ é: `> 0.25%` \(Significando, suportar cada navegador que tenha 0,25% ou mais da quantidade total de usuários ativos da web\)
 
 Para o alvo `node`, Parcel utiliza o `engines.node` definido no `package.json`, este padrão para _node 8_.
 
@@ -109,4 +109,5 @@ Para o alvo `node`, Parcel utiliza o `engines.node` definido no `package.json`, 
 
 [Flow](https://flow.org/) é um popular checador de tipo para JavaScript. Usar Flow com Parcel é muito simples, basta inserir `// @flow` na primeira linha dos arquivos `js`.
 
-O Parcel irá instalar automaticamente a configuração necessária para desmembrar os tipos do Flow do código compilado, portanto, não a nada com que você precise se preocupar, exceto as [integrações com editores](https://flow.org/en/docs/editors/) ou a [resolução do módulo de Caminho Absoluto](module_resolution.html#flow-via-resolucao-absoluta ou-til) com `.flowconfig`.
+O Parcel irá instalar automaticamente a configuração necessária para desmembrar os tipos do Flow do código compilado, portanto, não a nada com que você precise se preocupar, exceto as [integrações com editores](https://flow.org/en/docs/editors/) ou a [resolução do módulo de Caminho Absoluto](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/pt/docs/module_resolution.html#flow-via-resolucao-absoluta%20ou-til) com `.flowconfig`.
+

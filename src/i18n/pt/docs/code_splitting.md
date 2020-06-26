@@ -49,7 +49,7 @@ async function renderPage(name) {
 }
 ```
 
-**Nota:** Se você quiser utilizar async/await em navegadores que não têm suporte nativo, lembre-se de incluir `babel-polyfill` em sua aplicação ou `babel-runtime` + `babel-plugin-transform-runtime` nas bibliotecas).
+**Nota:** Se você quiser utilizar async/await em navegadores que não têm suporte nativo, lembre-se de incluir `babel-polyfill` em sua aplicação ou `babel-runtime` + `babel-plugin-transform-runtime` nas bibliotecas\).
 
 ```bash
 yarn add babel-polyfill
@@ -69,3 +69,4 @@ O Parcel infere a localização dos bundles automaticamente. Isto é feito pelo 
 Isso significa que você não precisa configurar onde os bundles devem ser carregados, mas também significa que você deve servir os bundles do mesmo local.
 
 O pacote resolve atualmente pacotes nos seguintes protocolos: `http`, `https`, `file`, `ftp`, `chrome-extension` e `moz-extension`.
+

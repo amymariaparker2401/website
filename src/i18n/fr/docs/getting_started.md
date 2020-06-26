@@ -32,7 +32,7 @@ Parcel peut prendre n'importe quel type de fichier comme point d'entrée, mais u
 
 Ensuite, créez un fichier index.html et index.js.
 
-```html
+```markup
 <html>
 <body>
   <script src="./index.js"></script>
@@ -44,13 +44,13 @@ Ensuite, créez un fichier index.html et index.js.
 console.log('hello world')
 ```
 
-Parcel a un serveur de développement intégré, qui reconstruira automatiquement votre application lorsque vous modifiez des fichiers et il prend en charge un [module de remplacement à chaud](hmr.html) pour un développement plus rapide. Faites-le pointer sur votre fichier d'entrée :
+Parcel a un serveur de développement intégré, qui reconstruira automatiquement votre application lorsque vous modifiez des fichiers et il prend en charge un [module de remplacement à chaud](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/fr/docs/hmr.html) pour un développement plus rapide. Faites-le pointer sur votre fichier d'entrée :
 
 ```bash
 parcel index.html
 ```
 
-Maintenant ouvrez http://localhost:1234/ dans votre navigateur. Si le remplacement de module à chaud ne fonctionne pas, vous devez peut-être [configurer votre éditeur](hmr.html#safe-write). Vous pouvez également remplacer le port par défaut avec l'option `-p <numéro de port>`.
+Maintenant ouvrez [http://localhost:1234/](http://localhost:1234/) dans votre navigateur. Si le remplacement de module à chaud ne fonctionne pas, vous devez peut-être [configurer votre éditeur](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/fr/docs/hmr.html#safe-write). Vous pouvez également remplacer le port par défaut avec l'option `-p <numéro de port>`.
 
 Utilisez le serveur de développement lorsque vous n'avez pas votre propre serveur ou si votre application est entièrement exécutée côté client. Si vous avez votre propre serveur, vous pouvez lancer Parcel en mode `watch` à la place. Cela permet de reconstruire automatiquement lorsque les fichiers changent et de prendre en charge le remplacement de module à chaud, mais ne démarre pas un serveur Web.
 
@@ -58,7 +58,7 @@ Utilisez le serveur de développement lorsque vous n'avez pas votre propre serve
 parcel watch index.html
 ```
 
-### Plusieurs fichiers comme point d'entrée
+## Plusieurs fichiers comme point d'entrée
 
 Si vous avez plusieurs fichiers comme point d'entrée, disons `index.html` et `about.html`, vous avez deux façons d'exécuter l'empaqueteur :
 
@@ -76,20 +76,20 @@ parcel *.html
 
 _REMARQUE :_ Si vous avez une structure de fichier comme celle-ci :
 
-```
+```text
 - répertoire-1
 -- index.html
 - répertoire-2
 -- index.html
 ```
 
-La recherche vers http://localhost:1234/répertoire-1/ ne fonctionnera pas, à la place, vous devez indiquer explicitement le fichier http://localhost:1234/répertoire-1/index.html.
+La recherche vers [http://localhost:1234/répertoire-1/](http://localhost:1234/répertoire-1/) ne fonctionnera pas, à la place, vous devez indiquer explicitement le fichier [http://localhost:1234/répertoire-1/index.html](http://localhost:1234/répertoire-1/index.html).
 
-### Construction pour la production
+## Construction pour la production
 
-Lorsque vous êtes prêt à construire les fichiers finaux utilisés pour la production, le mode `build` arrête de scruter les modifications et ne construit qu'une seule fois. Consultez la section [Production](production.html) pour plus de détails.
+Lorsque vous êtes prêt à construire les fichiers finaux utilisés pour la production, le mode `build` arrête de scruter les modifications et ne construit qu'une seule fois. Consultez la section [Production](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/fr/docs/production.html) pour plus de détails.
 
-### Ajout de Parcel à vos projets
+## Ajout de Parcel à vos projets
 
 Parfois, il n'est pas possible d'installer Parcel globalement, par exemple si vous utilisez l'agent de génération de quelqu'un d'autre ou si vous souhaitez utiliser un CI pour générer votre projet par programme. Dans ce cas, vous pouvez installer et exécuter Parcel en tant que package local.
 
@@ -107,7 +107,7 @@ npm install parcel-bundler --save-dev
 
 Ajoutez ensuite ces scripts de tâches à votre projet, en modifiant votre `package.json`:
 
-```json
+```javascript
 {
   "scripts": {
     "dev": "parcel <votre fichier d entrée>",
@@ -129,3 +129,4 @@ yarn build
 #ou
 npm run build
 ```
+

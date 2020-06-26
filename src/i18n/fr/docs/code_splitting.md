@@ -69,3 +69,4 @@ Parcel déduit automatiquement l'emplacement des paquets. Ceci est fait dans le 
 Cela signifie que vous n'avez pas besoin de configurer l'emplacement de chargement des paquets, mais vous devez également les fournir à partir du même emplacement.
 
 Actuellement, Parcel résout les paquets des protocoles suivants : `http`, `https`, `file`, `ftp`, `chrome-extension` et `moz-extension`.
+

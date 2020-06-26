@@ -2,7 +2,7 @@
 
 _Extensions supportées : `sass`, `scss`_
 
-La compilation SCSS nécessite un module `sass` (une version JS `dart-sass`). Pour l'installer avec npm :
+La compilation SCSS nécessite un module `sass` \(une version JS `dart-sass`\). Pour l'installer avec npm :
 
 ```bash
 npm install -D sass
@@ -19,3 +19,4 @@ Les dépendances dans les fichiers SCSS peuvent être utilisées avec les instru
 Si vous n'avez pas de module `sass` installé avant l'exécution de Parcel, Parcel l'installera automatiquement pour vous.
 
 **Remarques :** Vous pouvez aussi utiliser le module `node-sass` pour la compilation du SCSS. L'utilisation du module `node-sass` vous donnera une compilation plus rapide. Cependant, [une issue](https://github.com/parcel-bundler/parcel/issues/1836) a été reportée sur l'utilisation du module `node-sass` avec Parcel.
+

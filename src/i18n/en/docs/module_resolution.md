@@ -1,6 +1,6 @@
 # 📔 Module Resolution
 
-The Parcel resolver implements a modified version of [the node_modules resolution](https://nodejs.org/api/modules.html#modules_all_together) algorithm.
+The Parcel resolver implements a modified version of [the node\_modules resolution](https://nodejs.org/api/modules.html#modules_all_together) algorithm.
 
 ## Module resolution
 
@@ -8,8 +8,8 @@ In addition to the standard algorithm, all [asset types supported by Parcel](htt
 
 Module resolution can be relative to the:
 
-- **entry root**: the directory of the entrypoint specified to Parcel, or the shared root (common parent directory) when multiple entrypoints are specified.
-- **package root**: the directory of the nearest module root in `node_modules`.
+* **entry root**: the directory of the entrypoint specified to Parcel, or the shared root \(common parent directory\) when multiple entrypoints are specified.
+* **package root**: the directory of the nearest module root in `node_modules`.
 
 ### Absolute Paths
 
@@ -21,7 +21,7 @@ Module resolution can be relative to the:
 
 ### Glob file paths
 
-Globs are wildcard imports that bundle multiple assets at once. Globs can match some or all files (`/assets/*.png`), as well as files in multiple directories (`/assets/**/*`)
+Globs are wildcard imports that bundle multiple assets at once. Globs can match some or all files \(`/assets/*.png`\), as well as files in multiple directories \(`/assets/**/*`\)
 
 This example bundles a directory of png files and returns the dist URLs.
 
@@ -43,7 +43,7 @@ Aliases are supported through the `alias` field in `package.json`.
 
 This example aliases `react` to `preact` and some local custom module that is not in `node_modules`.
 
-```json
+```javascript
 // package.json
 {
   "name": "some-package",
@@ -60,10 +60,10 @@ This example aliases `react` to `preact` and some local custom module that is no
 
 Avoid using any special characters in your aliases as some may be used by Parcel and others by 3rd party tools or extensions. For example:
 
-- `~` used by Parcel to resolve [tilde paths](#~-tilde-paths).
-- `@` used by npm to resolve npm organisations.
+* `~` used by Parcel to resolve [tilde paths](module_resolution.md#~-tilde-paths).
+* `@` used by npm to resolve npm organisations.
 
-We advise being explicit when defining your aliases, so please **specify file extensions**, otherwise Parcel will need to guess. See [JavaScript Named Exports](#javascript-named-exports) for an example of this.
+We advise being explicit when defining your aliases, so please **specify file extensions**, otherwise Parcel will need to guess. See [JavaScript Named Exports](module_resolution.md#javascript-named-exports) for an example of this.
 
 ## Common issues
 
@@ -71,7 +71,7 @@ We advise being explicit when defining your aliases, so please **specify file ex
 
 Alias mappings apply to many asset types and do not specifically support mapping of JavaScript named exports. If you wish to map JS named exports you can do this:
 
-```json
+```javascript
 // package.json
 {
   "name": "some-package",
@@ -83,18 +83,18 @@ Alias mappings apply to many asset types and do not specifically support mapping
 
 and re-export the named export within the aliased file:
 
-```js
+```javascript
 // electron-ipc.js
 module.exports = require('electron').ipcRenderer
 ```
 
 ### Flow with Absolute or Tilde Resolution
 
-When using absolute path or tilde path module resolution you must configure Flow using the [module.name_mapper](https://flow.org/en/docs/config/options/#toc-module-name-mapper-regex-string) feature.
+When using absolute path or tilde path module resolution you must configure Flow using the [module.name\_mapper](https://flow.org/en/docs/config/options/#toc-module-name-mapper-regex-string) feature.
 
 Given a project with this structure:
 
-```
+```text
 package.json
 .flowconfig
 src/
@@ -118,20 +118,20 @@ We need Flow to replace the leading `/` in `'/components/apple'` with `src/`, re
 
 The following setting in our `.flowconfig` achieves this replacement:
 
-```ini
+```text
 [options]
 module.name_mapper='^\/\(.*\)$' -> '<PROJECT_ROOT>/src/\1'
 ```
 
 Where `<PROJECT_ROOT>` is a Flow specific identifier indicating the location of our `.flowconfig`
 
-NB: `module.name_mapper` can have multiple entries. This allows support for [Absolute](module_resolution.html#absolute-paths) or [Tilde](module_resolution.html#~-tilde-paths) Path Resolution in addition to [local module aliasing](module_resolution.html#aliasing) support.
+NB: `module.name_mapper` can have multiple entries. This allows support for [Absolute](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/en/docs/module_resolution.html#absolute-paths) or [Tilde](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/en/docs/module_resolution.html#~-tilde-paths) Path Resolution in addition to [local module aliasing](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/en/docs/module_resolution.html#aliasing) support.
 
 ### TypeScript ~ Resolution
 
 TypeScript will need to know about your use of the `~` module resolution or alias mappings. Please refer to the [TypeScript Module Resolution docs](https://www.typescriptlang.org/docs/handbook/module-resolution.html) for further information.
 
-```json
+```javascript
 // tsconfig.json
 {
   "compilerOptions": {
@@ -149,11 +149,12 @@ These are the advised usages with monorepos at this time:
 
 Advised usage:
 
-- use relative paths.
-- use `/` for a root path if a root is required.
+* use relative paths.
+* use `/` for a root path if a root is required.
 
 Unadvised usage:
 
-- **avoid** `~` use within monorepos.
+* **avoid** `~` use within monorepos.
 
 If you're a monorepo user and would like to contribute to these recommendations, please provide example repos when opening issues to support the discussion.
+

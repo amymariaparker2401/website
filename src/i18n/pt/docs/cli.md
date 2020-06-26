@@ -4,7 +4,7 @@
 
 ### Servir
 
-Inicia um servidor de desenvolvimento, que recriará automaticamente seu aplicativo ao alterar os arquivos e oferece suporte à [_hot module replacement_](hmr.html) para desenvolvimento rápido.
+Inicia um servidor de desenvolvimento, que recriará automaticamente seu aplicativo ao alterar os arquivos e oferece suporte à [_hot module replacement_](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/pt/docs/hmr.html) para desenvolvimento rápido.
 
 ```bash
 parcel index.html
@@ -22,7 +22,7 @@ parcel ./**/*.html
 
 ### Construir
 
-Constrói os recursos uma vez, ele também habilita minificação e define a variável de ambiente `NODE_ENV=production`. Veja [Produção](production.html) para mais detalhes.
+Constrói os recursos uma vez, ele também habilita minificação e define a variável de ambiente `NODE_ENV=production`. Veja [Produção](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/pt/docs/production.html) para mais detalhes.
 
 ```bash
 parcel build index.html
@@ -30,7 +30,7 @@ parcel build index.html
 
 _NOTA:_ Para casos de uso especiais, é possível realizar um único build do ambiente de `development`, dessa forma:
 
-```
+```text
 NODE_ENV=development parcel build <entrypoint> --no-minify
 ```
 
@@ -74,7 +74,7 @@ parcel build entry.js --out-dir build/output
 parcel build entry.js -d build/output
 ```
 
-```base
+```text
 root
 - build
 - - output
@@ -93,7 +93,7 @@ parcel entry.js --public-url ./dist/
 
 irá gerar:
 
-```html
+```markup
 <link rel="stylesheet" type="text/css" href="/dist/entry.1a2b3c.css">
 <!-- or -->
 <script src="/dist/entry.e5f6g7.js"></script>
@@ -109,7 +109,7 @@ Disponível em: `serve`, `watch`, `build`
 parcel build entry.js --target node
 ```
 
-⚠️ Alvos `node` e `electron` não irá empacotar as `dependencies` do package.json (mas irá incluir as `devDependencies`). Este comportamento pode ser substituído utilziando a flag [--bundle-node-modules](#forçando-agrupamento-de-módulos-node) (veja abaixo).
+⚠️ Alvos `node` e `electron` não irá empacotar as `dependencies` do package.json \(mas irá incluir as `devDependencies`\). Este comportamento pode ser substituído utilziando a flag [--bundle-node-modules](cli.md#forçando-agrupamento-de-módulos-node) \(veja abaixo\).
 
 Possíveis alvos: `node`, `browser`, `electron`
 
@@ -155,14 +155,14 @@ Disponível em: `serve`, `watch`, `build`
 parcel entry.js --log-level 1
 ```
 
-| Nível | Efeito         |
-| ----- | -------------- |
-| 0     | Desabilitado   |
-| 1     | Somente erros  |
-| 2     | Erros e Avisos |
-| 3     | Tudo           |
-| 4     | Verboso (irá manter tudo logado com timestamps <br> e também irá logar requisições http realizadas ao servidor de desenvolvimento) |
-| 5     | Debug (irá salvar tudo em um arquivo com timestamps) |
+| Nível | Efeito |
+| :--- | :--- |
+| 0 | Desabilitado |
+| 1 | Somente erros |
+| 2 | Erros e Avisos |
+| 3 | Tudo |
+| 4 | Verboso \(irá manter tudo logado com timestamps   e também irá logar requisições http realizadas ao servidor de desenvolvimento\) |
+| 5 | Debug \(irá salvar tudo em um arquivo com timestamps\) |
 
 ### Hostname HMR
 
@@ -210,7 +210,7 @@ parcel build entry.js --detailed-report
 
 Padrão: https desabilitado
 
-Disponível em: `serve`, `watch` (listen on HTTPS for HMR connections)
+Disponível em: `serve`, `watch` \(listen on HTTPS for HMR connections\)
 
 ```bash
 parcel build entry.js --https
@@ -319,3 +319,4 @@ parcel build entry.js --experimental-scope-hoisting
 ```
 
 Para obter mais informações, consulte a [sessão _Tree Shaking_](https://medium.com/@devongovett/parcel-v1-9-0-tree-shaking-2x-faster-watcher-and-more-87f2e1a70f79#4ed3) no post de Devon Govett no pacote 1,9.
+

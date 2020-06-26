@@ -4,11 +4,11 @@ _Supported extensions: `css`, `pcss`, `postcss`_
 
 CSS assets can be imported from a JavaScript or HTML file:
 
-```js
+```javascript
 import './index.css';
 ```
 
-```html
+```markup
 <link rel="stylesheet" type="text/css" href="index.css">
 ```
 
@@ -28,7 +28,7 @@ In addition to plain CSS, other compile-to-CSS languages like LESS, SASS, and St
 
 ## PostCSS
 
-[PostCSS](http://postcss.org) is a tool for transforming CSS with plugins, like [autoprefixer](https://github.com/postcss/autoprefixer), [Preset Env](https://github.com/csstools/postcss-preset-env), and [CSS Modules](https://github.com/css-modules/css-modules). You can configure PostCSS with Parcel by creating a configuration file using one of these names: `.postcssrc` (JSON), `.postcssrc.js`, or `postcss.config.js`.
+[PostCSS](http://postcss.org) is a tool for transforming CSS with plugins, like [autoprefixer](https://github.com/postcss/autoprefixer), [Preset Env](https://github.com/csstools/postcss-preset-env), and [CSS Modules](https://github.com/css-modules/css-modules). You can configure PostCSS with Parcel by creating a configuration file using one of these names: `.postcssrc` \(JSON\), `.postcssrc.js`, or `postcss.config.js`.
 
 Install plugins in your app:
 
@@ -38,7 +38,7 @@ yarn add postcss-modules autoprefixer
 
 Then, create a `.postcssrc`:
 
-```json
+```javascript
 {
   "modules": true,
   "plugins": {
@@ -53,7 +53,7 @@ Plugins are specified in the `plugins` object as keys, and options are defined u
 
 Target browsers for Autoprefixer, cssnext and other tools can be specified in `.browserslistrc` file:
 
-```
+```text
 > 1%
 last 2 versions
 ```
@@ -68,7 +68,7 @@ For CSS Modules to work properly with existing modules they need to specify this
 
 Parcel adds [cssnano](http://cssnano.co) to postcss in order to minify css in production build, where custom configuration can be set by creating `cssnano.config.js` file:
 
-```js
+```javascript
 module.exports = {
   preset: [
     'default',
@@ -81,3 +81,4 @@ module.exports = {
   ]
 }
 ```
+

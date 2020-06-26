@@ -1,6 +1,6 @@
-# 🐠 转换(Transforms)
+# 🐠 转换\(Transforms\)
 
-许多打包工具需要你安装和配置插件来转换资源，Parcel 支持许多开箱即用的转换器和内置的编译器。您可以使用 [Babel](https://babeljs.cn) 转换 JavaScript ，使用 [PostCSS](http://postcss.org) 转换 CSS ，使用 [PostHTML](https://github.com/posthtml/posthtml) 转换 HTML。Parcel 在模块中找到配置文件 (例如 .babelrc ，.postcssrc) 时会自动运行并进行转换。
+许多打包工具需要你安装和配置插件来转换资源，Parcel 支持许多开箱即用的转换器和内置的编译器。您可以使用 [Babel](https://babeljs.cn) 转换 JavaScript ，使用 [PostCSS](http://postcss.org) 转换 CSS ，使用 [PostHTML](https://github.com/posthtml/posthtml) 转换 HTML。Parcel 在模块中找到配置文件 \(例如 .babelrc ，.postcssrc\) 时会自动运行并进行转换。
 
 这甚至可以在第三方 `node_modules` 中运行：如果配置文件作为程序包的一部分发布，则仅为该模块自动启用转换。由于只需要处理需要转换的模块，因此可以快速打包。这也意味着你不需要手动配置转换，使其包含和排除某些文件，也不需要知道如何构建第三方代码，以便在你的应用程序中使用它。
 
@@ -16,7 +16,7 @@ yarn add @babel/preset-env
 
 接着，创建一个 `.babelrc`:
 
-```json
+```javascript
 {
   "presets": ["@babel/preset-env"]
 }
@@ -24,7 +24,7 @@ yarn add @babel/preset-env
 
 ## PostCSS
 
-[PostCSS](http://postcss.org) 是一个使用插件转换 CSS 的工具，例如 [autoprefixer](https://github.com/postcss/autoprefixer)，[Preset Env](https://github.com/csstools/postcss-preset-env) 以及 [CSS Modules](https://github.com/css-modules/css-modules) 。你可以使用这些名称之一创建配置，从而达到使用 Parcel 配置 PostCSS 的目的： `.postcssrc` (JSON)，`.postcssrc.js`，或 `postcss.config.js`。
+[PostCSS](http://postcss.org) 是一个使用插件转换 CSS 的工具，例如 [autoprefixer](https://github.com/postcss/autoprefixer)，[Preset Env](https://github.com/csstools/postcss-preset-env) 以及 [CSS Modules](https://github.com/css-modules/css-modules) 。你可以使用这些名称之一创建配置，从而达到使用 Parcel 配置 PostCSS 的目的： `.postcssrc` \(JSON\)，`.postcssrc.js`，或 `postcss.config.js`。
 
 在你应用程序中安装 plugins ：
 
@@ -34,7 +34,7 @@ yarn add postcss-modules autoprefixer
 
 接着，创建一个 `.postcssrc` 文件：
 
-```json
+```javascript
 {
   "modules": true,
   "plugins": {
@@ -49,7 +49,7 @@ Plugins 在 `plugins` 对象中被指定为 key，并使用对象的值定义选
 
 可以在 `.browserslistrc` 中指定 autoprefixer、Preset Env 和目标浏览器的其他工具:
 
-```
+```text
 > 1%
 last 2 versions
 ```
@@ -64,7 +64,7 @@ last 2 versions
 
 Parcel 在生产环境构建时，会使用 [cssnano](http://cssnano.co) 来压缩 css 文件。可以创建一个 `cssnano.config.js` 文件来进行详细的压缩配置：
 
-```js
+```javascript
 module.exports = {
   calc: false,
   discardComments: {
@@ -75,7 +75,7 @@ module.exports = {
 
 ## PostHTML
 
-[PostHTML](https://github.com/posthtml/posthtml) 是一个通过插件转换 HTML 的工具。你可以使用这些名称之一创建配置，从而达到使用 Parcel 配置 PostHTML 的目的： `.posthtmlrc` (JSON) ，`.posthtmlrc.js` ，或者 `posthtml.config.js`。
+[PostHTML](https://github.com/posthtml/posthtml) 是一个通过插件转换 HTML 的工具。你可以使用这些名称之一创建配置，从而达到使用 Parcel 配置 PostHTML 的目的： `.posthtmlrc` \(JSON\) ，`.posthtmlrc.js` ，或者 `posthtml.config.js`。
 
 在你的应用程序中安装 plugin ：
 
@@ -85,7 +85,7 @@ yarn add posthtml-img-autosize
 
 接着，创建一个 `.posthtmlrc` ：
 
-```json
+```javascript
 {
   "plugins": {
     "posthtml-img-autosize": {
@@ -101,7 +101,7 @@ Plugins 在 `plugins` 对象中指定为 key，并且选项使用对象值定义
 
 [TypeScript](https://www.typescriptlang.org/) 是 JavaScript 类型的超集，它可以编译成普通的 JavaScript，同时也支持现代 ES2015+ 的特性。转换 TypeScript 无需任何额外配置，开箱即用。
 
-```html
+```markup
 <!-- index.html -->
 <html>
   <body>
@@ -129,7 +129,7 @@ export default 'Hello, world'
 $ yarn add bs-platform --dev
 ```
 
-```json
+```javascript
 // bsconfig.json
 // from https://github.com/BuckleScript/bucklescript/blob/master/jscomp/bsb/templates/basic-reason/bsconfig.json
 
@@ -153,7 +153,7 @@ $ yarn add bs-platform --dev
 }
 ```
 
-```html
+```markup
 <!-- index.html -->
 <html>
   <body>
@@ -162,7 +162,7 @@ $ yarn add bs-platform --dev
 </html>
 ```
 
-```reason
+```text
 // src/index.re
 print_endline("Hello World");
 ```
@@ -213,7 +213,7 @@ $ yarn add react react-dom reason-react
 </html>
 ```
 
-```reason
+```text
 /* src/Greeting.re */
 
 let component = ReasonReact.statelessComponent("Greeting");
@@ -224,8 +224,9 @@ let make = (~name, _children) => {
 };
 ```
 
-```reason
+```text
 /* src/index.re */
 
 ReactDOMRe.renderToElementWithId(<Greeting name="Parcel" />, "app");
 ```
+

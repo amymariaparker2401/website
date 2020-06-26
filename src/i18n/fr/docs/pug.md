@@ -6,7 +6,7 @@ La mise en place du Pug est facile. Vous pouvez avoir la structure de fichier qu
 
 ## Exemple 1 - index.pug uniquement
 
-Supposons cette structure de fichier :
+Supposons cette structure de fichier :
 
 ```bash
 .
@@ -15,11 +15,11 @@ Supposons cette structure de fichier :
     └── index.pug
 ```
 
-Nous pouvons obtenir l'exécution en utilisant cette commande de Parcel : `parcel src/index.pug`.
+Nous pouvons obtenir l'exécution en utilisant cette commande de Parcel : `parcel src/index.pug`.
 
 ## Exemple 2 - index.pug, index.js et style.css
 
-Supposons cette structure de fichier :
+Supposons cette structure de fichier :
 
 ```bash
 .
@@ -32,7 +32,7 @@ Supposons cette structure de fichier :
 
 Dans index.pug, connectez simplement votre feuille de style et votre js comme d’habitude.
 
-```pug
+```text
 // index.pug
 
 doctype html
@@ -48,11 +48,11 @@ html(lang="")
 
 Si vous utilisiez Stylus, Sass ou LESS, vous les liés toujours de la même manière. Vous pouvez importer votre fichier de style directement dans votre fichier JS si vous préférez.
 
-Nous pouvons obtenir l'exécution en utilisant cette même commande de Parcel : `parcel src/index.pug`.
+Nous pouvons obtenir l'exécution en utilisant cette même commande de Parcel : `parcel src/index.pug`.
 
 ## Exemple 3 - Pug avec locals
 
-Supposons cette structure de fichier :
+Supposons cette structure de fichier :
 
 ```bash
 .
@@ -64,7 +64,7 @@ Supposons cette structure de fichier :
 
 Nous avons besoin d'exporter un objet `locals` à partir d'un fichier `pug.config.js`. Le fichier `pug.config.js` doit se trouver dans le répertoire contenant le fichier `index.pug` OU dans le répertoire contenant le fichier `package.json`. Le fichier `pug.config.js` n'a pas besoin d'être explicitement importé dans un fichier js. C’**EST** le seul moyen de rendre un objet `locals` disponible pour vos templates Pug.
 
-```js
+```javascript
 // pug.config.js
 
 module.exports = {
@@ -74,7 +74,7 @@ module.exports = {
 }
 ```
 
-```pug
+```text
 // index.pug
 
 doctype html
@@ -85,7 +85,7 @@ html(lang="")
     h1 #{hello}
 ```
 
-Encore une fois, nous pouvons obtenir l'exécution en utilisant cette commande de Parcel : `parcel src/index.pug`.
+Encore une fois, nous pouvons obtenir l'exécution en utilisant cette commande de Parcel : `parcel src/index.pug`.
 
 ### Annuler et réexécuter le colis après la mise à jour de l'objet locals
 
@@ -103,9 +103,9 @@ Vous pouvez utiliser un fichier `.pugrc` ou `.pugrc.js` à la place de `pug.conf
 
 Si vous souhaitez importer d'autres fichiers dans le fichier `pug.config.js`, vous devez utiliser des instructions `require`.
 
-Ceci fonctionnera :
+Ceci fonctionnera :
 
-```js
+```javascript
 // pug.config.js
 
 const data = require('./data.js')
@@ -117,9 +117,9 @@ module.exports = {
 }
 ```
 
-Ceci NE fonctionnera PAS :
+Ceci NE fonctionnera PAS :
 
-```js
+```javascript
 import data from './data.js'
 
 module.exports = {
@@ -131,7 +131,7 @@ module.exports = {
 
 ## Ajouter un script à package.json
 
-```json
+```javascript
 "scripts": {
     "dev": "parcel src/index.pug",
     "devopen": "parcel src/index.pug --open 'google chrome'",
@@ -140,3 +140,4 @@ module.exports = {
 ```
 
 Nous pouvons utiliser `npm run dev` ou `npm run devopen` pour que le projet s'ouvre dans le navigateur. Nous pouvons ensuite construire le projet avec `npm run build`.
+

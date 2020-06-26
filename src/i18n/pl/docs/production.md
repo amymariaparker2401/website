@@ -10,9 +10,9 @@ Tryb produkcyjny wyłącza tryb `watch` i hot module replacement, a więc kod zo
 
 Włączenie trybu produkcyjnego ustawia także zmienną systemową `NODE_ENV=production`. Duże biblioteki, takie jak React, mają specjalne funkcje przeznaczone wyłącznie do debuggingu i są wyłączane poprzez ustawienie tej zmiennej systemowej, co powoduje redukcję rozmiaru plików wyjściowych i szybszy proces budowania.
 
-### Opcje
+## Opcje
 
-#### Ustawienie folderu wyjściowego
+### Ustawienie folderu wyjściowego
 
 Domyślny: "dist"
 
@@ -22,14 +22,14 @@ lub
 parcel build entry.js -d build/output
 ```
 
-```base
+```text
 root
 - build
 - - output
 - - - entry.js
 ```
 
-#### Ustawienie publicznego URL, na którym aplikacja będzie serwowana
+### Ustawienie publicznego URL, na którym aplikacja będzie serwowana
 
 Domyślny: --out-dir option
 
@@ -39,13 +39,13 @@ parcel build entry.js --public-url ./
 
 spowoduje:
 
-```html
+```markup
 <link rel="stylesheet" type="text/css" href="1a2b3c4d.css">
 lub
 <script src="e5f6g7h8.js"></script>
 ```
 
-#### Wyłączanie minifikacji
+### Wyłączanie minifikacji
 
 Domyślnie: minifikacja włączona
 
@@ -53,10 +53,11 @@ Domyślnie: minifikacja włączona
 parcel build entry.js --no-minify
 ```
 
-#### Wyłączanie pamięci podręcznej zapisywanej na dysku
+### Wyłączanie pamięci podręcznej zapisywanej na dysku
 
 Domyślnie: pamięć podręczna włączona
 
 ```bash
 parcel build entry.js --no-cache
 ```
+

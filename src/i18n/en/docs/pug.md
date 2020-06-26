@@ -32,7 +32,7 @@ Let's assume this file structure:
 
 Inside index.pug, just wire up your stylesheet and js as usual.
 
-```pug
+```text
 // index.pug
 
 doctype html
@@ -64,7 +64,7 @@ Let's assume this file structure:
 
 We need to export a `locals` object from a `pug.config.js` file. The `pug.config.js` file must be in the directory with the `index.pug` file OR, in the directory containing the `package.json` file. The `pug.config.js` file does not need to be imported into a js file explicitly. This **IS** the only way to make a `locals` object available for your Pug templates.
 
-```js
+```javascript
 // pug.config.js
 
 module.exports = {
@@ -74,7 +74,7 @@ module.exports = {
 };
 ```
 
-```pug
+```text
 // index.pug
 
 doctype html
@@ -89,7 +89,7 @@ Again, we can get this running by using the same parcel command: `parcel src/ind
 
 ### Cancel and rerun parcel after updating locals object
 
-You will not be able to see changes made to your `locals` object on the fly.  If you update your `locals` object, you will need to cancel the parcel process in your terminal and relaunch `parcel src/index.pug` again.
+You will not be able to see changes made to your `locals` object on the fly. If you update your `locals` object, you will need to cancel the parcel process in your terminal and relaunch `parcel src/index.pug` again.
 
 ### Watch our for silent errors
 
@@ -105,7 +105,7 @@ If you want to import other files into the `pug.config.js` file, then you must u
 
 This will work:
 
-```js
+```javascript
 // pug.config.js
 
 const data = require("./data.js");
@@ -115,12 +115,11 @@ module.exports = {
     d: data
   }
 };
-
 ```
 
 This will NOT work:
 
-```js
+```javascript
 import data from "./data.js";
 
 module.exports = {
@@ -132,7 +131,7 @@ module.exports = {
 
 ## Adding a script to package.json
 
-```json
+```javascript
 "scripts": {
     "dev": "parcel src/index.pug",
     "devopen": "parcel src/index.pug --open 'google chrome'",
@@ -141,3 +140,4 @@ module.exports = {
 ```
 
 We can key `npm run dev` or `npm run devopen` to have the project open in the browser. We can then build the pub project with `npm run build`.
+

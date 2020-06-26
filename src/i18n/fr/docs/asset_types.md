@@ -1,8 +1,8 @@
 # 📝 Types de ressources
 
-Comme décrit dans la [documentation des ressources](assets.html), Parcel représente chaque fichier en entrée comme un `Asset`. Les types de ressources sont représentés comme des classes héritant de la classe de base `Asset` et implémentant l’interface requise pour analyser, décortiquer les dépendances, transformer et générer le code.
+Comme décrit dans la [documentation des ressources](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/fr/docs/assets.html), Parcel représente chaque fichier en entrée comme un `Asset`. Les types de ressources sont représentés comme des classes héritant de la classe de base `Asset` et implémentant l’interface requise pour analyser, décortiquer les dépendances, transformer et générer le code.
 
-Comme Parcel traite les ressources en parallèle sur plusieurs cœurs de processeurs, les transformations que les types de ressource peuvent effectuer sont limitées à celles qui fonctionnent sur un seul fichier à la fois. Pour les transformations sur plusieurs fichiers, un [Packager](packagers.html) personnalisé peut être utilisé.
+Comme Parcel traite les ressources en parallèle sur plusieurs cœurs de processeurs, les transformations que les types de ressource peuvent effectuer sont limitées à celles qui fonctionnent sur un seul fichier à la fois. Pour les transformations sur plusieurs fichiers, un [Packager](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/fr/docs/packagers.html) personnalisé peut être utilisé.
 
 ## Interface de Asset
 
@@ -57,7 +57,7 @@ module.exports = MyAsset
 
 ## Enregistrement d'un type d'Asset
 
-Vous pouvez enregistrer votre type de ressource avec un empaqueteur (bundler) en utilisant la méthode `addAssetType`. Elle accepte une extension de fichier à enregistrer et le chemin d'accès à votre module de type de ressource. C'est un chemin plutôt que l'objet réel afin qu'il puisse être transmis aux processus de travail.
+Vous pouvez enregistrer votre type de ressource avec un empaqueteur \(bundler\) en utilisant la méthode `addAssetType`. Elle accepte une extension de fichier à enregistrer et le chemin d'accès à votre module de type de ressource. C'est un chemin plutôt que l'objet réel afin qu'il puisse être transmis aux processus de travail.
 
 ```javascript
 const Bundler = require('parcel-bundler')
@@ -65,3 +65,4 @@ const Bundler = require('parcel-bundler')
 let bundler = new Bundler('input.js')
 bundler.addAssetType('.ext', require.resolve('./MonAsset'))
 ```
+

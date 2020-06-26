@@ -2,11 +2,11 @@
 
 ## Bundler
 
-Invece di utilizzare la CLI, si può anche usare l'API per inizializzare un bundle, per i casi d'uso più avanzati (per esempio l'elaborazione personalizzata dopo ogni build).
+Invece di utilizzare la CLI, si può anche usare l'API per inizializzare un bundle, per i casi d'uso più avanzati \(per esempio l'elaborazione personalizzata dopo ogni build\).
 
 Un esempio di "watch" con ogni opzione descritta:
 
-```Javascript
+```javascript
 const Bundler = require('parcel-bundler');
 const Path = require('path');
 
@@ -43,18 +43,18 @@ const bundle = await bundler.bundle();
 
 Questo è un elenco di tutti gli eventi del bundler
 
-- `bundled` viene richiamato una volta che Parcel ha terminato con successo il bundling, il [bundle](#bundle) principale viene passato come callback
+* `bundled` viene richiamato una volta che Parcel ha terminato con successo il bundling, il [bundle](api.md#bundle) principale viene passato come callback
 
-```Javascript
+```javascript
 const bundler = new Bundler(...);
 bundler.on('bundled', (bundler) => {
   // contiene tutte le risorse e i bundler, vedi la documentazione ulteriori informazioni
 });
 ```
 
-- `buildEnd` viene chiamato dopo ogni compilazione, restituendo un alert anche se si è verificato un errore
+* `buildEnd` viene chiamato dopo ogni compilazione, restituendo un alert anche se si è verificato un errore
 
-```Javascript
+```javascript
 const bundler = new Bundler(...);
 bundler.on('buildEnd', () => {
   // Fai qualcosa...
@@ -67,15 +67,15 @@ Un "bundle" è ciò che Parcel usa per raggruppare le risorse, questo contiene a
 
 #### Proprietà
 
-- `type`: Il tipo di assets che contiene (e.g. js, css, map, ...)
-- `name`: Il nome del bundle (generato usando `Asset.generateBundleName()` di `entryAsset`)
-- `parentBundle`: Il bundle genitore, é null nel caso non ne abbia
-- `entryAsset`: L' entryPoint del bundle, usato per generarne il nome e collezionare gli assets
-- `assets`: Un `Set` di tutti gli assets nel bundle
-- `childBundles`: Un `Set` di tutti i bundle figli
-- `siblingBundles`: Un `Set` di tutti i bundle fratelli
-- `siblingBundlesMap`: Un `Map<String(Tipo: js, css, map, ...), Bundle>` di tutti i bundle figli
-- `offsets`: Un `Map<Asset, numero(numero di linea nel bundle)>` di tutte le posizioni degli assets nel bundle, usato per generare sourcemaps accurate.
+* `type`: Il tipo di assets che contiene \(e.g. js, css, map, ...\)
+* `name`: Il nome del bundle \(generato usando `Asset.generateBundleName()` di `entryAsset`\)
+* `parentBundle`: Il bundle genitore, é null nel caso non ne abbia
+* `entryAsset`: L' entryPoint del bundle, usato per generarne il nome e collezionare gli assets
+* `assets`: Un `Set` di tutti gli assets nel bundle
+* `childBundles`: Un `Set` di tutti i bundle figli
+* `siblingBundles`: Un `Set` di tutti i bundle fratelli
+* `siblingBundlesMap`: Un `Map<String(Tipo: js, css, map, ...), Bundle>` di tutti i bundle figli
+* `offsets`: Un `Map<Asset, numero(numero di linea nel bundle)>` di tutte le posizioni degli assets nel bundle, usato per generare sourcemaps accurate.
 
 #### Tree
 
@@ -83,13 +83,13 @@ Il `Bundle` contiene un `parentBundle`, `childBunddles` e `siblingBundles`, tutt
 
 Un esempio molto semplice di un Asset Tree e di un Bundle Tree generato:
 
-##### Asset Tree:
+**Asset Tree:**
 
 `index.html` richiede `index.js` e `index.css`.
 
 `index.js` richiede `test.js` e `test.txt`
 
-```Text
+```text
 index.html
 -- index.js
  |--- test.js
@@ -97,13 +97,13 @@ index.html
 -- index.css
 ```
 
-##### Bundle Tree:
+**Bundle Tree:**
 
 `index.html` viene usato come asset di entrata per il bundle principale, questo bundle principale crea due bundle figli uno per `index.js` e uno per `index.css` questo perché entrambi sono diversi dal tipo `html`.
 
 `index.js` richiede due files, `test.js` e `test.txt`.
 
-`test.js` viene aggiunto agli assets del bundle `index.js`, in quanto è dello stesso tipo di `index.js``.
+`test.js` viene aggiunto agli assets del bundle `index.js`, in quanto è dello stesso tipo di \`index.js\`\`.
 
 `test.txt` crea un nuovo bundle e viene aggiunto come un figlio del bundle `index.js` in quanto è un assetType diverso da `index.js`.
 
@@ -111,7 +111,7 @@ index.html
 
 `index.css` e `index.js` sono bundles che sono anche siblingBundles tra di loro, quindi condividono lo stesso genitore.
 
-```Text
+```text
 index.html
 -- index.js (include index.js e test.js)
  |--- test.txt (include test.txt)
@@ -120,11 +120,11 @@ index.html
 
 ### Middleware
 
-Middleware può essere usato per agganciarsi a un server http (ad esempio `express` o un nodo `http`).
+Middleware può essere usato per agganciarsi a un server http \(ad esempio `express` o un nodo `http`\).
 
 Un esempio di utilizzo di Parcel middleware con express:
 
-```Javascript
+```javascript
 const Bundler = require('parcel-bundler');
 const app = require('express')();
 
@@ -137,3 +137,4 @@ app.use(bundler.middleware());
 // Inizializza il listen sulla porta 8080
 app.listen(8080);
 ```
+

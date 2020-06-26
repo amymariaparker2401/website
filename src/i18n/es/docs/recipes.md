@@ -6,7 +6,7 @@ Primero necesitas instalar las dependencias para React.
 
 [Entrada en el blog](http://blog.jakoblind.no/react-parcel/)
 
-```
+```text
 npm install --save react
 npm install --save react-dom
 npm install --save-dev parcel-bundler
@@ -14,9 +14,9 @@ npm install --save-dev babel-preset-env
 npm install --save-dev babel-preset-react
 ```
 
-<sub>O, si opcionalmente tienes instalado Yarn como gestor de paquetes</sub>
+O, si opcionalmente tienes instalado Yarn como gestor de paquetes
 
-```
+```text
 yarn add react
 yarn add react-dom
 yarn add --dev parcel-bundler
@@ -46,7 +46,7 @@ Agrega el script de inicio a `package.json`
 
 Primero necesitas instalar las dependencias para Preact.
 
-```
+```text
 npm install --save preact
 npm install --save preact-compat
 npm install --save-dev parcel-bundler
@@ -54,9 +54,9 @@ npm install --save-dev babel-preset-env
 npm install --save-dev babel-preset-preact
 ```
 
-<sub>O, si opcionalmente tienes instalado Yarn como gestor de paquetes</sub>
+O, si opcionalmente tienes instalado Yarn como gestor de paquetes
 
-```
+```text
 yarn add preact
 yarn add preact-compat
 yarn add --dev parcel-bundler
@@ -81,3 +81,4 @@ Agrega el script de inicio a `package.json`
   "start": "parcel index.html"
 }
 ```
+

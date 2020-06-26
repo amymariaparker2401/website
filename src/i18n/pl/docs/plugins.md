@@ -20,3 +20,4 @@ Opublikuj gotową paczkę na npm używając nazwy z prefiksem `parcel-plugin-`, 
 ## Używanie Wtyczek
 
 Używanie wtyczek w Parcel nie może być prostsze. Wszystko co musisz zrobić to zainstalować je i zapisać do pliku `package.json`. Wtyczki powinny mieć nazwy z prefiksem `parcel-plugin-`, np. `parcel-plugin-foo`. Jakiekolwiek zależności w `package.json` z tym prefiksem będą automatycznie załadowane podczas inicjalizacji.
+

@@ -2,13 +2,9 @@
 
 _Extensions supportées : `elm`_
 
-[Elm](https://elm-lang.org/) est un langage fonctionnel doté d'un système de
-type avancé qui garantit la correction de votre code et évite les erreurs
-d'exécution. Avec son souci de la simplicité et de la rapidité, Elm est un
-excellent choix pour créer des applications Web de toutes sortes. Parcel inclus la
-prise en charge Elm sans aucune configuration supplémentaire.
+[Elm](https://elm-lang.org/) est un langage fonctionnel doté d'un système de type avancé qui garantit la correction de votre code et évite les erreurs d'exécution. Avec son souci de la simplicité et de la rapidité, Elm est un excellent choix pour créer des applications Web de toutes sortes. Parcel inclus la prise en charge Elm sans aucune configuration supplémentaire.
 
-```html
+```markup
 <!-- index.html -->
 
 <html>
@@ -29,7 +25,7 @@ Elm.Main.init({
 })
 ```
 
-```elm
+```text
 -- Main.elm
 module Main exposing (main)
 
@@ -40,5 +36,5 @@ main =
   h1 [] [ text "Hello, Elm!" ]
 ```
 
-Pour en savoir plus sur Elm et son écosystème d’outils, consultez le
-[guide](https://guide.elm-lang.org/) du site officiel.
+Pour en savoir plus sur Elm et son écosystème d’outils, consultez le [guide](https://guide.elm-lang.org/) du site officiel.
+

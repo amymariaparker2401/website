@@ -69,3 +69,4 @@ Parcel infers the location of bundles automatically. This is done in the [bundle
 This means you don't need to configure where bundles should be loaded from, but also means you must serve the bundles from the same location.
 
 Parcel currently resolves bundles at the following protocols: `http`, `https`, `file`, `ftp`, `chrome-extension` and `moz-extension`.
+

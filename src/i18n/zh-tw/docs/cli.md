@@ -4,7 +4,7 @@
 
 ### 啟動伺服器
 
-啟動一個開發伺服器，並在你更動檔案時自動重新編譯 app，其也支援[模組熱替換](hmr.html)以利快速開發。
+啟動一個開發伺服器，並在你更動檔案時自動重新編譯 app，其也支援[模組熱替換](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/zh-tw/docs/hmr.html)以利快速開發。
 
 ```bash
 parcel index.html
@@ -22,7 +22,7 @@ parcel ./**/*.html
 
 ### 編譯
 
-一次性編譯資源，啟用程式碼壓縮並設定環境變數 `NODE_ENV` 設定為 `production`。詳情請見 [正式環境](production.html)一章。
+一次性編譯資源，啟用程式碼壓縮並設定環境變數 `NODE_ENV` 設定為 `production`。詳情請見 [正式環境](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/zh-tw/docs/production.html)一章。
 
 ```bash
 parcel build index.html
@@ -30,7 +30,7 @@ parcel build index.html
 
 _註：_ 在某些特殊使用情境下，是可以在 `development` 環境中執行單次編譯的，像是：
 
-```
+```text
 NODE_ENV=development parcel build <entrypoint> --no-minify
 ```
 
@@ -74,7 +74,7 @@ parcel build entry.js --out-dir build/output
 parcel build entry.js -d build/output
 ```
 
-```base
+```text
 root
 - build
 - - output
@@ -93,7 +93,7 @@ parcel entry.js --public-url ./dist/
 
 此選項將會輸出
 
-```html
+```markup
 <link rel="stylesheet" type="text/css" href="dist/entry.1a2b3c.css"/>
 <!-- or -->
 <script src="dist/entry.e5f6g7.js"></script>
@@ -109,7 +109,7 @@ parcel entry.js --public-url ./dist/
 parcel build entry.js --target node
 ```
 
-⚠️ `node` 與 `electron` 並不會打包 package.json 中的 `dependencies`（但會打包 `devDependencies`），此行為可用 [--bundle-node-modules](#強制編譯-node-模組) 來覆寫，詳見下方說明。
+⚠️ `node` 與 `electron` 並不會打包 package.json 中的 `dependencies`（但會打包 `devDependencies`），此行為可用 [--bundle-node-modules](cli.md#強制編譯-node-模組) 來覆寫，詳見下方說明。
 
 其他目標值：`node`、`browser` 及 `electron`
 
@@ -155,16 +155,16 @@ parcel serve entry.js --port 1111
 parcel entry.js --log-level 1
 ```
 
-| 紀錄等級 | 效果                                                                       |
-|----------|----------------------------------------------------------------------------|
-| 0        | 停用紀錄                                                                   |
-| 1        | 僅記錄錯誤                                                                 |
-| 2        | 紀錄錯誤及警告                                                             |
-| 3        | 紀錄錯誤、警告與一般資訊                                                   |
-| 4        | 顯示附帶時間戳記的詳盡 (Verbose) 訊息，<br/>並紀錄所有連至開發伺服器的請求 |
-| 5        | 除錯 (Debug)，將所有訊息輸出至檔案並附加時間戳記                           |
+| 紀錄等級 | 效果 |
+| :--- | :--- |
+| 0 | 停用紀錄 |
+| 1 | 僅記錄錯誤 |
+| 2 | 紀錄錯誤及警告 |
+| 3 | 紀錄錯誤、警告與一般資訊 |
+| 4 | 顯示附帶時間戳記的詳盡 \(Verbose\) 訊息， 並紀錄所有連至開發伺服器的請求 |
+| 5 | 除錯 \(Debug\)，將所有訊息輸出至檔案並附加時間戳記 |
 
-### 模組熱替換 (HMR) 主機名稱
+### 模組熱替換 \(HMR\) 主機名稱
 
 預設值：目前視窗的 `location.hostname` 值
 
@@ -174,7 +174,7 @@ parcel entry.js --log-level 1
 parcel entry.js --hmr-hostname parceljs.org
 ```
 
-### 模組熱替換 (HMR) 連接埠
+### 模組熱替換 \(HMR\) 連接埠
 
 預設值：隨機的可用連接埠
 
@@ -210,7 +210,7 @@ parcel build entry.js --detailed-report
 
 預設：停用 HTTPS
 
-適用指令： `serve` 及 `watch` (使用 HTTPS 監聽模組熱替換的連線)
+適用指令： `serve` 及 `watch` \(使用 HTTPS 監聽模組熱替換的連線\)
 
 ```bash
 parcel build entry.js --https
@@ -319,3 +319,4 @@ parcel build entry.js --experimental-scope-hoisting
 ```
 
 詳情請參閱 Devon Govett 文章的中的 [Tree Shaking](https://medium.com/@devongovett/parcel-v1-9-0-tree-shaking-2x-faster-watcher-and-more-87f2e1a70f79#4ed3) 小節。
+

@@ -22,7 +22,7 @@ hello:
   - computer
 ```
 
-```js
+```javascript
 // index.js
 
 import data from './data.yaml'
@@ -30,3 +30,4 @@ console.log(data.hello[0]);
 
 // "world"
 ```
+

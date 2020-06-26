@@ -1,8 +1,8 @@
 # 📝 Tipi di Asset
 
-Come descritto nella [Documentazione degli Assets](assets.html), Parcel rappresenta ogni file come un `Asset`. I Tipi di Asset sono rappresentati come classi che ereditano da una classe base `Asset` e implementano l'interfaccia richiesta per effettuare il parse, analizzare le dipendenze, convertire, trasformare e generare il codice.
+Come descritto nella [Documentazione degli Assets](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/it/docs/assets.html), Parcel rappresenta ogni file come un `Asset`. I Tipi di Asset sono rappresentati come classi che ereditano da una classe base `Asset` e implementano l'interfaccia richiesta per effettuare il parse, analizzare le dipendenze, convertire, trasformare e generare il codice.
 
-Parcel elabora le risorse in parallelo su più core di elaborazione e le trasformazioni che i tipi di risorse possono eseguire sono limitate a quelle che operano su un singolo file alla volta. Per utilizzare la conversione su più file, è possibile utilizzare un [Packager](packagers.html) personalizzato.
+Parcel elabora le risorse in parallelo su più core di elaborazione e le trasformazioni che i tipi di risorse possono eseguire sono limitate a quelle che operano su un singolo file alla volta. Per utilizzare la conversione su più file, è possibile utilizzare un [Packager](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/it/docs/packagers.html) personalizzato.
 
 ## Interfaccia degli Asset
 
@@ -63,3 +63,4 @@ const Bundler = require('parcel-bundler')
 let bundler = new Bundler('input.js')
 bundler.addAssetType('.ext', require.resolve('./MioAsset'))
 ```
+

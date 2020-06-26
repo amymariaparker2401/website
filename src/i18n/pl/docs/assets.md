@@ -1,10 +1,10 @@
 # 📦 Zasoby
 
-Parcel zbudowany jest wokół zasobów. Zasób może reprezentować dowolny plik, ale Parcel posiada specjalne wsparcie dla pewnych typów zasobów, takich jak JavaScript, CSS i plików HTML. Parcel automatycznie analizuje typy zależności wymienionych w tych plikach i dodaje je do wyjściowej paczki. Zasoby o podobnych typach są grupowane do wspólnych wyjściowych paczek. Jeśli zaimportujesz zasób innego typu (np. plik CSS z pliku JS), rozpocznie on tworzenie paczki potomnej i zostawi odwołanie do niej w paczce macierzystej. Zostanie to zilustrowane w sekcjach poniżej.
+Parcel zbudowany jest wokół zasobów. Zasób może reprezentować dowolny plik, ale Parcel posiada specjalne wsparcie dla pewnych typów zasobów, takich jak JavaScript, CSS i plików HTML. Parcel automatycznie analizuje typy zależności wymienionych w tych plikach i dodaje je do wyjściowej paczki. Zasoby o podobnych typach są grupowane do wspólnych wyjściowych paczek. Jeśli zaimportujesz zasób innego typu \(np. plik CSS z pliku JS\), rozpocznie on tworzenie paczki potomnej i zostawi odwołanie do niej w paczce macierzystej. Zostanie to zilustrowane w sekcjach poniżej.
 
 ## JavaScript
 
-Najbardziej tradycyjnym typem pliku dla programów tworzących pakiety jest JavaScript. Parcel wspiera zarówno składnię CommonJS, jak i modułów ES6 do celu importowania plików. Wspiera również dynamiczną składnię `import()` do asychronicznego wczytywania modułów, co szerzej opisane jest w sekcji [Dzielenie Kodu](code_splitting.html).
+Najbardziej tradycyjnym typem pliku dla programów tworzących pakiety jest JavaScript. Parcel wspiera zarówno składnię CommonJS, jak i modułów ES6 do celu importowania plików. Wspiera również dynamiczną składnię `import()` do asychronicznego wczytywania modułów, co szerzej opisane jest w sekcji [Dzielenie Kodu](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/pl/docs/code_splitting.html).
 
 ```javascript
 // Importuj moduł z użyciem składni CommonJS
@@ -14,7 +14,7 @@ const dep = require('./path/to/dep')
 import dep from './path/to/dep'
 ```
 
-Możesz również importować zasoby nie-JavaScriptowe z pliku JavaScript, np. pliki CSS lub obrazy. Kiedy importujesz taki plik, nie jest on wstawiany w kod, jak ma to miejsce w innych programach tworzących pakiety. Zamiast tego, taki zasób umieszczany jest w osobnej paczce (np. w pliku CSS) razem z wszystkimi jego zależnościami. W [modułach CSS](https://github.com/css-modules/css-modules), eksportowane klasy są umieszczane w paczce JavaScript. Inne typy zasobów eksportują URL do pliku wyjściowego w paczce JavaScript, by odwołanie do niego mogło zostać wstawione w kod.
+Możesz również importować zasoby nie-JavaScriptowe z pliku JavaScript, np. pliki CSS lub obrazy. Kiedy importujesz taki plik, nie jest on wstawiany w kod, jak ma to miejsce w innych programach tworzących pakiety. Zamiast tego, taki zasób umieszczany jest w osobnej paczce \(np. w pliku CSS\) razem z wszystkimi jego zależnościami. W [modułach CSS](https://github.com/css-modules/css-modules), eksportowane klasy są umieszczane w paczce JavaScript. Inne typy zasobów eksportują URL do pliku wyjściowego w paczce JavaScript, by odwołanie do niego mogło zostać wstawione w kod.
 
 ```javascript
 // Importuj plik CSS
@@ -27,7 +27,7 @@ import classNames from './test.css'
 import imageURL from './test.png'
 ```
 
-Jeśli chcesz wstawić plik w kod w paczce wyjściowej JavaScript zamiast odwołania do niego poprzez URL, możesz użyć API `fs.readFileSync` z Node.js. URL-e muszą być możliwe do statycznej analizy, dlatego nie mogą posiadać żadnych zmiennych (oprócz `__dirname` i `__filename`).
+Jeśli chcesz wstawić plik w kod w paczce wyjściowej JavaScript zamiast odwołania do niego poprzez URL, możesz użyć API `fs.readFileSync` z Node.js. URL-e muszą być możliwe do statycznej analizy, dlatego nie mogą posiadać żadnych zmiennych \(oprócz `__dirname` i `__filename`\).
 
 ```javascript
 import fs from 'fs'
@@ -75,7 +75,7 @@ Zależności w plikach SCSS mogą być definiowane za pomocą składni `@import`
 
 Zasoby HTML są często plikami wejściowymi które są podawane do Parcel, ale mogą być także odwołaniami w plikach JavaScript, np. do tworzenia linków do innych stron. URL-e do skryptów, styli, mediów i innych plików HTML są ekstraktowane i komplilowane tak jak opisano powyżej. Odwołania są przepisywane w HTML tak, aby zawierały ścieżki do plików wyjściowych. Wszystkie ścieżki powinny być relatywne do pliku HTML.
 
-```html
+```markup
 <html>
 <body>
   <!-- odwołanie do pliku obrazu -->
@@ -88,3 +88,4 @@ Zasoby HTML są często plikami wejściowymi które są podawane do Parcel, ale 
 </body>
 </html>
 ```
+

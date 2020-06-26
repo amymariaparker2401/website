@@ -45,7 +45,7 @@ async function renderPage(name) {
 }
 ```
 
-**Nota:** Si deseas usar async/await en navegadores que no lo soportan nativamente, recuerda incluir `babel-polyfill` en tu aplicación o `babel-runtime` + `babel-plugin-transform-runtime` en las librerias).
+**Nota:** Si deseas usar async/await en navegadores que no lo soportan nativamente, recuerda incluir `babel-polyfill` en tu aplicación o `babel-runtime` + `babel-plugin-transform-runtime` en las librerias\).
 
 ```bash
 yarn add babel-polyfill
@@ -57,3 +57,4 @@ import './app'
 ```
 
 Lee la documentación en [babel-polyfill](http://babeljs.io/docs/usage/polyfill) y [babel-runtime](http://babeljs.io/docs/plugins/transform-runtime).
+

@@ -4,7 +4,7 @@
 
 ### Serve
 
-Starts up a development server, which will automatically rebuild your app as you change files and supports [hot module replacement](hmr.html) for fast development.
+Starts up a development server, which will automatically rebuild your app as you change files and supports [hot module replacement](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/en/docs/hmr.html) for fast development.
 
 ```bash
 parcel index.html
@@ -22,7 +22,7 @@ parcel ./**/*.html
 
 ### Build
 
-Builds the assets once, it also enabled minification and sets the `NODE_ENV=production` environment variable. See [Production](production.html) for more details.
+Builds the assets once, it also enabled minification and sets the `NODE_ENV=production` environment variable. See [Production](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/en/docs/production.html) for more details.
 
 ```bash
 parcel build index.html
@@ -30,7 +30,7 @@ parcel build index.html
 
 _NOTE:_ For special use cases, it's also possible to perform a single build from the `development` environment, like this:
 
-```
+```text
 NODE_ENV=development parcel build <entrypoint> --no-minify
 ```
 
@@ -74,7 +74,7 @@ parcel build entry.js --out-dir build/output
 parcel build entry.js -d build/output
 ```
 
-```base
+```text
 root
 - build
 - - output
@@ -93,7 +93,7 @@ parcel entry.js --public-url ./dist/
 
 will output:
 
-```html
+```markup
 <link rel="stylesheet" type="text/css" href="dist/entry.1a2b3c.css" />
 <!-- or -->
 <script src="dist/entry.e5f6g7.js"></script>
@@ -109,7 +109,7 @@ Available in: `serve`, `watch`, `build`
 parcel build entry.js --target node
 ```
 
-⚠️ Target `node` and `electron` will not bundle package.json's `dependencies` (but will include `devDependencies`). This behavior can be overriden using [--bundle-node-modules](#force-node-modules-bundling) flag (see below).
+⚠️ Target `node` and `electron` will not bundle package.json's `dependencies` \(but will include `devDependencies`\). This behavior can be overriden using [--bundle-node-modules](cli.md#force-node-modules-bundling) flag \(see below\).
 
 Possible targets: `node`, `browser`, `electron`
 
@@ -155,14 +155,14 @@ Available in: `serve`, `watch`, `build`
 parcel entry.js --log-level 1
 ```
 
-| Loglevel | Effect                                                                                          |
-| -------- | ----------------------------------------------------------------------------------------------- |
-| 0        | Logging disabled                                                                                |
-| 1        | Only log errors                                                                                 |
-| 2        | Log errors and warnings                                                                         |
-| 3        | Log errors, warnings and info                                                                   |
-| 4        | Verbose (keep everything in log with timestamps <br> and also log http requests to dev server) |
-| 5        | Debug (save everything to a file with timestamps)                                               |
+| Loglevel | Effect |
+| :--- | :--- |
+| 0 | Logging disabled |
+| 1 | Only log errors |
+| 2 | Log errors and warnings |
+| 3 | Log errors, warnings and info |
+| 4 | Verbose \(keep everything in log with timestamps   and also log http requests to dev server\) |
+| 5 | Debug \(save everything to a file with timestamps\) |
 
 ### HMR Hostname
 
@@ -213,7 +213,7 @@ parcel build entry.js --detailed-report 10
 
 Default: https disabled
 
-Available in: `serve`, `watch` (listen on HTTPS for HMR connections)
+Available in: `serve`, `watch` \(listen on HTTPS for HMR connections\)
 
 ```bash
 parcel build entry.js --https
@@ -322,3 +322,4 @@ parcel build entry.js --experimental-scope-hoisting
 ```
 
 For more information, see the [Tree Shaking section](https://medium.com/@devongovett/parcel-v1-9-0-tree-shaking-2x-faster-watcher-and-more-87f2e1a70f79#4ed3) of Devon Govett's post on Parcel 1.9.
+

@@ -12,7 +12,7 @@ npm install --save react-dom
 npm install --save-dev parcel-bundler
 ```
 
-<sub>Oppure, se si vuole utilizzare Yarn</sub>
+Oppure, se si vuole utilizzare Yarn
 
 ```bash
 yarn add react
@@ -41,7 +41,7 @@ npm install --save-dev babel-preset-env
 npm install --save-dev babel-preset-preact
 ```
 
-<sub>Oppure, se si vuole utilizzare Yarn</sub>
+Oppure, se si vuole utilizzare Yarn
 
 ```bash
 yarn add preact
@@ -78,7 +78,7 @@ npm install --save vue
 npm install --save-dev parcel-bundler
 ```
 
-<sub>Oppure, se si vuole utilizzare Yarn</sub>
+Oppure, se si vuole utilizzare Yarn
 
 ```bash
 yarn add vue
@@ -93,3 +93,4 @@ Aggiungi uno script di Start nel `package.json`
   "start": "parcel index.html"
 }
 ```
+

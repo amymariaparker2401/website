@@ -32,7 +32,7 @@ Parcel 可以使用任何类型的文件作为入口，但是最好还是使用 
 
 接下来，创建一个 index.html 和 index.js 文件。
 
-```html
+```markup
 <html>
 <body>
   <script src="./index.js"></script>
@@ -44,17 +44,17 @@ Parcel 可以使用任何类型的文件作为入口，但是最好还是使用 
 console.log('hello world')
 ```
 
-Parcel 内置了一个当你改变文件时能够自动重新构建应用的开发服务器，而且为了实现快速开发，该开发服务器支持[热模块替换](hmr.html)。只需要在入口文件指出：
+Parcel 内置了一个当你改变文件时能够自动重新构建应用的开发服务器，而且为了实现快速开发，该开发服务器支持[热模块替换](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/zh/docs/hmr.html)。只需要在入口文件指出：
 
 ```bash
 parcel index.html
 ```
 
-现在在浏览器中打开 [http://localhost:1234/](http://localhost:1234/)。如果模块热重载没有生效，你可能需要[配置你的编辑器](hmr.html#safe-write)。你也可以使用 `-p <port number>` 选项覆盖默认的端口。
-如果没有自己的服务器可使用开发服务器，或者你的应用程序完全由客户端呈现。如果有自己的服务器，你可以在`watch` 模式下运行 Parcel 。当文件改变它仍然会自动重新构建并支持热替换，但是不会启动 web 服务。
+现在在浏览器中打开 [http://localhost:1234/](http://localhost:1234/)。如果模块热重载没有生效，你可能需要[配置你的编辑器](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/zh/docs/hmr.html#safe-write)。你也可以使用 `-p <port number>` 选项覆盖默认的端口。 如果没有自己的服务器可使用开发服务器，或者你的应用程序完全由客户端呈现。如果有自己的服务器，你可以在`watch` 模式下运行 Parcel 。当文件改变它仍然会自动重新构建并支持热替换，但是不会启动 web 服务。
 
 ```bash
 parcel watch index.html
 ```
 
-当你准备在生产模式下创建，`build` 模式会关闭监听并且只建立一次。请查阅 [Production](production.html) 查看更多细节。
+当你准备在生产模式下创建，`build` 模式会关闭监听并且只建立一次。请查阅 [Production](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/zh/docs/production.html) 查看更多细节。
+

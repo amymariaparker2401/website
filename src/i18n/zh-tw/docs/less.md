@@ -12,6 +12,7 @@ import './custom.less'
 
 或
 
-```html
+```markup
 <link href="./custom.less" rel="stylesheet">
 ```
+

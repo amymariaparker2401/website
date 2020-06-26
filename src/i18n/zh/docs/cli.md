@@ -4,7 +4,7 @@
 
 ### 服务
 
-serve 命令启用一个开发服务器，且支持 [热模块替换](hmr.html) 以实现快速开发。当你更改文件时，该服务器将自动重新构建你的应用程序。
+serve 命令启用一个开发服务器，且支持 [热模块替换](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/zh/docs/hmr.html) 以实现快速开发。当你更改文件时，该服务器将自动重新构建你的应用程序。
 
 ```bash
 parcel index.html
@@ -12,7 +12,7 @@ parcel index.html
 
 ### 构建（Build）
 
-build 命令会一次性构建资源，它还启用了压缩功能，并将 NODE_ENV 变量设置为生产环境。详见[生产环境](production.html)
+build 命令会一次性构建资源，它还启用了压缩功能，并将 NODE\_ENV 变量设置为生产环境。详见[生产环境](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/zh/docs/production.html)
 
 ```bash
 parcel build index.html
@@ -48,7 +48,7 @@ parcel build entry.js --out-dir build/output
 parcel build entry.js -d build/output
 ```
 
-```base
+```text
 root
 - build
 - - output
@@ -67,7 +67,7 @@ parcel entry.js --public-url ./dist/
 
 将输出到：
 
-```html
+```markup
 <link rel="stylesheet" type="text/css" href="/dist/entry.1a2b3c.css">
 或者
 <script src="/dist/entry.e5f6g7.js"></script>
@@ -95,12 +95,12 @@ parcel build entry.js --target node
 parcel entry.js --log-level 1
 ```
 
-| 日志等级 | 效果           |
-| -------- | -------------- |
-| 0        | 禁用记录       |
-| 1        | 只记录错误     |
-| 2        | 记录错误和警告 |
-| 3        | 记录一切       |
+| 日志等级 | 效果 |
+| :--- | :--- |
+| 0 | 禁用记录 |
+| 1 | 只记录错误 |
+| 2 | 记录错误和警告 |
+| 3 | 记录一切 |
 
 ### HMR 主机名
 
@@ -225,3 +225,4 @@ parcel build entry.js --no-minify
 ```bash
 parcel build entry.js --no-cache
 ```
+

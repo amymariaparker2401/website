@@ -4,7 +4,7 @@ _Extensions supportées : `vue`_
 
 Vue.js est un framework JavaScript évolutif avec une adaptation progressive pour construire des interfaces utilisateur sur le web. Parcel prend en charge Vue dès sa mise en place sans nécessiter de configuration supplémentaire.
 
-```html
+```markup
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -18,9 +18,9 @@ Vue.js est un framework JavaScript évolutif avec une adaptation progressive pou
 </html>
 ```
 
-Vous pouvez utiliser tous les outils que vous aimez (Pug, TypeScript, SCSS, ...) :
+Vous pouvez utiliser tous les outils que vous aimez \(Pug, TypeScript, SCSS, ...\) :
 
-```vue
+```text
 // app.vue
 <template lang="pug">
   .container Hello {{bundler}}
@@ -44,10 +44,11 @@ export default Vue.extend({
 </style>
 ```
 
-```js
+```javascript
 // index.js
 import Vue from 'vue'
 import App from './app.vue'
 
 new Vue(App).$mount('#app')
 ```
+

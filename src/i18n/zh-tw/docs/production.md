@@ -12,9 +12,9 @@ production 模式中會停用監看模式及模組熱替換，同時也會使用
 
 使用 production 模式還會將設定環境變數 `NODE_ENV` 為 `production`，某些大型函式庫如 React，在此環境變數設定下，會停用開發時使用的除錯功能，因此輸出的檔案會更小，編譯速度也隨之提高。
 
-若想使用一些開發模式中的除錯功能，請先確保 terser 中的 [dead_code 選項](https://github.com/terser-js/terser#compress-options)是啟用的（預設為啟用），並將開發時的除錯程式碼放進如下的檢查式中：
+若想使用一些開發模式中的除錯功能，請先確保 terser 中的 [dead\_code 選項](https://github.com/terser-js/terser#compress-options)是啟用的（預設為啟用），並將開發時的除錯程式碼放進如下的檢查式中：
 
-```js
+```javascript
 if (process.env.NODE_ENV === 'development') { // 或 `process.env.NODE_ENV !== 'production'`
   // 僅在開發環境中執行，並將在正式編譯中被移除
 }
@@ -26,15 +26,15 @@ if (process.env.NODE_ENV === 'development') { // 或 `process.env.NODE_ENV !== '
 
 Parcel 用下表列出的方式命名 bundle（進入點永遠不會經過雜湊）
 
-|                Bundle 類型 | 類型                   | 內容經過雜湊 |
-| -------------------------: | ---------------------- | :----------: |
-|                   任何類型 | 進入點                 |      ❌      |
-|                 JavaScript | `<script>`             |      ✅      |
-|                 JavaScript | 動態 import            |      ❌      |
-|                 JavaScript | Service worker         |      ❌      |
-|                       HTML | iframe                 |      ❌      |
-|                       HTML | 連結錨點 (anchor link) |      ❌      |
-| 原始檔 (影像及文字檔…等等) | Import/Require/...     |      ✅      |
+| Bundle 類型 | 類型 | 內容經過雜湊 |
+| ---: | :--- | :---: |
+| 任何類型 | 進入點 | ❌ |
+| JavaScript | `<script>` | ✅ |
+| JavaScript | 動態 import | ❌ |
+| JavaScript | Service worker | ❌ |
+| HTML | iframe | ❌ |
+| HTML | 連結錨點 \(anchor link\) | ❌ |
+| 原始檔 \(影像及文字檔…等等\) | Import/Require/... | ✅ |
 
 檔案的雜湊則遵循下列命名規則：
 
@@ -50,4 +50,5 @@ Parcel 用下表列出的方式命名 bundle（進入點永遠不會經過雜湊
 
 若你想在你的 CI（持續整合，Continuous Integration）系統中使用 Parcel 的話，則需要將 Parcel 安裝為本地套件。
 
-詳細步驟說明請參考[此文件](getting_started.html#將-parcel-加入至你的專案)。
+詳細步驟說明請參考[此文件](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/zh-tw/docs/getting_started.html#將-parcel-加入至你的專案)。
+

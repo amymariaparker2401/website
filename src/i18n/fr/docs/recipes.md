@@ -12,7 +12,7 @@ npm install --save react-dom
 npm install --save-dev parcel-bundler
 ```
 
-<sub>Ou si vous avez installé le gestionnaire de paquets Yarn</sub>
+Ou si vous avez installé le gestionnaire de paquets Yarn
 
 ```bash
 yarn add react
@@ -40,7 +40,7 @@ npm install --save-dev parcel-bundler
 npm install --save-dev babel-preset-preact
 ```
 
-<sub>Ou si vous avez installé le gestionnaire de paquets Yarn</sub>
+Ou si vous avez installé le gestionnaire de paquets Yarn
 
 ```bash
 yarn add preact
@@ -78,7 +78,7 @@ npm install --save vue
 npm install --save-dev parcel-bundler
 ```
 
-<sub>Ou si vous avez installé le gestionnaire de paquets Yarn</sub>
+Ou si vous avez installé le gestionnaire de paquets Yarn
 
 ```bash
 yarn add vue
@@ -103,7 +103,7 @@ npm install --save-dev typescript
 npm install --save-dev parcel-bundler
 ```
 
-<sub>Ou si vous avez installé le gestionnaire de paquets Yarn</sub>
+Ou si vous avez installé le gestionnaire de paquets Yarn
 
 ```bash
 yarn add typescript --dev
@@ -123,7 +123,7 @@ Ensuite, ajoutez le script `start` de démarrage au `package.json`
 
 Puis, dans votre fichier `index.html`, importez directement le fichier `.ts`.
 
-```html
+```markup
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -150,3 +150,4 @@ Ajoutez le script `start` de démarrage au `package.json`
 ```
 
 Fini! 😄 Le fichier `.js` compilé se trouve dans dossier `dist`.
+

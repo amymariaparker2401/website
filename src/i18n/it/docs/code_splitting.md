@@ -20,7 +20,7 @@ import('./pagine/info').then(function(page) {
 })
 ```
 
-Poiché "import()` restituisce una promise, si può anche usare la sintassi asinc/await. Probabilmente è necessario configurare Babel per convertire la sintassi, fino a quando non sarà più ampiamente supportata dai browser.
+Poiché "import\(\)\` restituisce una promise, si può anche usare la sintassi asinc/await. Probabilmente è necessario configurare Babel per convertire la sintassi, fino a quando non sarà più ampiamente supportata dai browser.
 
 ```javascript
 const page = await import('./pages/about')
@@ -28,7 +28,7 @@ const page = await import('./pages/about')
 page.render()
 ```
 
-Anche le importazioni dinamiche sono gestite in lazy loading in Parcel, così puoi ancora inserire tutte le tue chiamate "import()` nella parte superiore del file e i bundle figli non saranno caricati fino a quando non saranno usati. L'esempio seguente mostra come si possono caricare in modalità lazy loading dinamica le sottopagine di un'applicazione.
+Anche le importazioni dinamiche sono gestite in lazy loading in Parcel, così puoi ancora inserire tutte le tue chiamate "import\(\)\` nella parte superiore del file e i bundle figli non saranno caricati fino a quando non saranno usati. L'esempio seguente mostra come si possono caricare in modalità lazy loading dinamica le sottopagine di un'applicazione.
 
 ```javascript
 // Impostare una mappa dei nomi delle pagine per le importazioni dinamiche.
@@ -45,7 +45,7 @@ async function renderPage(name) {
 }
 ```
 
-**Nota:** Se vuoi usare asinc/await in browser che non lo supportano nativamente, ricorda di includere 'babel-polyfill' nella tua app o 'babel-runtime' + 'babel-plugin-transform-runtime' nelle librerie).
+**Nota:** Se vuoi usare asinc/await in browser che non lo supportano nativamente, ricorda di includere 'babel-polyfill' nella tua app o 'babel-runtime' + 'babel-plugin-transform-runtime' nelle librerie\).
 
 ```bash
 yarn add babel-polyfill
@@ -57,3 +57,4 @@ import './app'
 ```
 
 Leggi la documentazione su [babel-polyfill](http://babeljs.io/docs/usage/polyfill) e [babel-runtime](http://babeljs.io/docs/plugins/transform-runtime).
+

@@ -32,7 +32,7 @@ Pug 的設定相當容易，你可以使用任一種的檔案結構。下列提�
 
 然後像平常一樣在 index.pug 中寫些樣式及 JS：
 
-```pug
+```text
 // index.pug
 
 doctype html
@@ -66,7 +66,7 @@ Stylus、Sass 或 LESS 也是使用一樣的方法。如果你喜歡的話，你
 
 `pug.config.js` 必須與 `index.pug` 或是 `package.json` 位於同一目錄。
 
-```js
+```javascript
 // pug.config.js
 
 module.exports = {
@@ -76,7 +76,7 @@ module.exports = {
 };
 ```
 
-```pug
+```text
 // index.pug
 
 doctype html
@@ -113,7 +113,7 @@ html(lang="")
 
 下列範例可以正常執行：
 
-```js
+```javascript
 // pug.config.js
 
 const data = require("./data.js");
@@ -123,12 +123,11 @@ module.exports = {
     d: data
   }
 };
-
 ```
 
 這樣則**無法**運作：
 
-```js
+```javascript
 import data from "./data.js";
 
 module.exports = {
@@ -140,7 +139,7 @@ module.exports = {
 
 ## 將腳本加入 package.json
 
-```json
+```javascript
 "scripts": {
     "dev": "parcel src/index.pug",
     "devopen": "parcel src/index.pug --open 'google chrome'",
@@ -149,3 +148,4 @@ module.exports = {
 ```
 
 使用 `npm run devopen` 可以在瀏覽器中開啟專案，執行 `npm run build` 則可產生正式環境的編譯。
+

@@ -4,9 +4,9 @@
 
 除了使用 CLI 以外還能使用 API 來初始化打包工具以達成某些進階功能，如在每次編譯時執行一些自訂的流程。
 
-下面將用一個監看 (watch) 的範例來解釋所有設定選項：
+下面將用一個監看 \(watch\) 的範例來解釋所有設定選項：
 
-```Javascript
+```javascript
 const Bundler = require('parcel-bundler');
 const Path = require('path');
 
@@ -66,9 +66,9 @@ const options = {
 
 下列是所有事件的列表
 
-- Parcel 會在編譯完成時觸發 `bundled` 事件，並傳入 [bundle](#bundle) 實體至回呼函式。
+* Parcel 會在編譯完成時觸發 `bundled` 事件，並傳入 [bundle](api.md#bundle) 實體至回呼函式。
 
-```Javascript
+```javascript
 const bundler = new Bundler(...);
 bundler.on('bundled', (bundle) => {
   // bundler 包含所有資源及 bundle，詳見開發文件
@@ -77,9 +77,9 @@ bundler.on('bundled', (bundle) => {
 bundler.bundle();
 ```
 
-- 每次編譯完成後（包括重新編譯）`buildEnd` 事件會被觸發，此事件即便編譯發生錯誤仍會被觸發。
+* 每次編譯完成後（包括重新編譯）`buildEnd` 事件會被觸發，此事件即便編譯發生錯誤仍會被觸發。
 
-```Javascript
+```javascript
 const bundler = new Bundler(...);
 bundler.on('buildEnd', () => {
   // 做點什麼...
@@ -88,9 +88,9 @@ bundler.on('buildEnd', () => {
 bundler.bundle();
 ```
 
-- `buildStart` 事件會於首次編譯開始時被觸發，並傳入一個 `entryFiles` 陣列至回呼函式。
+* `buildStart` 事件會於首次編譯開始時被觸發，並傳入一個 `entryFiles` 陣列至回呼函式。
 
-```Javascript
+```javascript
 const bundler = new Bundler(...);
 bundler.on('buildStart', entryPoints => {
   // 做點什麼...
@@ -99,9 +99,9 @@ bundler.on('buildStart', entryPoints => {
 bundler.bundle();
 ```
 
-- 當編譯出錯時會觸發 `buildError` 事件，並會將 `Error` 物件傳入回呼函式
+* 當編譯出錯時會觸發 `buildError` 事件，並會將 `Error` 物件傳入回呼函式
 
-```Javascript
+```javascript
 const bundler = new Bundler(...);
 bundler.on('buildError', error => {
   // 做點什麼...
@@ -116,29 +116,29 @@ Parcel 使用 `Bundle` 將所有資源打包在一起，其也包含了子系及
 
 #### 屬性
 
-- `type`：其包含的資源類型，如 js、css 或 map …等等
-- `name`：bundle 名稱。由 `entryAsset` 的 `Asset.generateBundleName()` 產生
-- `parentBundle`：父 bundle。若是入口 bundle 的話則為 null
-- `entryAsset`：bundle 的進入點，用來產生名稱及搜集資源
-- `assets`：bundle 中所有資源的集合 (`Set`)
-- `childBundles`：所有子 bundle 的集合 (`Set`)
-- `siblingBundles`：所有旁系 bundle 的集合 (`Set`)
-- `siblingBundlesMap`：所有旁系 bundle 的對應關係 (`Map<String(Type: js, css, map, ...), Bundle>`)
-- `offsets`：bundle 中所有資源位置的對應關係 (`Map<Asset, number(line number inside the bundle)>`)，用來產生準確的 source map。
+* `type`：其包含的資源類型，如 js、css 或 map …等等
+* `name`：bundle 名稱。由 `entryAsset` 的 `Asset.generateBundleName()` 產生
+* `parentBundle`：父 bundle。若是入口 bundle 的話則為 null
+* `entryAsset`：bundle 的進入點，用來產生名稱及搜集資源
+* `assets`：bundle 中所有資源的集合 \(`Set`\)
+* `childBundles`：所有子 bundle 的集合 \(`Set`\)
+* `siblingBundles`：所有旁系 bundle 的集合 \(`Set`\)
+* `siblingBundlesMap`：所有旁系 bundle 的對應關係 \(`Map<String(Type: js, css, map, ...), Bundle>`\)
+* `offsets`：bundle 中所有資源位置的對應關係 \(`Map<Asset, number(line number inside the bundle)>`\)，用來產生準確的 source map。
 
-#### 樹 (Tree)
+#### 樹 \(Tree\)
 
 `Bundle` 包含了 `parentBundle`、`childBundles` 及 `siblingBundles` 等屬性，並一起建立一個快速迭代的 bundle 樹。
 
 下列的基本範例展示了一個資源樹及其產生的 bundle 樹：
 
-##### 資源樹 (Asset tree)：
+**資源樹 \(Asset tree\)：**
 
 `index.html` 引入 `index.js` 及 `index.css`.
 
 `index.js` 引入 `test.js` 及 `test.txt`
 
-```Text
+```text
 index.html
 -- index.js
  |--- test.js
@@ -146,7 +146,7 @@ index.html
 -- index.css
 ```
 
-##### Bundle 樹 (Bundle Tree)：
+**Bundle 樹 \(Bundle Tree\)：**
 
 `index.html` 被作為主 bundle 的進入資源，主 bundle 建立了兩個子 bundle，一個用於 `index.js`，另一個則用於 `index.css`，因其類型與 `html` 不同。
 
@@ -158,22 +158,22 @@ index.html
 
 `index.css` 沒有引入資源，因此只包含其自身的入口資源。
 
-`index.css` 及 `index.js` bundles 為旁系 bundle (siblingBundles)，因為它們共用一個父 bundle。
+`index.css` 及 `index.js` bundles 為旁系 bundle \(siblingBundles\)，因為它們共用一個父 bundle。
 
-```Text
+```text
 index.html
 -- index.js (包括 index.js 及 test.js)
  |--- test.txt (包括 test.txt)
 -- index.css (包括 index.css)
 ```
 
-### 中介軟體 (Middleware)
+### 中介軟體 \(Middleware\)
 
 中介軟體可用來介入 HTTP 伺服器，如 `express` 和 node 的 `http`。
 
 下列範例展示了如何在 express 中使用 Parcel 中介軟體
 
-```Javascript
+```javascript
 const Bundler = require('parcel-bundler');
 const app = require('express')();
 
@@ -189,3 +189,4 @@ app.use(bundler.middleware());
 // 監聽連接埠 8080
 app.listen(8080);
 ```
+

@@ -4,7 +4,7 @@
 
 ### Serve
 
-Запускает сервер для разработки, который автоматически пересобирает приложение при изменении файлов и поддерживает [горячую замену модулей](hmr.html) для быстрой разработки.
+Запускает сервер для разработки, который автоматически пересобирает приложение при изменении файлов и поддерживает [горячую замену модулей](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/ru/docs/hmr.html) для быстрой разработки.
 
 ```bash
 parcel index.html
@@ -12,8 +12,7 @@ parcel index.html
 
 ### Build
 
-Собирает ресурсы за один раз, это также минифицирует их и устанавливает переменную окружения `NODE_ENV=production`.
-См. [Работа в продакшене](production.html) для получения дополнительной информации.
+Собирает ресурсы за один раз, это также минифицирует их и устанавливает переменную окружения `NODE_ENV=production`. См. [Работа в продакшене](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/ru/docs/production.html) для получения дополнительной информации.
 
 ```bash
 parcel build index.html
@@ -57,7 +56,7 @@ parcel build entry.js --out-dir build/output
 parcel build entry.js -d build/output
 ```
 
-```base
+```text
 root
 - build
 - - output
@@ -66,7 +65,7 @@ root
 
 ### Установить общедоступный URL для сервера
 
-Значение по умолчанию: [аналогично указанному в опции --out-dir](#output-directory)
+Значение по умолчанию: [аналогично указанному в опции --out-dir](cli.md#output-directory)
 
 Доступно для: `serve`, `watch`, `build`
 
@@ -76,7 +75,7 @@ parcel entry.js --public-url ./dist/
 
 выведет
 
-```html
+```markup
 <link rel="stylesheet" type="text/css" href="/dist/entry.1a2b3c.css">
 <!-- или -->
 <script src="/dist/entry.e5f6g7.js"></script>
@@ -124,12 +123,12 @@ parcel serve entry.js --port 1111
 parcel entry.js --log-level 1
 ```
 
-| Уровень логирования | Эффект                                    |
-| ------------------- | ----------------------------------------- |
-| 0                   | Логирование отключено                     |
-| 1                   | Логировать только ошибки                  |
-| 2                   | Логировать только ошибки и предупреждения |
-| 3                   | Логировать всё                            |
+| Уровень логирования | Эффект |
+| :--- | :--- |
+| 0 | Логирование отключено |
+| 1 | Логировать только ошибки |
+| 2 | Логировать только ошибки и предупреждения |
+| 3 | Логировать всё |
 
 ### Имя хоста для HMR
 
@@ -177,7 +176,7 @@ parcel build entry.js --detailed-report
 
 Значение по умолчанию: https отключён
 
-Доступно для: `serve`, `watch` (работает на HTTPS для подключений HMR)
+Доступно для: `serve`, `watch` \(работает на HTTPS для подключений HMR\)
 
 ```bash
 parcel build entry.js --https
@@ -275,4 +274,5 @@ parcel serve entry.js --global myvariable
 parcel serve entry.js --experimental-scope-hoisting
 ```
 
-Для получения дополнительной информации смотрите [раздел Tree Shaking](https://medium.com/@devongovett/parcel-v1-9-0-tree-shaking-2x-faster-watcher-and-more-87f2e1a70f79#4ed3) в записи Девона Говетта (Devon Govett) про Parcel 1.9.
+Для получения дополнительной информации смотрите [раздел Tree Shaking](https://medium.com/@devongovett/parcel-v1-9-0-tree-shaking-2x-faster-watcher-and-more-87f2e1a70f79#4ed3) в записи Девона Говетта \(Devon Govett\) про Parcel 1.9.
+

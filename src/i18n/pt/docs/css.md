@@ -4,11 +4,11 @@ _Extensões suportadas: `css`, `pcss`, `postcss`_
 
 Recursos CSS podem ser importados de um arquivo Javascript ou HTML:
 
-```js
+```javascript
 import './index.css';
 ```
 
-```html
+```markup
 <link rel="stylesheet" type="text/css" href="index.css">
 ```
 
@@ -28,7 +28,7 @@ Além de CSS simples, outras linguagens que compilam para CSS como LESS, SASS e 
 
 ## PostCSS
 
-[PostCSS](http://postcss.org) é uma ferramenta pra transformar CSS com plugins, como o [autoprefixer](https://github.com/postcss/autoprefixer), [Preset Env](https://github.com/csstools/postcss-preset-env), e [CSS Modules](https://github.com/css-modules/css-modules). Você pode configurar o PostCSS com o Parcel ao criar um arquivo de configuração com um desses nomes: `.postcssrc` (JSON), `.postcssrc.js`, ou `postcss.config.js`.
+[PostCSS](http://postcss.org) é uma ferramenta pra transformar CSS com plugins, como o [autoprefixer](https://github.com/postcss/autoprefixer), [Preset Env](https://github.com/csstools/postcss-preset-env), e [CSS Modules](https://github.com/css-modules/css-modules). Você pode configurar o PostCSS com o Parcel ao criar um arquivo de configuração com um desses nomes: `.postcssrc` \(JSON\), `.postcssrc.js`, ou `postcss.config.js`.
 
 Instale plugins na sua aplicação:
 
@@ -38,7 +38,7 @@ yarn add postcss-modules autoprefixer
 
 Então, crie o `.postcssrc`:
 
-```json
+```javascript
 {
   "modules": true,
   "plugins": {
@@ -53,7 +53,7 @@ Plugins são especificados nas chaves do objeto `plugins`, e as opções são de
 
 Navegadores de destino para Autoprefixer, cssnext e outras ferramentas podem ser especificadas no arquivo `.browserslistrc`:
 
-```
+```text
 > 1%
 last 2 versions
 ```
@@ -68,7 +68,7 @@ Para que os módulos CSS funcionem corretamente com os módulos existentes, eles
 
 Parcel adiciona o [cssnano](http://cssnano.co) ao postcss para minificar o css em _build_ de produção, onde configurações customizadas podem ser definidas ao criar o arquivo `cssnano.config.js`:
 
-```js
+```javascript
 module.exports = {
   preset: [
     'default',
@@ -81,3 +81,4 @@ module.exports = {
   ]
 }
 ```
+

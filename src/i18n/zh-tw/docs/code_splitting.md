@@ -1,6 +1,6 @@
 # ✂️ 程式碼分離
 
-Parcel 預設支援免設定的程式碼分離 (Code Splitting)，可將你的程式分割為多個 bundle 並按需載入，這意味著初始化的 bundle 更小，且載入速度更快。
+Parcel 預設支援免設定的程式碼分離 \(Code Splitting\)，可將你的程式分割為多個 bundle 並按需載入，這意味著初始化的 bundle 更小，且載入速度更快。
 
 當使用者瀏覽你的網頁時，Parcel 將會依照需求自動載入子 bundle。
 
@@ -34,7 +34,7 @@ const page = await import('./pages/about')
 page.render()
 ```
 
-在 Parcel 中，動態的 import 會被延遲載入 (Lazy Load)，所以你還是能將所有的 `import()` 放在檔案頂部，只有用到子 bundle 時才會載入。
+在 Parcel 中，動態的 import 會被延遲載入 \(Lazy Load\)，所以你還是能將所有的 `import()` 放在檔案頂部，只有用到子 bundle 時才會載入。
 
 下列的範例展示了如何在程式中動態地延遲子頁面的載入。
 
@@ -71,3 +71,4 @@ import './app'
 Parcel 會利用 [bundle-url](https://github.com/parcel-bundler/parcel/blob/master/packages/core/parcel-bundler/src/builtins/bundle-url.js) 模組來自動偵測 bundle 的位置，並使用堆疊追蹤（Stack Trace）來決定初始化 bundle 的載入路徑。這表示你不需要親自設定 bundle 要從何載入，但你必須將所有 bundle 放置於同一位置。
 
 Parcel 目前可解析的協定有：`http`、`https`、`file`、`ftp`、`chrome-extension` 及 `moz-extension`。
+

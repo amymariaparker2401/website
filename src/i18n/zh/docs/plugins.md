@@ -20,3 +20,4 @@ module.exports = function(bundler) {
 ## 使用插件
 
 在 Parcel 中使用插件是前所未有的简单。你所做的，只是将它们安装好并保存到 `package.json` 中。插件需要以 `parcel-plugin-` 作为前缀被命名。例如 `parcel-plugin-foo`。任何在 `package.json` 中被列出的带有此前缀的依赖，都会在初始化的时候被自动加载。
+

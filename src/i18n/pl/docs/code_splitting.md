@@ -57,3 +57,4 @@ import './app'
 ```
 
 Przeczytaj dokumentację na temat [babel-polyfill](http://babeljs.io/docs/usage/polyfill) i [babel-runtime](http://babeljs.io/docs/plugins/transform-runtime).
+

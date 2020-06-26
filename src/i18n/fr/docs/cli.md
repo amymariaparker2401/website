@@ -4,7 +4,7 @@
 
 ### Serve
 
-Démarre un serveur de développement, qui reconstruira automatiquement votre application lorsque vous modifiez des fichiers et prend en charge [le remplacement de module à chaud](hmr.html) pour un développement plus rapide.
+Démarre un serveur de développement, qui reconstruira automatiquement votre application lorsque vous modifiez des fichiers et prend en charge [le remplacement de module à chaud](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/fr/docs/hmr.html) pour un développement plus rapide.
 
 ```bash
 parcel index.html
@@ -22,7 +22,7 @@ parcel ./**/*.html
 
 ### Build
 
-Construit les ressources une seule fois, il active aussi la minification et définit la variable environnement `NODE_ENV=production`. Consultez [Production](production.html) pour plus de détails.
+Construit les ressources une seule fois, il active aussi la minification et définit la variable environnement `NODE_ENV=production`. Consultez [Production](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/fr/docs/production.html) pour plus de détails.
 
 ```bash
 parcel build index.html
@@ -30,7 +30,7 @@ parcel build index.html
 
 _REMARQUE :_ Pour des cas d'utilisation spéciaux, il est également possible d'effectuer une construction unique à partir de l'environnement `development`, comme ceci :
 
-```
+```text
 NODE_ENV=development parcel build <entrypoint> --no-minify
 ```
 
@@ -46,7 +46,7 @@ parcel watch index.html
 
 ### Help
 
-Affiche toutes les options possibles de l'outil en ligne de commande (CLI).
+Affiche toutes les options possibles de l'outil en ligne de commande \(CLI\).
 
 ```bash
 parcel help
@@ -74,7 +74,7 @@ parcel build entry.js --out-dir build/output
 parcel build entry.js -d build/output
 ```
 
-```base
+```text
 root
 - build
 - - output
@@ -93,13 +93,13 @@ parcel entry.js --public-url ./dist/
 
 Cela produira :
 
-```html
+```markup
 <link rel="stylesheet" type="text/css" href="dist/entry.1a2b3c.css" />
 <!-- ou -->
 <script src="dist/entry.e5f6g7.js"></script>
 ```
 
-### La cible (target)
+### La cible \(target\)
 
 Par défaut : browser
 
@@ -109,7 +109,7 @@ Disponible dans : `serve`, `watch`, `build`
 parcel build entry.js --target node
 ```
 
-⚠️ `--target node` et `--target electron` n'ajoutent pas les `dependencies` du `package.json` au paquet (mais ajoutent bien les `devDependencies`). Ce comportement peut être modifié via le flag [--bundle-node-modules](#forcer-l'ajout-des-dépendances-node) (voir ci-dessous).
+⚠️ `--target node` et `--target electron` n'ajoutent pas les `dependencies` du `package.json` au paquet \(mais ajoutent bien les `devDependencies`\). Ce comportement peut être modifié via le flag \[--bundle-node-modules\]\(\#forcer-l'ajout-des-dépendances-node\) \(voir ci-dessous\).
 
 Les cibles possibles sont : `node`, `browser` et `electron`
 
@@ -155,14 +155,14 @@ Disponible dans : `serve`, `watch`, `build`
 parcel entry.js --log-level 1
 ```
 
-| Loglevel | Effet                                                                                                   |
-| -------- | ------------------------------------------------------------------------------------------------------- |
-| 0        | Journal désactivé                                                                                       |
-| 1        | Consigner uniquement les erreurs                                                                        |
-| 2        | Consigner les erreurs et les avertissements                                                             |
-| 3        | Consigner les erreurs, les avertissements et les infos                                                  |
-| 4        | Verbose (garder tout dans un log avec l'horodatage <br/> et aussi les requêtes http sur le serveur dev) |
-| 5        | Débogue (sauve tout dans un fichier avec l'horodatage)                                                  |
+| Loglevel | Effet |
+| :--- | :--- |
+| 0 | Journal désactivé |
+| 1 | Consigner uniquement les erreurs |
+| 2 | Consigner les erreurs et les avertissements |
+| 3 | Consigner les erreurs, les avertissements et les infos |
+| 4 | Verbose \(garder tout dans un log avec l'horodatage   et aussi les requêtes http sur le serveur dev\) |
+| 5 | Débogue \(sauve tout dans un fichier avec l'horodatage\) |
 
 ### Nom d'hôte du HMR
 
@@ -210,7 +210,7 @@ parcel build entry.js --detailed-report
 
 Par défaut : https désactivé
 
-Disponible dans : `serve`, `watch` (écoute le HTTPS pour les connexions HMR)
+Disponible dans : `serve`, `watch` \(écoute le HTTPS pour les connexions HMR\)
 
 ```bash
 parcel build entry.js --https
@@ -319,3 +319,4 @@ parcel build entry.js --experimental-scope-hoisting
 ```
 
 Pour plus d'informations, consultez la [section Tree Shaking](https://medium.com/@devongovett/parcel-v1-9-0-tree-shaking-2x-faster-watcher-and-more-87f2e1a70f79#4ed3) de l'article de Devon Govett sur Parcel 1.9.
+

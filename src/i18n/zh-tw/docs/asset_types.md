@@ -1,9 +1,8 @@
 # 📝 資源類型
 
-如同 [資源](assets.html) 一章所述，Parcel 視每個輸入的檔案為一個 `資源` (Asset)。
-資源類型代表著從 `資源` 類別繼承而來的類別，其實作了必要的介面以分析相依套件、轉換及產生程式碼。
+如同 [資源](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/zh-tw/docs/assets.html) 一章所述，Parcel 視每個輸入的檔案為一個 `資源` \(Asset\)。 資源類型代表著從 `資源` 類別繼承而來的類別，其實作了必要的介面以分析相依套件、轉換及產生程式碼。
 
-Parcel 利用多核心並行處理資源，因此僅能進行同一時間處理單一檔案的資源類型轉換。若需轉換多種檔案則需自訂一個 [Packager](packagers.html)。
+Parcel 利用多核心並行處理資源，因此僅能進行同一時間處理單一檔案的資源類型轉換。若需轉換多種檔案則需自訂一個 [Packager](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/zh-tw/docs/packagers.html)。
 
 ## 資源介面
 
@@ -57,8 +56,7 @@ module.exports = MyAsset
 
 ## 註冊資源類型
 
-你可以使用 `addAssetType` 方法在打包工具中註冊你的資源類型，其接受欲註冊的副檔名及你的資源類型模型路徑。
-為了將模型傳遞至 worker 中執行，這裡僅需傳入路徑而非實際的物件。
+你可以使用 `addAssetType` 方法在打包工具中註冊你的資源類型，其接受欲註冊的副檔名及你的資源類型模型路徑。 為了將模型傳遞至 worker 中執行，這裡僅需傳入路徑而非實際的物件。
 
 ```javascript
 const Bundler = require('parcel-bundler')
@@ -66,3 +64,4 @@ const Bundler = require('parcel-bundler')
 let bundler = new Bundler('input.js')
 bundler.addAssetType('.ext', require.resolve('./MyAsset'))
 ```
+

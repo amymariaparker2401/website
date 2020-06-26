@@ -4,7 +4,7 @@ _支援的副檔名：`vue`_
 
 Vue.js 是款漸進式的 JavaScript 網頁 UI 框架。Parcel 預設就支援 Vue，完全不需額外設定。
 
-```html
+```markup
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -16,12 +16,11 @@ Vue.js 是款漸進式的 JavaScript 網頁 UI 框架。Parcel 預設就支援 V
     <script src="./index.js"></script>
   </body>
 </html>
-
 ```
 
 你也可以使用如 pug、typescript 及 scss…那些你最愛的工具：
 
-```html
+```markup
 <!-- app.vue -->
 <template lang="pug">
   .container Hello {{bundler}}
@@ -43,14 +42,13 @@ export default Vue.extend({
   color: green;
 }
 </style>
-
 ```
 
-```js
+```javascript
 // index.js
 import Vue from 'vue';
 import App from './app.vue';
 
 new Vue(App).$mount('#app');
-
 ```
+

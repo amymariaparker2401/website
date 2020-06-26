@@ -1,6 +1,6 @@
 # 🔥 Hot Module Replacement
 
-Hot Module Replacement (HMR) usprawnia proces tworzenia oprogramowania dzięki automatycznej aktualizacji modułów w przeglądarce "na gorąco", bez konieczności odświeżania strony. Oznacza to, że stan aplikacji może zostać zachowany podczas dokonywania drobnych zmian. Implementacja HMR w Parcel od razu wspiera zasoby zarówno JavaScript jak i CSS. HMR jest automatycznie wyłączany w czasie pakowania w trybie produkcyjnym.
+Hot Module Replacement \(HMR\) usprawnia proces tworzenia oprogramowania dzięki automatycznej aktualizacji modułów w przeglądarce "na gorąco", bez konieczności odświeżania strony. Oznacza to, że stan aplikacji może zostać zachowany podczas dokonywania drobnych zmian. Implementacja HMR w Parcel od razu wspiera zasoby zarówno JavaScript jak i CSS. HMR jest automatycznie wyłączany w czasie pakowania w trybie produkcyjnym.
 
 Po zapisaniu pliku, Parcel przebudowuje zmmiany i wysyła aktualizację do wszystkich włączonych klientów zawierającą nowy kod. Nowy kod zastępuje starą jego wersję i jest ponownie ewaluowany wraz z jego modułami macierzystymi. Możliwe jest wpięcie się do tego procesu używając API `module.hot`, które powiadamia kod za każdym razem kiedy zostanie on usunięty, lub kiedy nadejdzie nowa jego wersja. Projekty takie jak [react-hot-loader](https://github.com/gaearon/react-hot-loader) mogą pomóc w tym procesie i działają od razu z Parcel.
 
@@ -17,3 +17,4 @@ if (module.hot) {
   })
 }
 ```
+

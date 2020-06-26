@@ -32,7 +32,7 @@ Parcel 은 어떤 유형의 파일이라도 진입점으로 취할 수 있지만
 
 그럼, index.html 과 index.js 파일을 만들어 봅시다.
 
-```html
+```markup
 <html>
 <body>
   <script src="./index.js"></script>
@@ -44,18 +44,19 @@ Parcel 은 어떤 유형의 파일이라도 진입점으로 취할 수 있지만
 console.log('hello world')
 ```
 
-Parcel 은 파일 변화를 자동으로 다시 빌드(rebuild) 하고 [빠른 모듈 교체](hmr.html)를 지원하는 내장 개발용 서버가 있어 빠른 개발이 가능해 집니다. 그저 진입 파일을 지정하면 됩니다:
+Parcel 은 파일 변화를 자동으로 다시 빌드\(rebuild\) 하고 [빠른 모듈 교체](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/ko/docs/hmr.html)를 지원하는 내장 개발용 서버가 있어 빠른 개발이 가능해 집니다. 그저 진입 파일을 지정하면 됩니다:
 
 ```bash
 parcel index.html
 ```
 
-이제 브라우저에서 http://localhost:1234/ 에 접속하세요. 만약 빠른 모듈 교체가 동작하지 않는다면 [에디터 설정을 변경](hmr.html#safe-write)하셔야 합니다. 기본 포트번호를 `-p <port number>` 옵션으로 덮어 쓸 수도 있습니다.
+이제 브라우저에서 [http://localhost:1234/](http://localhost:1234/) 에 접속하세요. 만약 빠른 모듈 교체가 동작하지 않는다면 [에디터 설정을 변경](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/ko/docs/hmr.html#safe-write)하셔야 합니다. 기본 포트번호를 `-p <port number>` 옵션으로 덮어 쓸 수도 있습니다.
 
-본인 소유의 서버가 없거나 완전히 클라이언트에서만 렌더되는 앱이라면 개발용 서버를 사용하세요. 만약 본인 소유의 서버가 있다면 `watch` 모드로 Parcel 을 구동할 수 있습니다. 이 역시 파일 변화를 자동 리빌드(rebuild) 하고 빠른 모듈 교체를 지원합니다. 그러나 웹 서버를 시동시키지는 않습니다.
+본인 소유의 서버가 없거나 완전히 클라이언트에서만 렌더되는 앱이라면 개발용 서버를 사용하세요. 만약 본인 소유의 서버가 있다면 `watch` 모드로 Parcel 을 구동할 수 있습니다. 이 역시 파일 변화를 자동 리빌드\(rebuild\) 하고 빠른 모듈 교체를 지원합니다. 그러나 웹 서버를 시동시키지는 않습니다.
 
 ```bash
 parcel watch index.html
 ```
 
-프로덕션을 위한 빌드를 할 준비가 되었다면, `build` 모드로 감시 기능을 끄고 한 번만 빌드 합니다. [프로덕션](production.html) 섹션에서 보다 자세한 사항들을 확인해 보세요.
+프로덕션을 위한 빌드를 할 준비가 되었다면, `build` 모드로 감시 기능을 끄고 한 번만 빌드 합니다. [프로덕션](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/ko/docs/production.html) 섹션에서 보다 자세한 사항들을 확인해 보세요.
+

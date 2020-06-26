@@ -14,7 +14,7 @@ _支援的副檔名：`json` 及 `json5`_
     └── index.js
 ```
 
-```json
+```javascript
 {
   "hello": [
     "world",
@@ -23,7 +23,7 @@ _支援的副檔名：`json` 及 `json5`_
 }
 ```
 
-```js
+```javascript
 // index.js
 
 import data from './data.json'
@@ -31,3 +31,4 @@ console.log(data.hello[0]);
 
 // "world"
 ```
+

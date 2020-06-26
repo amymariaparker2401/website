@@ -4,7 +4,7 @@ _Supported extensions: `vue`_
 
 Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web. Parcel supports Vue right out of the box without the need for any additional configuration.
 
-```html
+```markup
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -16,12 +16,11 @@ Vue.js is a progressive, incrementally-adoptable JavaScript framework for buildi
     <script src="./index.js"></script>
   </body>
 </html>
-
 ```
 
-You can use all tools you like (Pug, TypeScript, SCSS, ...):
+You can use all tools you like \(Pug, TypeScript, SCSS, ...\):
 
-```vue
+```text
 // app.vue
 <template lang="pug">
   .container Hello {{bundler}}
@@ -43,13 +42,13 @@ export default Vue.extend({
   color: green;
 }
 </style>
-
 ```
 
-```js
+```javascript
 // index.js
 import Vue from 'vue';
 import App from './app.vue';
 
 new Vue(App).$mount('#app')
 ```
+

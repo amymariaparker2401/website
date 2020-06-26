@@ -6,7 +6,7 @@ _支援的副檔名： `elm`_
 
 Parcel 預設就支援 Elm，完全無需額外設定。
 
-```html
+```markup
 <!-- index.html -->
 
 <html>
@@ -27,7 +27,7 @@ Elm.Main.init({
 })
 ```
 
-```elm
+```text
 -- Main.elm
 module Main exposing (main)
 
@@ -39,3 +39,4 @@ main =
 ```
 
 更多關於 Elm 與工具生態圈的訊息，請見[官方說明](https://guide.elm-lang.org/)。
+

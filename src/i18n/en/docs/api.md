@@ -2,10 +2,9 @@
 
 ## Bundler
 
-Instead of the CLI you can also use the API to initialise a bundler, for more advanced use-cases (e.g. custom processing after every build).
-A watch example with every option explained:
+Instead of the CLI you can also use the API to initialise a bundler, for more advanced use-cases \(e.g. custom processing after every build\). A watch example with every option explained:
 
-```Javascript
+```javascript
 const Bundler = require('parcel-bundler');
 const Path = require('path');
 
@@ -52,15 +51,15 @@ const options = {
 })();
 ```
 
-If you want to use/start the built-in development server of Parcel you can use `bundler.serve()`. This calls `bundler.bundle()` and starts a simple http (or https) server. `serve()` takes in 3 arguments (they are all optional), first one is port, second one is https (this can either be an object `{cert,key}` pointing to the location of key and cert file or `true` to generate a key) and the third one is the host.
+If you want to use/start the built-in development server of Parcel you can use `bundler.serve()`. This calls `bundler.bundle()` and starts a simple http \(or https\) server. `serve()` takes in 3 arguments \(they are all optional\), first one is port, second one is https \(this can either be an object `{cert,key}` pointing to the location of key and cert file or `true` to generate a key\) and the third one is the host.
 
 ### Events
 
 This is a list of all bundler events
 
-- `bundled` gets called once Parcel has successfully finished bundling, the main [bundle](#bundle) instance gets passed to the callback
+* `bundled` gets called once Parcel has successfully finished bundling, the main [bundle](api.md#bundle) instance gets passed to the callback
 
-```Javascript
+```javascript
 const bundler = new Bundler(...);
 bundler.on('bundled', (bundle) => {
   // bundler contains all assets and bundles, see documentation for details
@@ -69,9 +68,9 @@ bundler.on('bundled', (bundle) => {
 bundler.bundle();
 ```
 
-- `buildEnd` gets called after each build (aka **including every rebuild**), this also emits if an error occurred
+* `buildEnd` gets called after each build \(aka **including every rebuild**\), this also emits if an error occurred
 
-```Javascript
+```javascript
 const bundler = new Bundler(...);
 bundler.on('buildEnd', () => {
   // Do something...
@@ -80,9 +79,9 @@ bundler.on('buildEnd', () => {
 bundler.bundle();
 ```
 
-- `buildStart` gets called at the start of the first build, the `entryFiles` Array gets passed to the callback
+* `buildStart` gets called at the start of the first build, the `entryFiles` Array gets passed to the callback
 
-```Javascript
+```javascript
 const bundler = new Bundler(...);
 bundler.on('buildStart', entryPoints => {
   // Do something...
@@ -91,9 +90,9 @@ bundler.on('buildStart', entryPoints => {
 bundler.bundle();
 ```
 
-- `buildError` gets called every time an error occurs during builds, the `Error` Object gets passed to the callback
+* `buildError` gets called every time an error occurs during builds, the `Error` Object gets passed to the callback
 
-```Javascript
+```javascript
 const bundler = new Bundler(...);
 bundler.on('buildError', error => {
   // Do something...
@@ -108,15 +107,15 @@ A `Bundle` is what Parcel uses to bundle assets together, this also contains chi
 
 #### Properties
 
-- `type`: The type of assets it contains (e.g. js, css, map, ...)
-- `name`: The name of the bundle (generated using `Asset.generateBundleName()` of `entryAsset`)
-- `parentBundle`: The parent bundle, is null in case of the entry bundle
-- `entryAsset`: The entryPoint of the bundle, used for generating the name and gathering assets.
-- `assets`: A `Set` of all assets inside the bundle
-- `childBundles`: A `Set` of all child bundles
-- `siblingBundles`: A `Set` of all sibling bundles
-- `siblingBundlesMap`: A `Map<String(Type: js, css, map, ...), Bundle>` of all sibling bundles
-- `offsets`: A `Map<Asset, number(line number inside the bundle)>` of all the locations of the assets inside the bundle, used to generate accurate source maps
+* `type`: The type of assets it contains \(e.g. js, css, map, ...\)
+* `name`: The name of the bundle \(generated using `Asset.generateBundleName()` of `entryAsset`\)
+* `parentBundle`: The parent bundle, is null in case of the entry bundle
+* `entryAsset`: The entryPoint of the bundle, used for generating the name and gathering assets.
+* `assets`: A `Set` of all assets inside the bundle
+* `childBundles`: A `Set` of all child bundles
+* `siblingBundles`: A `Set` of all sibling bundles
+* `siblingBundlesMap`: A `Map<String(Type: js, css, map, ...), Bundle>` of all sibling bundles
+* `offsets`: A `Map<Asset, number(line number inside the bundle)>` of all the locations of the assets inside the bundle, used to generate accurate source maps
 
 #### Tree
 
@@ -124,13 +123,13 @@ The `Bundle` contains a `parentBundle`, `childBundles` and `siblingBundles`, all
 
 A very basic example of an asset tree and it's generated bundle Tree
 
-##### Asset tree:
+**Asset tree:**
 
 `index.html` requires `index.js` and `index.css`.
 
 `index.js` requires `test.js` and `test.txt`
 
-```Text
+```text
 index.html
 -- index.js
  |--- test.js
@@ -138,7 +137,7 @@ index.html
 -- index.css
 ```
 
-##### Bundle Tree:
+**Bundle Tree:**
 
 `index.html` gets used as an entry asset for the main bundle, this main bundle creates two child bundles one for `index.js` and one for `index.css` this because they both are different from the `html` type.
 
@@ -152,7 +151,7 @@ index.html
 
 `index.css` and `index.js` bundles are siblingBundles of each other as they share the same parent.
 
-```Text
+```text
 index.html
 -- index.js (includes index.js and test.js)
  |--- test.txt (includes test.txt)
@@ -161,11 +160,11 @@ index.html
 
 ### Middleware
 
-Middleware can be used to hook into an http server (e.g. `express` or node `http`).
+Middleware can be used to hook into an http server \(e.g. `express` or node `http`\).
 
 An example of using the Parcel middleware with express
 
-```Javascript
+```javascript
 const Bundler = require('parcel-bundler');
 const app = require('express')();
 
@@ -181,3 +180,4 @@ app.use(bundler.middleware());
 // Listen on port 8080
 app.listen(8080);
 ```
+

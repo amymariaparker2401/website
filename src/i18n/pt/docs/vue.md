@@ -1,9 +1,8 @@
 # Vue
 
-_Extensões suportadas: `vue`_
-Vue.js é um progressivo e incrementalmente adoptável framework Javascript para criar UI na Web. O Parcel tem suporte nativo ao Vue sem a necessidade de nenhuma configuração adicional.
+_Extensões suportadas: `vue`_ Vue.js é um progressivo e incrementalmente adoptável framework Javascript para criar UI na Web. O Parcel tem suporte nativo ao Vue sem a necessidade de nenhuma configuração adicional.
 
-```html
+```markup
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -15,12 +14,11 @@ Vue.js é um progressivo e incrementalmente adoptável framework Javascript para
     <script src="./index.js"></script>
   </body>
 </html>
-
 ```
 
-Você pode usar todas as ferramentas como (Pug, TypeScript, SCSS, ...):
+Você pode usar todas as ferramentas como \(Pug, TypeScript, SCSS, ...\):
 
-```vue
+```text
 // app.vue
 <template lang="pug">
   .container Hello {{bundler}}
@@ -42,13 +40,13 @@ export default Vue.extend({
   color: green;
 }
 </style>
-
 ```
 
-```js
+```javascript
 // index.js
 import Vue from 'vue';
 import App from './app.vue';
 
 new Vue(App).$mount('#app')
 ```
+

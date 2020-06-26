@@ -2,10 +2,9 @@
 
 ## Bundler
 
-你可以选择使用 API 替代 CLI 来初始化 bundler 对象，以获取更高级的使用方式(例如：在每次构建时进行自定义操作)。
-针对每个选项都给出了可参考的示例进行解释说明：
+你可以选择使用 API 替代 CLI 来初始化 bundler 对象，以获取更高级的使用方式\(例如：在每次构建时进行自定义操作\)。 针对每个选项都给出了可参考的示例进行解释说明：
 
-```Javascript
+```javascript
 const Bundler = require('parcel-bundler');
 const Path = require('path');
 
@@ -42,18 +41,18 @@ const bundle = await bundler.bundle();
 
 这是所有的 bundler 事件列表。
 
-- 一旦 parcel 完成打包，会调用 `bundled`，主 [bundle](#bundle) 会作为参数传递到该 callback
+* 一旦 parcel 完成打包，会调用 `bundled`，主 [bundle](api.md#bundle) 会作为参数传递到该 callback
 
-```Javascript
+```javascript
 const bundler = new Bundler(...);
 bundler.on('bundled', (bundler) => {
   // bundler 包含所有资源和 bundle，如需了解更多请查看文档
 });
 ```
 
-- 每次构建结束后，都会调用 `buildEnd`，即使发生错误它也仍然会被触发
+* 每次构建结束后，都会调用 `buildEnd`，即使发生错误它也仍然会被触发
 
-```Javascript
+```javascript
 const bundler = new Bundler(...);
 bundler.on('buildEnd', () => {
   // 做一些操作……
@@ -66,15 +65,15 @@ bundler.on('buildEnd', () => {
 
 #### 属性
 
-- `type`：它包含的资源类型 (例如：js, css, map, ...)
-- `name`：bundle 的名称 (使用 `entryAsset` 的 `Asset.generateBundleName()` 生成)
-- `parentBundle`：父 bundle ，入口 bundle 的父 bundle 是 null
-- `entryAsset`：bundle 的入口，用于生成名称(name)和聚拢资源(assets)
-- `assets`：bundle 中所有资源的`集合(Set)`
-- `childBundles`：所有子 bundle 的`集合(Set)`
-- `siblingBundles`：所有兄弟 bundle 的`集合(Set)`
-- `siblingBundlesMap`：所有兄弟 bundle 的映射 `Map<String(Type: js, css, map, ...), Bundle>`
-- `offsets`：所有 bundle 中资源位置的映射 `Map<Asset, number(line number inside the bundle)>` ，用于生成准确的 sourcemap 。
+* `type`：它包含的资源类型 \(例如：js, css, map, ...\)
+* `name`：bundle 的名称 \(使用 `entryAsset` 的 `Asset.generateBundleName()` 生成\)
+* `parentBundle`：父 bundle ，入口 bundle 的父 bundle 是 null
+* `entryAsset`：bundle 的入口，用于生成名称\(name\)和聚拢资源\(assets\)
+* `assets`：bundle 中所有资源的`集合(Set)`
+* `childBundles`：所有子 bundle 的`集合(Set)`
+* `siblingBundles`：所有兄弟 bundle 的`集合(Set)`
+* `siblingBundlesMap`：所有兄弟 bundle 的映射 `Map<String(Type: js, css, map, ...), Bundle>`
+* `offsets`：所有 bundle 中资源位置的映射 `Map<Asset, number(line number inside the bundle)>` ，用于生成准确的 sourcemap 。
 
 #### 树
 
@@ -82,13 +81,13 @@ bundler.on('buildEnd', () => {
 
 资源树及其生成的 bundle 树的基本示例如下:
 
-##### 资源树：
+**资源树：**
 
 `index.html` 引用 `index.js` 和 `index.css`
 
 `index.js` 引用 `test.js` 和 `test.txt`
 
-```Text
+```text
 index.html
 -- index.js
  |--- test.js
@@ -96,7 +95,7 @@ index.html
 -- index.css
 ```
 
-##### Bundle 树:
+**Bundle 树:**
 
 `index.html` 被作为主 bundle 的入口资源，这个主 bundle 创建了两个子 bundle ，一个用于 `index.js`，另一个用于 `index.css` ，这是因为它们与 `html` 的类型不同。
 
@@ -108,22 +107,22 @@ index.html
 
 `index.css` 没有引用资源，因此只包含它的入口资源。
 
-`index.css` 和 `index.js` 这两个 bundle 为共享同一父 bundle 的兄弟 bundle(siblingBundles)。
+`index.css` 和 `index.js` 这两个 bundle 为共享同一父 bundle 的兄弟 bundle\(siblingBundles\)。
 
-```Text
+```text
 index.html
 -- index.js (includes index.js and test.js)
  |--- test.txt (includes test.txt)
 -- index.css (includes index.css)
 ```
 
-### 中间件(Middleware)
+### 中间件\(Middleware\)
 
-中间件可以用于 hook 到 http 服务器(例如：`express` 或者 Node.js `http`) 。
+中间件可以用于 hook 到 http 服务器\(例如：`express` 或者 Node.js `http`\) 。
 
 使用 express 的 parcel 中间件示例：
 
-```Javascript
+```javascript
 const Bundler = require('parcel-bundler');
 const app = require('express')();
 
@@ -143,3 +142,4 @@ async function start() {
 
 start();
 ```
+

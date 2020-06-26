@@ -1,13 +1,16 @@
-# CSS
+# css
+
+## CSS
 
 _支援的副檔名：`css`、`pcss` 及 `postcss`_
 
 CSS 資源可於 JavaScript 或 HTML 檔案中被匯入：
 
-```js
+```javascript
 import './index.css';
 ```
-```html
+
+```markup
 <link rel="stylesheet" type="text/css" href="index.css">
 ```
 
@@ -29,11 +32,11 @@ CSS 資源也能透過 `@import` 語法引用相依檔案，或用 `url()` 匯�
 
 除了純 CSS 以外，Parcel 也支援其他編譯至 CSS 的語言如 LESS、SASS 及 Stylus 等。它們的執行方式與純 CSS 相同。
 
-# PostCSS
+## PostCSS
 
 [PostCSS](http://postcss.org) 是款可以轉換 CSS 的外掛，它有如 [autoprefixer](https://github.com/postcss/autoprefixer)、[Preset Env](https://github.com/csstools/postcss-preset-env) 和 [CSS Modules](https://github.com/css-modules/css-modules) 等等的外掛。
 
-若要在 Parcel 中使用 PostCSS，你需要建立下列其中一個設定檔：`.postcssrc` (JSON)、`.postcssrc.js` 或 `postcss.config.js`。
+若要在 Parcel 中使用 PostCSS，你需要建立下列其中一個設定檔：`.postcssrc` \(JSON\)、`.postcssrc.js` 或 `postcss.config.js`。
 
 在你的 app 中安裝外掛：
 
@@ -43,7 +46,7 @@ yarn add postcss-modules autoprefixer
 
 接著建立 `.postcssrc`：
 
-```json
+```javascript
 {
   "modules": true,
   "plugins": {
@@ -58,23 +61,22 @@ yarn add postcss-modules autoprefixer
 
 針對 Autoprefixer、cssnext 及其他工具的支援瀏覽器可在 `.browserslistrc` 中設定：
 
-```
+```text
 > 1%
 last 2 versions
 ```
 
-在指定最外層的 `modules` 時，CSS 模組啟用方式稍有不同。因 CSS 模組會匯出一個需要被引入在 JavaScript bundle 中的物件，Parcel 需要對此特別處理。
-需要注意的是，你仍須在專案中安裝 `postcss-modules`。
+在指定最外層的 `modules` 時，CSS 模組啟用方式稍有不同。因 CSS 模組會匯出一個需要被引入在 JavaScript bundle 中的物件，Parcel 需要對此特別處理。 需要注意的是，你仍須在專案中安裝 `postcss-modules`。
 
-## 使用現有的 CSS 函式庫
+### 使用現有的 CSS 函式庫
 
 為使現有的 CSS 模組可以正常運作，需要特別在它們的 `.postcssrc` 指定支援程度。
 
-## 設定 cssnano CSS 壓縮
+### 設定 cssnano CSS 壓縮
 
 Parcel 會將 [cssnano](http://cssnano.co) 加入至 PostCSS 以便在正式編譯中對 CSS 進行壓縮。若需設定 cssnano 可以建立 `cssnano.config.js` 檔案：
 
-```js
+```javascript
 module.exports = {
   preset: [
     'default',
@@ -87,3 +89,4 @@ module.exports = {
   ]
 }
 ```
+

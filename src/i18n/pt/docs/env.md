@@ -7,13 +7,14 @@ Arquivos `.env` devem ser armazenados junto com o `package.json` que contém sua
 Parcel carrega arquivos `.env` com esses nomes especificos para os valores de `NODE_ENV` seguintes:
 
 | Nome de arquivos `.env` válidos | `NODE_ENV=\*` | `NODE_ENV=test` |
-| ------------------------------- | ------------- | --------------- |
-| `.env`                          | ✔️            | ✔️              |
-| `.env.local`                    | ✔️            | ✖️              |
-| `.env.${NODE_ENV}`              | ✔️            | ✔️              |
-| `.env.${NODE_ENV}.local`        | ✔️            | ✔️              |
+| :--- | :--- | :--- |
+| `.env` | ✔️ | ✔️ |
+| `.env.local` | ✔️ | ✖️ |
+| `.env.${NODE_ENV}` | ✔️ | ✔️ |
+| `.env.${NODE_ENV}.local` | ✔️ | ✔️ |
 
 Notavelmente:
 
-- `NODE_ENV` padrão para `development`.
-- `.env.local` não é carregado quando `NODE_ENV=test` desde que [os testes devem produzir os mesmos resultados para todos](https://github.com/parcel-bundler/parcel/blob/28df546a2249b6aac1e529dd629f506ba6b0a4bb/src/utils/env.js#L9)
+* `NODE_ENV` padrão para `development`.
+* `.env.local` não é carregado quando `NODE_ENV=test` desde que [os testes devem produzir os mesmos resultados para todos](https://github.com/parcel-bundler/parcel/blob/28df546a2249b6aac1e529dd629f506ba6b0a4bb/src/utils/env.js#L9)
+

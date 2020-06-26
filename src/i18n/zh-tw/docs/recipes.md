@@ -12,7 +12,7 @@ npm install --save react-dom
 npm install --save-dev parcel-bundler
 ```
 
-<sub>或者是你想使用 Yarn 來管理套件</sub>
+或者是你想使用 Yarn 來管理套件
 
 ```bash
 yarn add react
@@ -40,7 +40,7 @@ npm install --save-dev parcel-bundler
 npm install --save-dev babel-preset-preact
 ```
 
-<sub>或者是你想使用 Yarn 來管理套件</sub>
+或者是你想使用 Yarn 來管理套件
 
 ```bash
 yarn add preact
@@ -78,7 +78,7 @@ npm install --save vue
 npm install --save-dev parcel-bundler
 ```
 
-<sub>或者是你想使用 Yarn 來管理套件</sub>
+或者是你想使用 Yarn 來管理套件
 
 ```bash
 yarn add vue
@@ -103,7 +103,7 @@ npm install --save-dev typescript
 npm install --save-dev parcel-bundler
 ```
 
-<sub>或者你想使用 yarn 來安裝</sub>
+或者你想使用 yarn 來安裝
 
 ```bash
 yarn add --dev typescript
@@ -123,7 +123,7 @@ yarn add --dev parcel-bundler
 
 接著在你的 `index.html` 中引用你的 `.ts` 檔案即可。
 
-```html
+```markup
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -150,3 +150,4 @@ yarn add --dev parcel-bundler
 ```
 
 完成！ 😄 編譯過的 `.js` 檔案將會在 dist 目錄中。
+

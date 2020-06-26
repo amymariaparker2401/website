@@ -32,7 +32,7 @@ Parcel はどんな種類のファイルでもエントリーポイントとし�
 
 次に、index.html と index.js ファイルを作成しましょう。
 
-```html
+```markup
 <html>
   <body>
     <script src="./index.js"></script>
@@ -44,13 +44,13 @@ Parcel はどんな種類のファイルでもエントリーポイントとし�
 console.log('hello world')
 ```
 
-Parcel には開発用サーバーが組み込まれており、ファイルを変更した際に自動的にアプリケーションを再ビルドします。 また、開発を効率的にするため[ホットモジュールリプレイスメント](hmr.html)をサポートしています。次のようにエントリーファイルを指定してみましょう。
+Parcel には開発用サーバーが組み込まれており、ファイルを変更した際に自動的にアプリケーションを再ビルドします。 また、開発を効率的にするため[ホットモジュールリプレイスメント](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/ja/docs/hmr.html)をサポートしています。次のようにエントリーファイルを指定してみましょう。
 
 ```bash
 parcel index.html
 ```
 
-では、ブラウザで http://localhost:1234/ を開いてみましょう。もし、ホットモジュールリプレイスメントが動いていない場合は[エディタの設定を編集](hmr.html#safe-write)する必要があるかもしれません。 `-p <ポート番号>` オプションを使うことでデフォルトのポート番号を上書きすることができます。
+では、ブラウザで [http://localhost:1234/](http://localhost:1234/) を開いてみましょう。もし、ホットモジュールリプレイスメントが動いていない場合は[エディタの設定を編集](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/ja/docs/hmr.html#safe-write)する必要があるかもしれません。 `-p <ポート番号>` オプションを使うことでデフォルトのポート番号を上書きすることができます。
 
 自分でサーバーを持っていない場合、あるいはアプリケーションがすべてクライアントでレンダリングされる場合には、Parcel の開発用サーバを使いましょう。自分でサーバーを持っている場合には、代わりに Parcel を `watch` モードで実行することができます。ファイルが変更されると自動で再ビルドを行い、ホットモジュールリプレースメントをサポートしますが、Web サーバーは起動しません。
 
@@ -58,7 +58,7 @@ parcel index.html
 parcel watch index.html
 ```
 
-### 複数のエントリーファイル
+## 複数のエントリーファイル
 
 万が一、あなたが複数のエントリーファイルを持っている、たとえば `index.html` と `about.html` があるとした場合にはバンドラーを起動するために 2 種類の方法があります。
 
@@ -76,20 +76,20 @@ parcel *.html
 
 _NOTE:_ もしこのようなファイル構造をしている場合
 
-```
+```text
 - folder-1
 -- index.html
 - folder-2
 -- index.html
 ```
 
-http://localhost:1234/folder-1/ を開いてもうまくいきません。http://localhost:1234/folder-1/index.html のように、ファイル名を正確に指定する必要があります。
+[http://localhost:1234/folder-1/](http://localhost:1234/folder-1/) を開いてもうまくいきません。[http://localhost:1234/folder-1/index.html](http://localhost:1234/folder-1/index.html) のように、ファイル名を正確に指定する必要があります。
 
-### 本番用にビルドする
+## 本番用にビルドする
 
-本番用のビルドを行うときは、 `build` モードがファイルの監視を無効にして、一度だけビルドを行います。 詳細は[本番](production.html)を参照してください。
+本番用のビルドを行うときは、 `build` モードがファイルの監視を無効にして、一度だけビルドを行います。 詳細は[本番](https://github.com/amymariaparker2401/website/tree/574adba7f88c1181c822d553056158f78247bbe7/src/i18n/ja/docs/production.html)を参照してください。
 
-### Parcel をプロジェクトに追加する
+## Parcel をプロジェクトに追加する
 
 時には Parcel をグローバルインストールできないこともあるでしょう。（例：他人のマシンや CI を使ってプロジェクトを自動でビルドしたいとき）こういう場合には、ローカルパッケージとして Parcel をインストールすることができます。
 
@@ -107,7 +107,7 @@ npm install parcel-bundler --save-dev
 
 それから、プロジェクトの `package.json` にこれらのタスクスクリプトを追加します。
 
-```json
+```javascript
 {
   "scripts": {
     "dev": "parcel <your entry file>",
@@ -129,3 +129,4 @@ yarn build
 #または
 npm run build
 ```
+
